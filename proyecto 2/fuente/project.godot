@@ -21,6 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Zombie Defense"
+run/main_scene="res://src/Mundo.tscn"
 config/icon="res://icon.png"
 
 [rendering]
