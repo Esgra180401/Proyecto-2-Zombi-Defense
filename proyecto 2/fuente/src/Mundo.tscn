@@ -9,7 +9,7 @@
 [ext_resource path="res://building.jpg" type="Texture" id=7]
 [ext_resource path="res://Character Sprites.png" type="Texture" id=8]
 [ext_resource path="res://Zombie Sprites.png" type="Texture" id=9]
-[ext_resource path="res://src/actors/Actor.gd" type="Script" id=10]
+[ext_resource path="res://zombie.gd" type="Script" id=10]
 [ext_resource path="res://src/actors/player.gd" type="Script" id=11]
 
 [sub_resource type="CircleShape2D" id=1]
