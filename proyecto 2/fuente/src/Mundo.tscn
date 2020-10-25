@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Game Theme.wav" type="AudioStream" id=1]
 [ext_resource path="res://base.jpg" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://building.jpg" type="Texture" id=7]
 [ext_resource path="res://Character Sprites.png" type="Texture" id=8]
 [ext_resource path="res://Zombie Sprites.png" type="Texture" id=9]
+[ext_resource path="res://src/actors/Actor.gd" type="Script" id=10]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 735.403
@@ -54,6 +55,13 @@ flip_v = true
 region_enabled = true
 region_rect = Rect2( 304, 192, 208, 128 )
 
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Sprite7"]
+position = Vector2( 8.36682, 1.6004 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Sprite7/KinematicBody2D"]
+position = Vector2( -132.433, 7.54222 )
+polygon = PoolVector2Array( 84.2859, -81.4174, 84.2859, -16.7902, 84.2859, 52.0749, 84.2859, -16.7902 )
+
 [node name="Sprite8" type="Sprite" parent="."]
 position = Vector2( 856, 504 )
 texture = ExtResource( 2 )
@@ -94,6 +102,11 @@ flip_v = true
 region_enabled = true
 region_rect = Rect2( 0, 192, 192, 128 )
 
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Sprite5"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite5/KinematicBody2D"]
+polygon = PoolVector2Array( -32.2809, -76.5127, -31.2215, 65.4554, -32.2809, -3.40973 )
+
 [node name="Sprite2" type="Sprite" parent="."]
 position = Vector2( 512, 184 )
 texture = ExtResource( 2 )
@@ -108,6 +121,12 @@ flip_v = true
 region_enabled = true
 region_rect = Rect2( 192, 320, 128, 192 )
 
+[node name="KinematicBody2D2" type="KinematicBody2D" parent="Sprite3"]
+position = Vector2( -1.49829, 1.49832 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Sprite3/KinematicBody2D2"]
+polygon = PoolVector2Array( -64.2206, 8.66115, 77.2194, 11.2422, -47.7393, 8.66115 )
+
 [node name="Sprite10" type="Sprite" parent="."]
 position = Vector2( 24, 344 )
 scale = Vector2( 0.014, 0.014 )
@@ -116,7 +135,6 @@ texture = ExtResource( 6 )
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Sprite10"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite10/KinematicBody2D"]
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite11" type="Sprite" parent="."]
@@ -127,11 +145,9 @@ offset = Vector2( 10000, -17071.4 )
 
 [node name="KinematicBody2D2" type="KinematicBody2D" parent="Sprite11"]
 position = Vector2( -24857.1, 5214.29 )
-scale = Vector2( 1, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite11/KinematicBody2D2"]
 position = Vector2( 34857.3, -22285.8 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite12" type="Sprite" parent="."]
@@ -141,11 +157,9 @@ texture = ExtResource( 6 )
 
 [node name="KinematicBody2D3" type="KinematicBody2D" parent="Sprite12"]
 position = Vector2( -68571.4, 0 )
-scale = Vector2( 1, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite12/KinematicBody2D3"]
 position = Vector2( 68500.3, 0 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite13" type="Sprite" parent="."]
@@ -162,6 +176,11 @@ region_enabled = true
 region_rect = Rect2( 363, 160, 480, 864 )
 region_filter_clip = true
 
+[node name="KinematicBody2D" type="KinematicBody2D" parent="—Pngtree—cartoon overhead blue car_4170273"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="—Pngtree—cartoon overhead blue car_4170273/KinematicBody2D"]
+polygon = PoolVector2Array( -5.94873, -428.789, -72.353, -420.838, -152.493, -383.926, -179.605, -331.94, -178.318, -174.626, -221.291, -137.88, -182.523, -124.847, -177.588, 329.291, -152.032, 402.288, -107.03, 431.177, 103.672, 435.407, 161.884, 404.336, 186.25, 298.582, 178.544, -129.516, 222.304, -119.758, 211.794, -144.209, 178.736, -172.387, 177.449, -329.701, 147.163, -383.92, 69.3652, -425.488 )
+
 [node name="—Pngtree—cartoon overhead blue car_4170274" type="Sprite" parent="."]
 position = Vector2( 248, 320 )
 rotation = -0.872665
@@ -170,6 +189,14 @@ texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 363, 160, 480, 864 )
 region_filter_clip = true
+
+[node name="KinematicBody2D2" type="KinematicBody2D" parent="—Pngtree—cartoon overhead blue car_4170274"]
+position = Vector2( 0.378418, -0.949219 )
+rotation = -6.28319
+scale = Vector2( 0.994527, 1.00551 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="—Pngtree—cartoon overhead blue car_4170274/KinematicBody2D2"]
+polygon = PoolVector2Array( -5.94873, -428.789, -72.353, -420.838, -152.493, -383.926, -179.605, -331.94, -178.318, -174.626, -221.291, -137.88, -182.523, -124.847, -177.588, 329.291, -152.032, 402.288, -107.03, 431.177, 103.672, 435.407, 161.884, 404.336, 186.25, 298.582, 178.544, -129.516, 222.304, -119.758, 211.794, -144.209, 178.736, -172.387, 177.449, -329.701, 147.163, -383.92, 69.3652, -425.488 )
 
 [node name="top-tree-png-4127" type="Sprite" parent="."]
 position = Vector2( 32.625, 436.625 )
@@ -250,62 +277,66 @@ polygon = PoolVector2Array( -5.42773, 121.972, 112.007, 123.793, 112.007, -36.45
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="building/KinematicBody2D"]
 polygon = PoolVector2Array( -108.553, -68.3187, 0.986755, -68.3187, 1.48018, -53.751, 112.007, -52.8405, 112.007, -102.917, 101.151, -113.843, 1.97359, -114.753, 1.48018, -124.769, -108.553, -124.769 )
 
-[node name="Sprite14" type="Sprite" parent="."]
-position = Vector2( 494.744, 411.438 )
-scale = Vector2( 0.480044, 0.529612 )
-texture = ExtResource( 8 )
-region_enabled = true
-region_rect = Rect2( 285, 80, 50, 53 )
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="Sprite14"]
-position = Vector2( 3.96851, 9.52435 )
-
-[node name="CollisionPolygon2D3" type="CollisionShape2D" parent="Sprite14/KinematicBody2D"]
-position = Vector2( -4.68091, -1.15021 )
-scale = Vector2( 1.11135, 1.08831 )
-shape = SubResource( 2 )
-
-[node name="Sprite15" type="Sprite" parent="."]
-position = Vector2( 534.72, 403.486 )
-scale = Vector2( 0.544635, 0.544295 )
-texture = ExtResource( 8 )
-region_enabled = true
-region_rect = Rect2( 156, 80, 46, 53 )
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="Sprite15"]
-position = Vector2( 3.96851, 9.52435 )
-
-[node name="CollisionPolygon2D2" type="CollisionShape2D" parent="Sprite15/KinematicBody2D"]
-position = Vector2( -4.47034, -0.254456 )
-scale = Vector2( 0.979554, 1.05896 )
-shape = SubResource( 2 )
-
-[node name="Sprite16" type="Sprite" parent="."]
-position = Vector2( 515.258, 381.668 )
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 511.819, 383.189 )
 scale = Vector2( 0.533499, 0.576384 )
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( -0.713989, 1.82062 )
+shape = SubResource( 2 )
+
+[node name="Sprite16" type="Sprite" parent="KinematicBody2D"]
+position = Vector2( 2.7262, -7.8031 )
 texture = ExtResource( 8 )
 region_enabled = true
 region_rect = Rect2( 10, 77, 60, 65 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="Sprite16"]
-position = Vector2( 3.96851, 9.52435 )
+[node name="KinematicBody2D2" type="KinematicBody2D" parent="."]
+position = Vector2( 534.5, 407.281 )
+scale = Vector2( 0.544635, 0.544295 )
+script = ExtResource( 10 )
 
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Sprite16/KinematicBody2D"]
-position = Vector2( -7.40863, 1.47614 )
-scale = Vector2( 1, 1 )
+[node name="CollisionPolygon2D2" type="CollisionShape2D" parent="KinematicBody2D2"]
+position = Vector2( 0.630249, 0.110107 )
+scale = Vector2( 0.979554, 1.05896 )
 shape = SubResource( 2 )
 
-[node name="Sprite17" type="Sprite" parent="."]
+[node name="Sprite15" type="Sprite" parent="KinematicBody2D2"]
+position = Vector2( 0.403442, -6.97247 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 156, 80, 46, 53 )
+
+[node name="KinematicBody2D3" type="KinematicBody2D" parent="."]
 position = Vector2( 355.472, -49.426 )
 scale = Vector2( 0.364849, 0.331973 )
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D2" type="CollisionShape2D" parent="KinematicBody2D3"]
+position = Vector2( 0.946533, -2.21661 )
+scale = Vector2( 1.46225, 1.59865 )
+shape = SubResource( 2 )
+
+[node name="Sprite17" type="Sprite" parent="KinematicBody2D3"]
 texture = ExtResource( 9 )
 flip_v = true
 region_enabled = true
 region_rect = Rect2( 249, 246, 69, 70 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="Sprite17"]
+[node name="KinematicBody2D4" type="KinematicBody2D" parent="."]
+position = Vector2( 489.109, 409.141 )
+scale = Vector2( 0.480044, 0.529612 )
+script = ExtResource( 10 )
 
-[node name="CollisionPolygon2D2" type="CollisionShape2D" parent="Sprite17/KinematicBody2D"]
-position = Vector2( 0.946533, -2.21661 )
-scale = Vector2( 1.46225, 1.59865 )
+[node name="CollisionPolygon2D3" type="CollisionShape2D" parent="KinematicBody2D4"]
+position = Vector2( 0.279419, -0.0261269 )
+scale = Vector2( 1.11135, 1.08831 )
 shape = SubResource( 2 )
+
+[node name="Sprite14" type="Sprite" parent="KinematicBody2D4"]
+position = Vector2( -0.661743, -8.77502 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 285, 80, 50, 53 )
