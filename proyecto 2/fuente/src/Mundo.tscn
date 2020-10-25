@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Game Theme.wav" type="AudioStream" id=1]
 [ext_resource path="res://base.jpg" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Character Sprites.png" type="Texture" id=8]
 [ext_resource path="res://Zombie Sprites.png" type="Texture" id=9]
 [ext_resource path="res://src/actors/Actor.gd" type="Script" id=10]
+[ext_resource path="res://src/actors/player.gd" type="Script" id=11]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 735.403
@@ -301,7 +302,7 @@ position = Vector2( 512, 384 )
 scale = Vector2( 0.533499, 0.576384 )
 collision_layer = 2
 collision_mask = 2
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="player 1"]
 position = Vector2( 0.339233, 1.40704 )
@@ -317,7 +318,7 @@ region_rect = Rect2( 10, 77, 60, 65 )
 [node name="player 2" type="KinematicBody2D" parent="."]
 position = Vector2( 528, 416 )
 scale = Vector2( 0.544635, 0.544295 )
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 
 [node name="CollisionPolygon2D2" type="CollisionShape2D" parent="player 2"]
 position = Vector2( 0.630249, 0.110107 )
@@ -385,7 +386,7 @@ region_rect = Rect2( 420, 255, 60, 68 )
 [node name="player 3" type="KinematicBody2D" parent="."]
 position = Vector2( 489.109, 409.141 )
 scale = Vector2( 0.480044, 0.529612 )
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 
 [node name="CollisionPolygon2D3" type="CollisionShape2D" parent="player 3"]
 position = Vector2( 0.279419, -0.0261269 )
