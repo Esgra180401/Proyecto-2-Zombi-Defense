@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/actors/player.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+health = 500
+strenght = 100
+level = 0
+noiseLVL = 0
+atkrange = 5

@@ -10,19 +10,25 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "KinematicBody2D",
-"class": "Actor",
+"class": "CharacterStats",
 "language": "GDScript",
-"path": "res://src/actors/Actor.gd"
+"path": "res://src/actors/CharacterStats.gd"
+}, {
+"base": "Node",
+"class": "Turnos",
+"language": "GDScript",
+"path": "res://Turno.gd"
 } ]
 _global_script_class_icons={
-"Actor": ""
+"CharacterStats": "",
+"Turnos": ""
 }
 
 [application]
 
 config/name="Zombie Defense"
 run/main_scene="res://src/Mundo.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/icon.png"
 
 [display]
 

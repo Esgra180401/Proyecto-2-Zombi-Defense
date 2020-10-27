@@ -2,20 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Character Sprites.png-8e2dd9695b770ef03e1110dc48b7d594.stex"
+path="res://.import/top-tree-png-4127.png-5ba703734213b2d7fba4e9d0449ffb44.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character Sprites.png"
-dest_files=[ "res://.import/Character Sprites.png-8e2dd9695b770ef03e1110dc48b7d594.stex" ]
+source_file="res://assets/top-tree-png-4127.png"
+dest_files=[ "res://.import/top-tree-png-4127.png-5ba703734213b2d7fba4e9d0449ffb44.stex" ]
 
 [params]
 
-compress/mode=3
-compress/lossy_quality=1.0
+compress/mode=0
+compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

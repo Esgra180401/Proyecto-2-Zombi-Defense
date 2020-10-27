@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/—Pngtree—cartoon overhead blue car_4170273.png-b690808072ff4cf9013501b31f87067b.stex"
+path="res://.import/—Pngtree—cartoon overhead blue car_4170273.png-caed8ac20564ca46900f46fab1b000e6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://—Pngtree—cartoon overhead blue car_4170273.png"
-dest_files=[ "res://.import/—Pngtree—cartoon overhead blue car_4170273.png-b690808072ff4cf9013501b31f87067b.stex" ]
+source_file="res://assets/—Pngtree—cartoon overhead blue car_4170273.png"
+dest_files=[ "res://.import/—Pngtree—cartoon overhead blue car_4170273.png-caed8ac20564ca46900f46fab1b000e6.stex" ]
 
 [params]
 

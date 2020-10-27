@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/base.jpg-318f19864a8f1364978ae261735ca008.stex"
+path="res://.import/—Pngtree—sewage drainage manhole cover_5408282.png-c2fe29ca6c89d9c5ae2743e00486ebda.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://base.jpg"
-dest_files=[ "res://.import/base.jpg-318f19864a8f1364978ae261735ca008.stex" ]
+source_file="res://assets/—Pngtree—sewage drainage manhole cover_5408282.png"
+dest_files=[ "res://.import/—Pngtree—sewage drainage manhole cover_5408282.png-c2fe29ca6c89d9c5ae2743e00486ebda.stex" ]
 
 [params]
 
