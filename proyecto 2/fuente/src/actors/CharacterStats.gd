@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Sprite
 
 class_name CharacterStats
 
@@ -8,6 +8,3 @@ export var level: int
 export var noiseLVL: int
 export var atkrange: int
 
-func _physics_process(delta: float) -> void:
-	var velocity: = Vector2(0,0)
-	move_and_slide(velocity)

@@ -1,29 +1,232 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Game Theme.wav" type="AudioStream" id=1]
-[ext_resource path="res://assets/base.jpg" type="Texture" id=2]
-[ext_resource path="res://assets/imagen.jpg" type="Texture" id=3]
+[ext_resource path="res://GameTheme.ogg" type="AudioStream" id=1]
+[ext_resource path="res://assets/Map_MarketSquare.png" type="Texture" id=2]
 [ext_resource path="res://assets/top-tree-png-4127.png" type="Texture" id=4]
-[ext_resource path="res://assets/—Pngtree—cartoon overhead blue car_4170273.png" type="Texture" id=5]
-[ext_resource path="res://assets/—Pngtree—sewage drainage manhole cover_5408282.png" type="Texture" id=6]
-[ext_resource path="res://assets/building.jpg" type="Texture" id=7]
 [ext_resource path="res://assets/Character Sprites.png" type="Texture" id=8]
 [ext_resource path="res://assets/Zombie Sprites.png" type="Texture" id=9]
 [ext_resource path="res://src/actors/Enemy.gd" type="Script" id=10]
 [ext_resource path="res://src/actors/player.gd" type="Script" id=11]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 735.403
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 38.7022, 37.0408, 0.0959473, 37.2734, 0.0959473, -0.170105, 38.9348, 0.0625 )
 
-[sub_resource type="CircleShape2D" id=3]
-radius = 19.5327
+[sub_resource type="TileSet" id=2]
+0/name = "Map_MarketSquare.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 268, 146, 39, 37 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+2/name = "Map_MarketSquare.png 2"
+2/texture = ExtResource( 2 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 421, 577, 39, 37 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 1 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+4/name = "Map_MarketSquare.png 4"
+4/texture = ExtResource( 2 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 536, 146, 40, 37 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "Map_MarketSquare.png 5"
+5/texture = ExtResource( 2 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 498, 218, 39, 36 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "Map_MarketSquare.png 6"
+6/texture = ExtResource( 2 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 843, 2, 193, 217 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
 
-[sub_resource type="CapsuleShape2D" id=5]
-radius = 14.9953
-height = 0.157745
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 155.958, 147.181, -0.0559082, 147.181, -0.0559082, -0.112396, 155.958, -0.112396 )
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 46.6305, 28.6161 )
+[sub_resource type="TileSet" id=4]
+0/name = "Map_MarketSquare.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 997, 289, 156, 147 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 3 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "Map_MarketSquare.png 1"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 383, 398, 422, 357 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Map_MarketSquare.png 2"
+2/texture = ExtResource( 2 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 267, 2, 117, 111 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "Map_MarketSquare.png 3"
+3/texture = ExtResource( 2 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 384, 2, 115, 111 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "Map_MarketSquare.png 4"
+4/texture = ExtResource( 2 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 499, 2, 115, 111 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "Map_MarketSquare.png 5"
+5/texture = ExtResource( 2 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 614, 2, 117, 111 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "Map_MarketSquare.png 6"
+6/texture = ExtResource( 2 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 843, 289, 155, 147 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+7/name = "Map_MarketSquare.png 7"
+7/texture = ExtResource( 2 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 536, 254, 78, 73 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0
+8/name = "Map_MarketSquare.png 8"
+8/texture = ExtResource( 2 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 267, 146, 40, 37 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
+8/shapes = [  ]
+8/z_index = 0
 
 [node name="Mundo" type="Node"]
 __meta__ = {
@@ -31,379 +234,174 @@ __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
 
+[node name="Map" type="Node" parent="."]
+
+[node name="TileMap" type="TileMap" parent="Map"]
+tile_set = SubResource( 2 )
+cell_size = Vector2( 39, 37 )
+format = 1
+tile_data = PoolIntArray( -1, 2, 0, -65536, 2, 0, -65535, 2, 0, -65534, 2, 0, -65533, 2, 0, -65532, 2, 0, -65531, 2, 0, -65530, 2, 0, -65529, 2, 0, -65528, 2, 0, -65527, 2, 0, -65526, 2, 0, -65525, 2, 0, -65524, 2, 0, -65523, 2, 0, -65522, 2, 0, -65521, 2, 0, -65520, 2, 0, -65519, 2, 0, -65518, 2, 0, -65517, 2, 0, -65516, 2, 0, -65515, 2, 0, -65514, 2, 0, -65513, 2, 0, -65512, 2, 0, -65511, 2, 0, -65510, 2, 0, -65509, 2, 0, 65535, 2, 0, 5, 4, 0, 6, 4, 0, 8, 536870914, 0, 9, 536870914, 0, 10, 536870914, 0, 11, 536870914, 0, 12, 536870914, 0, 13, 536870914, 0, 14, 536870914, 0, 15, 536870914, 0, 16, 536870914, 0, 17, 536870914, 0, 18, 536870914, 0, 20, 4, 0, 21, 4, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 131071, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 4, 0, 65544, 536870914, 0, 65545, 536870914, 0, 65546, 536870914, 0, 65547, 536870914, 0, 65548, 536870914, 0, 65549, 536870914, 0, 65550, 536870914, 0, 65551, 536870914, 0, 65552, 536870914, 0, 65553, 536870914, 0, 65554, 536870914, 0, 65556, 4, 0, 65557, 2, 0, 65558, 2, 0, 196607, 2, 0, 131076, 2, 0, 131077, 2, 0, 131078, 4, 0, 131080, 536870914, 0, 131081, 536870914, 0, 131082, 536870914, 0, 131083, 536870914, 0, 131084, 536870914, 0, 131085, 536870914, 0, 131086, 536870914, 0, 131087, 536870914, 0, 131088, 536870914, 0, 131089, 536870914, 0, 131090, 2, 0, 131092, 4, 0, 131093, 2, 0, 131094, 2, 0, 262143, 2, 0, 196613, 4, 0, 196614, 4, 0, 196615, 536870916, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 196626, 536870916, 0, 196627, 0, 0, 196628, 4, 0, 196629, 4, 0, 327679, 2, 0, 262144, 4, 0, 262145, 4, 0, 262146, 4, 0, 262147, 4, 0, 262148, 4, 0, 262149, 4, 0, 262150, 4, 0, 262151, 536870916, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 536870916, 0, 262162, 536870916, 0, 262163, 0, 0, 262164, 4, 0, 262165, 4, 0, 262166, 4, 0, 262167, 4, 0, 262168, 4, 0, 262169, 4, 0, 262170, 4, 0, 393215, 2, 0, 327680, 536870916, 0, 327681, 536870916, 0, 327682, 536870916, 0, 327683, 536870916, 0, 327684, 536870916, 0, 327685, 0, 0, 327686, 536870916, 0, 327687, 536870916, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327702, 0, 0, 327703, 0, 0, 327704, 0, 0, 327705, 0, 0, 327706, 0, 0, 458751, 2, 0, 393216, 536870916, 0, 393217, 536870916, 0, 393218, 536870916, 0, 393219, 536870916, 0, 393220, 536870916, 0, 393221, 536870916, 0, 393222, 536870916, 0, 393223, 536870916, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393237, 0, 0, 393238, 0, 0, 393239, 0, 0, 393240, 0, 0, 393241, 0, 0, 393242, 0, 0, 524287, 2, 0, 458759, 536870916, 0, 458760, 0, 0, 458761, 5, 0, 458762, 5, 0, 458763, 5, 0, 458764, 5, 0, 458765, 5, 0, 458766, 5, 0, 458767, 5, 0, 458768, 5, 0, 458769, 5, 0, 458770, 0, 0, 458771, 0, 0, 458778, 0, 0, 589823, 2, 0, 524292, 536870914, 0, 524293, 536870914, 0, 524295, 536870916, 0, 524296, 0, 0, 524297, 5, 0, 524298, 2, 0, 524299, 2, 0, 524300, 5, 0, 524301, 5, 0, 524302, 5, 0, 524303, 2, 0, 524304, 2, 0, 524305, 5, 0, 524306, 0, 0, 524307, 0, 0, 524309, 536870914, 0, 524310, 536870914, 0, 524314, 0, 0, 655359, 2, 0, 589828, 536870914, 0, 589829, 536870914, 0, 589831, 536870916, 0, 589832, 0, 0, 589833, 5, 0, 589834, 2, 0, 589835, 2, 0, 589836, 5, 0, 589837, 5, 0, 589838, 5, 0, 589839, 2, 0, 589840, 2, 0, 589841, 5, 0, 589842, 0, 0, 589843, 0, 0, 589845, 536870914, 0, 589846, 536870914, 0, 589850, 0, 0, 720895, 2, 0, 655367, 536870916, 0, 655368, 0, 0, 655369, 5, 0, 655370, 5, 0, 655371, 5, 0, 655372, 5, 0, 655373, 5, 0, 655374, 5, 0, 655375, 5, 0, 655376, 5, 0, 655377, 5, 0, 655378, 0, 0, 655379, 0, 0, 655386, 0, 0, 786431, 2, 0, 720896, 2, 0, 720897, 2, 0, 720898, 2, 0, 720899, 2, 0, 720900, 2, 0, 720901, 0, 0, 720902, 0, 0, 720903, 536870916, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 2, 0, 720919, 2, 0, 720920, 2, 0, 720921, 2, 0, 720922, 2, 0, 851967, 2, 0, 786432, 2, 0, 786433, 2, 0, 786434, 2, 0, 786435, 2, 0, 786436, 2, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 2, 0, 786455, 2, 0, 786456, 2, 0, 786457, 2, 0, 786458, 2, 0, 917503, 2, 0, 851968, 2, 0, 851969, 2, 0, 851970, 2, 0, 851971, 2, 0, 851972, 2, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 2, 0, 851991, 2, 0, 851992, 2, 0, 851993, 2, 0, 851994, 2, 0, 983039, 2, 0, 917509, 0, 0, 917510, 0, 0, 917511, 2, 0, 917512, 2, 0, 917513, 2, 0, 917514, 0, 0, 917515, 0, 0, 917516, 2, 0, 917517, 2, 0, 917520, 2, 0, 917521, 2, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917530, 0, 0, 1048575, 2, 0, 983045, 0, 0, 983046, 0, 0, 983047, 2, 0, 983048, 2, 0, 983050, 0, 0, 983051, 0, 0, 983053, 2, 0, 983056, 2, 0, 983059, 0, 0, 983060, 0, 0, 983061, 0, 0, 983066, 0, 0, 1114111, 2, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 2, 0, 1048584, 2, 0, 1048585, 2, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048602, 0, 0, 1179647, 2, 0, 1114117, 0, 0, 1114118, 0, 0, 1114119, 0, 0, 1114120, 0, 0, 1114121, 0, 0, 1114122, 0, 0, 1114123, 0, 0, 1114124, 2, 0, 1114125, 2, 0, 1114126, 2, 0, 1114127, 2, 0, 1114128, 2, 0, 1114129, 2, 0, 1114130, 2, 0, 1114131, 0, 0, 1114132, 0, 0, 1114133, 0, 0, 1114138, 0, 0, 1245183, 2, 0, 1179648, 2, 0, 1179649, 2, 0, 1179650, 2, 0, 1179651, 2, 0, 1179652, 2, 0, 1179653, 2, 0, 1179654, 2, 0, 1179655, 2, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 2, 0, 1179661, 2, 0, 1179662, 2, 0, 1179663, 2, 0, 1179664, 2, 0, 1179665, 2, 0, 1179666, 2, 0, 1179667, 2, 0, 1179668, 2, 0, 1179669, 2, 0, 1179670, 2, 0, 1179671, 2, 0, 1179672, 2, 0, 1179673, 2, 0, 1179674, 2, 0, 1310719, 2, 0, 1245184, 2, 0, 1245185, 2, 0, 1245186, 2, 0, 1245187, 2, 0, 1245188, 2, 0, 1245189, 2, 0, 1245190, 2, 0, 1245191, 2, 0, 1245192, 0, 0, 1245193, 2, 0, 1245194, 2, 0, 1245195, 2, 0, 1245196, 2, 0, 1245197, 2, 0, 1245198, 2, 0, 1245199, 2, 0, 1245200, 2, 0, 1245201, 2, 0, 1245202, 2, 0, 1245203, 2, 0, 1245204, 2, 0, 1245205, 2, 0, 1245206, 2, 0, 1245207, 2, 0, 1245208, 2, 0, 1245209, 2, 0, 1245210, 2, 0, 1376255, 2, 0, 1310720, 2, 0, 1310721, 2, 0, 1310722, 2, 0, 1310723, 2, 0, 1310724, 2, 0, 1310725, 2, 0, 1310726, 2, 0, 1310727, 2, 0, 1310728, 2, 0, 1310729, 2, 0, 1310730, 2, 0, 1310731, 2, 0, 1310732, 2, 0, 1310733, 2, 0, 1310734, 2, 0, 1310735, 2, 0, 1310736, 2, 0, 1310737, 2, 0, 1310738, 2, 0, 1310739, 2, 0, 1310740, 2, 0, 1310741, 2, 0, 1310742, 2, 0, 1310743, 2, 0, 1310744, 2, 0, 1310745, 2, 0, 1310746, 2, 0, 1441791, 2, 0, 1376256, 2, 0, 1376257, 2, 0, 1376258, 2, 0, 1376259, 2, 0, 1376260, 2, 0, 1376261, 2, 0, 1376262, 2, 0, 1376276, 2, 0, 1376277, 2, 0, 1376278, 2, 0, 1376279, 2, 0, 1376280, 2, 0, 1376281, 2, 0, 1376282, 2, 0 )
+
+[node name="TileMap2" type="TileMap" parent="Map"]
+tile_set = SubResource( 4 )
+cell_size = Vector2( 39, 37 )
+format = 1
+tile_data = PoolIntArray( 0, 536870912, 0, 4, 536870918, 0, 7, 2, 0, 10, 3, 0, 14, 536870915, 0, 17, 536870914, 0, 19, 6, 0, 23, 0, 0, 65555, 8, 0, 131091, 8, 0, 196615, 8, 0, 196616, 8, 0, 196617, 8, 0, 196618, 8, 0, 196619, 8, 0, 196620, 8, 0, 196621, 8, 0, 196622, 8, 0, 196623, 8, 0, 196624, 8, 0, 196625, 8, 0, 196626, 8, 0, 196627, 8, 0, 458752, 536870912, 0, 458756, 536870918, 0, 458759, 8, 0, 458771, 6, 0, 458775, 0, 0, 524295, 8, 0, 524298, 7, 0, 524303, 7, 0, 524307, 8, 0, 589831, 8, 0, 589843, 8, 0, 655367, 8, 0, 655379, 8, 0, 720903, 8, 0, 917504, 536870912, 0, 917508, 536870918, 0, 917523, 6, 0, 917527, 0, 0 )
+
+[node name="Map_MarketSquare" type="Sprite" parent="Map"]
+position = Vector2( 525.607, 664.53 )
+scale = Vector2( 1.01608, 1.02381 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 305, 469, 501, 287 )
+
 [node name="Music" type="Node" parent="."]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Music"]
 stream = ExtResource( 1 )
 autoplay = true
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 511.58, 440 )
-scale = Vector2( 1.00164, 1 )
-texture = ExtResource( 2 )
-flip_v = true
-region_enabled = true
-region_rect = Rect2( 0, 0, 512, 320 )
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="Sprite"]
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/KinematicBody2D"]
-polygon = PoolVector2Array( -231.266, -22.0087, -146.851, -20.7488, -145.591, 48.5468, -62.4366, 48.5468, -62.4366, -18.229, -42.2778, -16.9691, -42.2778, 10.7492, 38.3572, 10.7492, 38.3572, -22.0087, 61.0358, -22.0087, 62.2957, 12.0091, 142.931, 10.7492, 141.671, -20.7488, 232.385, -20.7488, 233.645, 131.702, 144.191, 131.702, 144.191, 68.7056, 62.2957, 68.7056, 63.5555, 134.221, 40.877, 132.962, 38.3572, 101.464, -43.5378, 101.464, -42.2778, 136.741, -183.389, 136.741, -183.389, 85.0845, -233.786, 83.8246 )
-
-[node name="Sprite6" type="Sprite" parent="."]
-show_behind_parent = true
-position = Vector2( 187.352, 343.159 )
-scale = Vector2( 1.06873, 1 )
-texture = ExtResource( 2 )
-flip_v = true
-region_enabled = true
-region_rect = Rect2( 304, 192, 208, 128 )
-
-[node name="Sprite7" type="Sprite" parent="."]
-position = Vector2( 1064, 344 )
-texture = ExtResource( 2 )
-flip_v = true
-region_enabled = true
-region_rect = Rect2( 304, 192, 208, 128 )
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="Sprite7"]
-position = Vector2( 8.36682, 1.6004 )
-
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Sprite7/KinematicBody2D"]
-position = Vector2( -132.433, 7.54222 )
-polygon = PoolVector2Array( 84.2859, -81.4174, 84.2859, -16.7902, 84.2859, 52.0749, 84.2859, -16.7902 )
-
-[node name="Sprite8" type="Sprite" parent="."]
-position = Vector2( 855.159, 504 )
-scale = Vector2( 1.00956, 1 )
-texture = ExtResource( 2 )
-flip_v = true
-region_enabled = true
-region_rect = Rect2( 320, 304, 176, 208 )
-
-[node name="KinematicBody2D3" type="KinematicBody2D" parent="Sprite8"]
-position = Vector2( -344, -64 )
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite8/KinematicBody2D3"]
-polygon = PoolVector2Array( 268.923, -15.7092, 422.633, -14.4492, 420.113, 140.521, 318.06, 139.261, 318.06, 90.1242, 270.183, 90.1242 )
-
-[node name="Sprite9" type="Sprite" parent="."]
-position = Vector2( 168, 504 )
-texture = ExtResource( 2 )
-flip_v = true
-region_enabled = true
-region_rect = Rect2( 0, 304, 192, 192 )
-
-[node name="KinematicBody2D2" type="KinematicBody2D" parent="Sprite9"]
-position = Vector2( 344, -64 )
-collision_layer = 3
-collision_mask = 2147483651
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite9/KinematicBody2D2"]
-polygon = PoolVector2Array( -257.724, -22.0087, -416.474, -23.2687, -416.474, 131.702, -257.724, 132.962 )
-
-[node name="Sprite4" type="Sprite" parent="."]
-position = Vector2( 861.057, 344 )
-scale = Vector2( 1.03066, 1 )
-texture = ExtResource( 2 )
-flip_v = true
-region_enabled = true
-region_rect = Rect2( 0, 192, 192, 128 )
-
-[node name="Sprite5" type="Sprite" parent="."]
-position = Vector2( 32, 344 )
-texture = ExtResource( 2 )
-flip_v = true
-region_enabled = true
-region_rect = Rect2( 0, 192, 192, 128 )
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="Sprite5"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite5/KinematicBody2D"]
-polygon = PoolVector2Array( -32.2809, -76.5127, -31.2215, 65.4554, -32.2809, -3.40973 )
-
-[node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 512, 184 )
-texture = ExtResource( 2 )
-flip_v = true
-region_enabled = true
-region_rect = Rect2( 192, 320, 128, 192 )
-
-[node name="Sprite3" type="Sprite" parent="."]
-position = Vector2( 512, -4.21597 )
-scale = Vector2( 1, 1.03942 )
-texture = ExtResource( 2 )
-flip_v = true
-region_enabled = true
-region_rect = Rect2( 192, 320, 128, 192 )
-
-[node name="KinematicBody2D2" type="KinematicBody2D" parent="Sprite3"]
-position = Vector2( -1.49829, 1.49832 )
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Sprite3/KinematicBody2D2"]
-polygon = PoolVector2Array( -64.2206, 8.66115, 77.2194, 11.2422, 42.7926, 10.5311, -47.7393, 8.66115 )
-
-[node name="Sprite10" type="Sprite" parent="."]
-position = Vector2( 24, 344 )
-scale = Vector2( 0.014, 0.014 )
-texture = ExtResource( 6 )
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="Sprite10"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite10/KinematicBody2D"]
-shape = SubResource( 1 )
-
-[node name="Sprite11" type="Sprite" parent="."]
-position = Vector2( 372, 271 )
-scale = Vector2( 0.014, 0.014 )
-texture = ExtResource( 6 )
-offset = Vector2( 10000, -17071.4 )
-
-[node name="KinematicBody2D2" type="KinematicBody2D" parent="Sprite11"]
-position = Vector2( -24857.1, 5214.29 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite11/KinematicBody2D2"]
-position = Vector2( 34857.3, -22285.8 )
-shape = SubResource( 1 )
-
-[node name="Sprite12" type="Sprite" parent="."]
-position = Vector2( 984, 344 )
-scale = Vector2( 0.014, 0.014 )
-texture = ExtResource( 6 )
-
-[node name="KinematicBody2D3" type="KinematicBody2D" parent="Sprite12"]
-position = Vector2( -68571.4, 0 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite12/KinematicBody2D3"]
-position = Vector2( 68500.3, 0 )
-shape = SubResource( 1 )
-
-[node name="Sprite13" type="Sprite" parent="."]
-position = Vector2( 512, 344 )
-scale = Vector2( 0.014, 0.014 )
-texture = ExtResource( 6 )
-
-[node name="—Pngtree—cartoon overhead blue car_4170273" type="Sprite" parent="."]
-position = Vector2( 544, 120 )
-rotation = 1.0472
-scale = Vector2( 0.0741669, 0.0746296 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 363, 160, 480, 864 )
-region_filter_clip = true
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="—Pngtree—cartoon overhead blue car_4170273"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="—Pngtree—cartoon overhead blue car_4170273/KinematicBody2D"]
-polygon = PoolVector2Array( -5.94873, -428.789, -72.353, -420.838, -152.493, -383.926, -179.605, -331.94, -178.318, -174.626, -221.291, -137.88, -182.523, -124.847, -177.588, 329.291, -152.032, 402.288, -107.03, 431.177, 103.672, 435.407, 161.884, 404.336, 186.25, 298.582, 178.544, -129.516, 222.304, -119.758, 211.794, -144.209, 178.736, -172.387, 177.449, -329.701, 147.163, -383.92, 69.3652, -425.488 )
-
-[node name="—Pngtree—cartoon overhead blue car_4170274" type="Sprite" parent="."]
-position = Vector2( 248, 320 )
-rotation = -0.872665
-scale = Vector2( 0.0741669, 0.0746296 )
-texture = ExtResource( 5 )
-region_enabled = true
-region_rect = Rect2( 363, 160, 480, 864 )
-region_filter_clip = true
-
-[node name="KinematicBody2D2" type="KinematicBody2D" parent="—Pngtree—cartoon overhead blue car_4170274"]
-position = Vector2( 0.378418, -0.949219 )
-rotation = -6.28319
-scale = Vector2( 0.994527, 1.00551 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="—Pngtree—cartoon overhead blue car_4170274/KinematicBody2D2"]
-position = Vector2( -16.0613, -1.38086 )
-polygon = PoolVector2Array( -5.94873, -428.789, -72.353, -420.838, -152.493, -383.926, -179.605, -331.94, -178.318, -174.626, -221.291, -137.88, -182.523, -124.847, -177.588, 329.291, -152.032, 402.288, -107.03, 431.177, 103.672, 435.407, 161.884, 404.336, 186.25, 298.582, 178.544, -129.516, 222.304, -119.758, 211.794, -144.209, 178.736, -172.387, 177.449, -329.701, 147.163, -383.92, 69.3652, -425.488 )
-
-[node name="top-tree-png-4127" type="Sprite" parent="."]
-position = Vector2( 32.625, 436.625 )
-scale = Vector2( 0.456573, 0.494131 )
-texture = ExtResource( 4 )
-
-[node name="top-tree-png-4131" type="Sprite" parent="."]
-position = Vector2( 984, 504 )
-scale = Vector2( 0.456573, 0.494131 )
-texture = ExtResource( 4 )
-
-[node name="top-tree-png-4132" type="Sprite" parent="."]
-position = Vector2( 984, 464 )
-scale = Vector2( 0.456573, 0.494131 )
-texture = ExtResource( 4 )
-
-[node name="top-tree-png-4133" type="Sprite" parent="."]
-position = Vector2( 984, 424 )
-rotation = 1.5708
-scale = Vector2( 0.456573, 0.494131 )
-texture = ExtResource( 4 )
-
-[node name="top-tree-png-4128" type="Sprite" parent="."]
-position = Vector2( 32, 504 )
-scale = Vector2( 0.456573, 0.494131 )
-texture = ExtResource( 4 )
-
-[node name="top-tree-png-4129" type="Sprite" parent="."]
-position = Vector2( 32, 560 )
-rotation = 1.5708
-scale = Vector2( 0.456573, 0.494131 )
-texture = ExtResource( 4 )
-
-[node name="top-tree-png-4130" type="Sprite" parent="."]
-position = Vector2( 984, 568 )
-rotation = 1.5708
-scale = Vector2( 0.456573, 0.494131 )
-texture = ExtResource( 4 )
-
-[node name="imagen" type="Sprite" parent="."]
-position = Vector2( 868.15, 140.44 )
-scale = Vector2( 0.810694, 0.417976 )
-texture = ExtResource( 3 )
-region_enabled = true
-region_rect = Rect2( 32, 64, 720, 672 )
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="imagen"]
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionPolygon" type="CollisionPolygon2D" parent="imagen/KinematicBody2D"]
-polygon = PoolVector2Array( -102.566, -175.704, -102.566, 92.2541, 88.6277, 94.6466, 88.6277, 3.73227, 282.289, 6.12476, 282.289, -178.096 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="imagen/KinematicBody2D"]
-polygon = PoolVector2Array( -233.319, 312.362, 102.196, 312.362, 102.196, 312.362 )
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="imagen/KinematicBody2D"]
-polygon = PoolVector2Array( 357.533, -314.468, -291.382, -316.63, -360.37, -316.86, -291.382, -317.093, 347.665, -319.253 )
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="imagen/KinematicBody2D"]
-polygon = PoolVector2Array( -357.903, -312.075, -355.436, 312.362, -357.903, -283.366 )
-
-[node name="building" type="Sprite" parent="."]
-position = Vector2( 220, 140.036 )
-scale = Vector2( 2.02666, 1.09832 )
-texture = ExtResource( 7 )
-region_enabled = true
-region_rect = Rect2( 465, 187, 225, 255 )
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="building"]
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="building/KinematicBody2D"]
-position = Vector2( 0, -0.572472 )
-scale = Vector2( 1, 1.00322 )
-polygon = PoolVector2Array( -108.06, -51.9301, -20.7238, -51.0196, -20.7238, 38.2076, -59.2108, 38.2076, -58.7173, 58.2382, -21.2172, 58.2382, -21.2172, 124.703, -106.579, 123.793 )
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="building/KinematicBody2D"]
-polygon = PoolVector2Array( -5.42773, 121.972, 112.007, 123.793, 112.007, -36.4519, 58.2237, -37.3623, 58.2237, 11.8037, -5.42773, 12.7142 )
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="building/KinematicBody2D"]
-polygon = PoolVector2Array( -108.553, -68.3187, 0.986755, -68.3187, 1.48018, -53.751, 112.007, -52.8405, 112.007, -102.917, 101.151, -113.843, 1.97359, -114.753, 1.48018, -124.769, -108.553, -124.769 )
-
 [node name="YSort" type="YSort" parent="."]
 
-[node name="player 1" type="KinematicBody2D" parent="YSort"]
-position = Vector2( 512, 384 )
-scale = Vector2( 0.533499, 0.576384 )
-collision_layer = 2
-collision_mask = 2
-script = ExtResource( 11 )
-
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="YSort/player 1"]
-position = Vector2( 0.339233, 1.40704 )
-shape = SubResource( 3 )
-one_way_collision_margin = 0.0
-
-[node name="ranger" type="Sprite" parent="YSort/player 1"]
-position = Vector2( 2.7262, -7.8031 )
+[node name="ranger" type="Sprite" parent="YSort"]
+position = Vector2( 605.88, 566.162 )
+scale = Vector2( 0.861627, 0.837508 )
 texture = ExtResource( 8 )
 region_enabled = true
 region_rect = Rect2( 10, 77, 60, 65 )
-
-[node name="player 2" type="KinematicBody2D" parent="YSort"]
-position = Vector2( 528, 416 )
-scale = Vector2( 0.544635, 0.544295 )
 script = ExtResource( 11 )
 
-[node name="CollisionPolygon2D2" type="CollisionShape2D" parent="YSort/player 2"]
-position = Vector2( 0.630249, 0.110107 )
-scale = Vector2( 0.979554, 1.05896 )
-shape = SubResource( 3 )
-
-[node name="tank" type="Sprite" parent="YSort/player 2"]
-position = Vector2( 0.403442, -6.97247 )
+[node name="tank" type="Sprite" parent="YSort"]
+position = Vector2( 606.536, 493.58 )
+scale = Vector2( 0.962379, 0.995109 )
 texture = ExtResource( 8 )
 region_enabled = true
 region_rect = Rect2( 156, 80, 46, 53 )
-
-[node name="player 3" type="KinematicBody2D" parent="YSort"]
-position = Vector2( 489.109, 409.141 )
-scale = Vector2( 0.480044, 0.529612 )
 script = ExtResource( 11 )
 
-[node name="CollisionPolygon2D3" type="CollisionShape2D" parent="YSort/player 3"]
-position = Vector2( 0.279419, -0.0261269 )
-scale = Vector2( 1.11135, 1.08831 )
-shape = SubResource( 3 )
-
-[node name="soldier" type="Sprite" parent="YSort/player 3"]
-position = Vector2( -0.661743, -8.77502 )
+[node name="soldier" type="Sprite" parent="YSort"]
+position = Vector2( 564.86, 571.243 )
+scale = Vector2( 0.887913, 0.88527 )
 texture = ExtResource( 8 )
 region_enabled = true
 region_rect = Rect2( 285, 80, 50, 53 )
+script = ExtResource( 11 )
 
-[node name="zombi base" type="KinematicBody2D" parent="YSort"]
-position = Vector2( 464, 240 )
-scale = Vector2( 0.364849, 0.331973 )
-script = ExtResource( 10 )
-
-[node name="CollisionPolygon2D2" type="CollisionShape2D" parent="YSort/zombi base"]
-position = Vector2( 0.946533, -2.21661 )
-scale = Vector2( 1.46225, 1.59865 )
-shape = SubResource( 3 )
-
-[node name="zombi" type="Sprite" parent="YSort/zombi base"]
+[node name="zombi" type="Sprite" parent="YSort"]
+position = Vector2( 410.127, 170.528 )
+scale = Vector2( 0.580853, 0.604334 )
 texture = ExtResource( 9 )
 flip_v = true
 region_enabled = true
 region_rect = Rect2( 249, 246, 69, 70 )
-
-[node name="araña" type="KinematicBody2D" parent="YSort"]
-position = Vector2( 568, 208 )
-scale = Vector2( 0.364849, 0.331973 )
-collision_layer = 2
-collision_mask = 2
 script = ExtResource( 10 )
 
-[node name="CollisionPolygon2D2" type="CollisionShape2D" parent="YSort/araña"]
-position = Vector2( 0, 3.8147e-06 )
-rotation = 3.14159
-scale = Vector2( 1.46225, 1.59865 )
-shape = SubResource( 5 )
-one_way_collision_margin = 0.0
-
-[node name="zombi trepa" type="Sprite" parent="YSort/araña"]
+[node name="zombi trepa" type="Sprite" parent="YSort"]
+position = Vector2( 604.772, 163.514 )
+scale = Vector2( 0.913905, 0.871377 )
 texture = ExtResource( 9 )
 flip_v = true
 region_enabled = true
 region_rect = Rect2( 420, 255, 60, 68 )
-
-[node name="zombi boss" type="KinematicBody2D" parent="YSort"]
-position = Vector2( 512, 208 )
-scale = Vector2( 0.364849, 0.331973 )
 script = ExtResource( 10 )
 
-[node name="CollisionPolygon2D2" type="CollisionShape2D" parent="YSort/zombi boss"]
-position = Vector2( 0.946533, -2.21661 )
-scale = Vector2( 1.46225, 1.59865 )
-shape = SubResource( 4 )
-
-[node name="tanke zombi" type="Sprite" parent="YSort/zombi boss"]
+[node name="tanque zombi" type="Sprite" parent="YSort"]
+position = Vector2( 529.283, 180.13 )
+scale = Vector2( 0.530112, 0.608117 )
 texture = ExtResource( 9 )
 flip_v = true
 region_enabled = true
 region_rect = Rect2( 420, 357, 150, 102 )
+script = ExtResource( 10 )
+
+[node name="Extra Assets" type="Node" parent="."]
+
+[node name="top-tree-png-4127" type="Sprite" parent="Extra Assets"]
+position = Vector2( 43.0524, 462.681 )
+scale = Vector2( 0.456573, 0.494131 )
+texture = ExtResource( 4 )
+
+[node name="top-tree-png-4131" type="Sprite" parent="Extra Assets"]
+position = Vector2( 1003.66, 461.222 )
+scale = Vector2( 0.456573, 0.494131 )
+texture = ExtResource( 4 )
+
+[node name="top-tree-png-4134" type="Sprite" parent="Extra Assets"]
+position = Vector2( 953.526, 462.207 )
+scale = Vector2( 0.456573, 0.494131 )
+texture = ExtResource( 4 )
+
+[node name="top-tree-png-4135" type="Sprite" parent="Extra Assets"]
+position = Vector2( 891.515, 463.329 )
+scale = Vector2( 0.456573, 0.494131 )
+texture = ExtResource( 4 )
+
+[node name="top-tree-png-4133" type="Sprite" parent="Extra Assets"]
+position = Vector2( 52.0412, 703.204 )
+rotation = 1.52367
+scale = Vector2( 0.456573, 0.494131 )
+texture = ExtResource( 4 )
+
+[node name="top-tree-png-4136" type="Sprite" parent="Extra Assets"]
+position = Vector2( 109.718, 704.988 )
+rotation = 1.52367
+scale = Vector2( 0.456573, 0.494131 )
+texture = ExtResource( 4 )
+
+[node name="top-tree-png-4139" type="Sprite" parent="Extra Assets"]
+position = Vector2( 159.664, 703.204 )
+rotation = 1.52367
+scale = Vector2( 0.456573, 0.494131 )
+texture = ExtResource( 4 )
+
+[node name="top-tree-png-4140" type="Sprite" parent="Extra Assets"]
+position = Vector2( 209.611, 704.988 )
+rotation = 1.52367
+scale = Vector2( 0.456573, 0.494131 )
+texture = ExtResource( 4 )
+
+[node name="top-tree-png-4141" type="Sprite" parent="Extra Assets"]
+position = Vector2( 258.369, 704.394 )
+rotation = 1.52367
+scale = Vector2( 0.456573, 0.494131 )
+texture = ExtResource( 4 )
+
+[node name="top-tree-png-4137" type="Sprite" parent="Extra Assets"]
+position = Vector2( 791.728, 697.853 )
+rotation = 1.52367
+scale = Vector2( 0.456573, 0.494131 )
+texture = ExtResource( 4 )
+
+[node name="top-tree-png-4138" type="Sprite" parent="Extra Assets"]
+position = Vector2( 849.404, 699.637 )
+rotation = 1.52367
+scale = Vector2( 0.456573, 0.494131 )
+texture = ExtResource( 4 )
+
+[node name="top-tree-png-4142" type="Sprite" parent="Extra Assets"]
+position = Vector2( 899.351, 697.853 )
+rotation = 1.52367
+scale = Vector2( 0.456573, 0.494131 )
+texture = ExtResource( 4 )
+
+[node name="top-tree-png-4143" type="Sprite" parent="Extra Assets"]
+position = Vector2( 949.298, 699.637 )
+rotation = 1.52367
+scale = Vector2( 0.456573, 0.494131 )
+texture = ExtResource( 4 )
+
+[node name="top-tree-png-4144" type="Sprite" parent="Extra Assets"]
+position = Vector2( 998.055, 699.042 )
+rotation = 1.52367
+scale = Vector2( 0.456573, 0.494131 )
+texture = ExtResource( 4 )
+
+[node name="top-tree-png-4128" type="Sprite" parent="Extra Assets"]
+position = Vector2( 102.842, 462.673 )
+scale = Vector2( 0.456573, 0.494131 )
+texture = ExtResource( 4 )
+
+[node name="top-tree-png-4132" type="Sprite" parent="Extra Assets"]
+position = Vector2( 157.373, 462.877 )
+scale = Vector2( 0.456573, 0.494131 )
+texture = ExtResource( 4 )
