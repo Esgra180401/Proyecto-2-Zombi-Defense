@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://GameTheme.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Game Theme.ogg" type="AudioStream" id=1]
 [ext_resource path="res://assets/Map_MarketSquare.png" type="Texture" id=2]
-[ext_resource path="res://src/actors/CharacterStats.gd" type="Script" id=3]
 [ext_resource path="res://assets/top-tree-png-4127.png" type="Texture" id=4]
 [ext_resource path="res://assets/Character Sprites.png" type="Texture" id=8]
 [ext_resource path="res://assets/Zombie Sprites.png" type="Texture" id=9]
@@ -315,7 +314,6 @@ scale = Vector2( 0.887913, 0.88527 )
 texture = ExtResource( 8 )
 region_enabled = true
 region_rect = Rect2( 285, 80, 50, 53 )
-script = ExtResource( 3 )
 
 [node name="zombi" type="Sprite" parent="Characters"]
 position = Vector2( 410.127, 170.528 )
