@@ -2,7 +2,7 @@
 
 [ext_resource path="res://GameTheme.ogg" type="AudioStream" id=1]
 [ext_resource path="res://assets/Map_MarketSquare.png" type="Texture" id=2]
-[ext_resource path="res://src/actors/CharacterStats.gd" type="Script" id=3]
+[ext_resource path="res://src/actors/player.gd" type="Script" id=3]
 [ext_resource path="res://assets/top-tree-png-4127.png" type="Texture" id=4]
 [ext_resource path="res://assets/Character Sprites.png" type="Texture" id=8]
 [ext_resource path="res://assets/Zombie Sprites.png" type="Texture" id=9]
@@ -301,6 +301,9 @@ scale = Vector2( 0.861627, 0.837508 )
 texture = ExtResource( 8 )
 region_enabled = true
 region_rect = Rect2( 10, 77, 60, 65 )
+script = ExtResource( 3 )
+
+[node name="Tween" type="Tween" parent="Characters/ranger"]
 
 [node name="tank" type="Sprite" parent="Characters"]
 position = Vector2( 606.536, 493.58 )
@@ -308,6 +311,9 @@ scale = Vector2( 0.962379, 0.995109 )
 texture = ExtResource( 8 )
 region_enabled = true
 region_rect = Rect2( 156, 80, 46, 53 )
+script = ExtResource( 3 )
+
+[node name="Tween" type="Tween" parent="Characters/tank"]
 
 [node name="soldier" type="Sprite" parent="Characters"]
 position = Vector2( 564.86, 571.243 )
@@ -316,6 +322,8 @@ texture = ExtResource( 8 )
 region_enabled = true
 region_rect = Rect2( 285, 80, 50, 53 )
 script = ExtResource( 3 )
+
+[node name="Tween" type="Tween" parent="Characters/soldier"]
 
 [node name="zombi" type="Sprite" parent="Characters"]
 position = Vector2( 410.127, 170.528 )
