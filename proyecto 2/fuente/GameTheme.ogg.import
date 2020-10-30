@@ -12,4 +12,4 @@ dest_files=[ "res://.import/GameTheme.ogg-580aa0b0ca2d183d298ed5e3169eebd9.oggst
 [params]
 
 loop=true
-loop_offset=0
+loop_offset=15.25
