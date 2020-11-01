@@ -290,7 +290,7 @@ format = 1
 tile_data = PoolIntArray( 0, 536870912, 0, 4, 536870918, 0, 7, 2, 0, 10, 3, 0, 14, 536870915, 0, 17, 536870914, 0, 19, 6, 0, 23, 0, 0, 65555, 8, 0, 131091, 8, 0, 196615, 8, 0, 196616, 8, 0, 196617, 8, 0, 196618, 8, 0, 196619, 8, 0, 196620, 8, 0, 196621, 8, 0, 196622, 8, 0, 196623, 8, 0, 196624, 8, 0, 196625, 8, 0, 196626, 8, 0, 196627, 8, 0, 458752, 536870912, 0, 458756, 536870918, 0, 458759, 8, 0, 458771, 6, 0, 458775, 0, 0, 524295, 8, 0, 524298, 7, 0, 524303, 7, 0, 524307, 8, 0, 589831, 8, 0, 589843, 8, 0, 655367, 8, 0, 655379, 8, 0, 720903, 8, 0, 917504, 536870912, 0, 917508, 536870918, 0, 917523, 6, 0, 917527, 0, 0 )
 
 [node name="Map_MarketSquare" type="Sprite" parent="Map"]
-position = Vector2( 525.607, 664.53 )
+position = Vector2( 528, 664 )
 scale = Vector2( 1.01608, 1.02381 )
 texture = ExtResource( 2 )
 region_enabled = true
@@ -366,57 +366,6 @@ scale = Vector2( 0.861627, 0.837508 )
 shape = SubResource( 7 )
 
 [node name="Tween" type="Tween" parent="Turnos/Area2D"]
-
-[node name="Area2D2" type="Area2D" parent="Turnos"]
-position = Vector2( 370.628, 203.245 )
-collision_layer = 7
-collision_mask = 7
-
-[node name="zombi" type="Sprite" parent="Turnos/Area2D2"]
-position = Vector2( -0.143311, 2.20555 )
-scale = Vector2( 0.580853, 0.604334 )
-texture = ExtResource( 9 )
-flip_v = true
-region_enabled = true
-region_rect = Rect2( 249, 246, 69, 70 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Turnos/Area2D2"]
-position = Vector2( -0.105469, 0.102615 )
-shape = SubResource( 8 )
-
-[node name="Area2D4" type="Area2D" parent="Turnos"]
-position = Vector2( 488.211, 166.864 )
-collision_layer = 7
-collision_mask = 7
-
-[node name="tanque zombi" type="Sprite" parent="Turnos/Area2D4"]
-position = Vector2( -0.198792, 5.94597 )
-scale = Vector2( 0.530112, 0.608117 )
-texture = ExtResource( 9 )
-flip_v = true
-region_enabled = true
-region_rect = Rect2( 420, 357, 150, 102 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Turnos/Area2D4"]
-position = Vector2( -0.135803, -0.0671234 )
-shape = SubResource( 8 )
-
-[node name="Area2D5" type="Area2D" parent="Turnos"]
-position = Vector2( 604.974, 166.13 )
-collision_layer = 6
-collision_mask = 6
-
-[node name="zombi trepa" type="Sprite" parent="Turnos/Area2D5"]
-position = Vector2( -1.37006, -3.73738 )
-scale = Vector2( 0.913905, 0.871377 )
-texture = ExtResource( 9 )
-flip_v = true
-region_enabled = true
-region_rect = Rect2( 420, 255, 60, 68 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Turnos/Area2D5"]
-position = Vector2( 0.123535, 0.0366483 )
-shape = SubResource( 8 )
 
 [node name="Extra Assets" type="Node" parent="."]
 
@@ -509,5 +458,56 @@ texture = ExtResource( 4 )
 position = Vector2( 157.373, 462.877 )
 scale = Vector2( 0.456573, 0.494131 )
 texture = ExtResource( 4 )
+
+[node name="Area2D2" type="Area2D" parent="Extra Assets"]
+position = Vector2( 370.628, 203.245 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="zombi" type="Sprite" parent="Extra Assets/Area2D2"]
+position = Vector2( -0.143311, 2.20555 )
+scale = Vector2( 0.580853, 0.604334 )
+texture = ExtResource( 9 )
+flip_v = true
+region_enabled = true
+region_rect = Rect2( 249, 246, 69, 70 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Extra Assets/Area2D2"]
+position = Vector2( -0.105469, 0.102615 )
+shape = SubResource( 8 )
+
+[node name="Area2D4" type="Area2D" parent="Extra Assets"]
+position = Vector2( 488.211, 166.864 )
+collision_layer = 7
+collision_mask = 7
+
+[node name="tanque zombi" type="Sprite" parent="Extra Assets/Area2D4"]
+position = Vector2( -0.198792, 5.94597 )
+scale = Vector2( 0.530112, 0.608117 )
+texture = ExtResource( 9 )
+flip_v = true
+region_enabled = true
+region_rect = Rect2( 420, 357, 150, 102 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Extra Assets/Area2D4"]
+position = Vector2( -0.135803, -0.0671234 )
+shape = SubResource( 8 )
+
+[node name="Area2D5" type="Area2D" parent="Extra Assets"]
+position = Vector2( 604.974, 166.13 )
+collision_layer = 6
+collision_mask = 6
+
+[node name="zombi trepa" type="Sprite" parent="Extra Assets/Area2D5"]
+position = Vector2( -1.37006, -3.73738 )
+scale = Vector2( 0.913905, 0.871377 )
+texture = ExtResource( 9 )
+flip_v = true
+region_enabled = true
+region_rect = Rect2( 420, 255, 60, 68 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Extra Assets/Area2D5"]
+position = Vector2( 0.123535, 0.0366483 )
+shape = SubResource( 8 )
 
 [node name="GUI" type="Node" parent="."]

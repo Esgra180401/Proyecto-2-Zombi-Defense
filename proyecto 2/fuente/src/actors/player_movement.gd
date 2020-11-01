@@ -2,10 +2,13 @@ extends Area2D
 
 class_name player_movement
 
+
 var moving = false
 var  tile_size = 37
 var last_movement = Vector2(0,0)
 var motion_vector = Vector2()
+var turnos = 3
+signal completed
 
 func _ready():
 	$Tween.connect("tween_completed",self,"_on_Tween_tween_completed")
@@ -14,48 +17,62 @@ func _physics_process(delta):
 	
 	
 	if !moving:
-		
-		if Input.is_action_pressed("ui_up"):
-			motion_vector = Vector2( 0, -1)
-			rotation_degrees = 0
-			tile_size = 37
-		if Input.is_action_pressed("ui_down"):
-			motion_vector = Vector2( 0, 1)
-			rotation_degrees = 180
-			tile_size = 37
-		if Input.is_action_pressed("ui_left"):
-			motion_vector = Vector2( -1, 0)
-			rotation_degrees = 270
-			tile_size = 39
-		if Input.is_action_pressed("ui_right"):
-			motion_vector = Vector2( 1, 0)
-			rotation_degrees = 90
-			tile_size = 39
+		if turnos <= 0:
+				turnos = 3
+				emit_signal("completed")
+				
+				
+		else:
+			if Input.is_action_pressed("ui_up"):
+				motion_vector = Vector2( 0, -1)
+				rotation_degrees = 0
+				tile_size = 37
+				turnos-=1
+			if Input.is_action_pressed("ui_down"):
+				motion_vector = Vector2( 0, 1)
+				rotation_degrees = 180
+				tile_size = 37
+				turnos-=1
+			if Input.is_action_pressed("ui_left"):
+				motion_vector = Vector2( -1, 0)
+				rotation_degrees = 270
+				tile_size = 39
+				turnos-=1
+			if Input.is_action_pressed("ui_right"):
+				motion_vector = Vector2( 1, 0)
+				rotation_degrees = 90
+				tile_size = 39
+				turnos-=1
 
-		if motion_vector != Vector2():
-			last_movement=motion_vector
-			var new_position = position + motion_vector * tile_size
-			$Tween.interpolate_property ( self, 'position', position, new_position, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-			#That last method's fifth property is how long it takes to go from one tile to the other in seconds.
-			$Tween.start()
-			moving = true
-			motion_vector=Vector2()
+			if motion_vector != Vector2():
+				last_movement=motion_vector
+				var new_position = position + motion_vector * tile_size
+				$Tween.interpolate_property ( self, 'position', position, new_position, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+				#That last method's fifth property is how long it takes to go from one tile to the other in seconds.
+				$Tween.start()
+				moving = true
+				motion_vector=Vector2()
 			
-			
-	
+		
 func go_back(object):
 	if last_movement == Vector2(0,1):
 		motion_vector = Vector2( 0, -1)
 		tile_size = 13
+		turnos+=1
 	elif last_movement == Vector2(0,-1):
 		motion_vector = Vector2( 0, 1)
 		tile_size = 13
+		turnos+=1
 	elif last_movement == Vector2(-1,0):
 		motion_vector = Vector2( 1, 0)
 		tile_size = 14
+		turnos+=1
 	else:
 		motion_vector = Vector2( -1, 0)
 		tile_size = 14
+		turnos+=1
+	if turnos>3:
+		turnos = 3
 	var new_position = position + motion_vector * tile_size
 	$Tween.interpolate_property ( self, 'position', position, new_position, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$Tween.start()
