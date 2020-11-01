@@ -255,10 +255,10 @@ points = PoolVector2Array( 155.958, 147.181, -0.0559082, 147.181, -0.0559082, -0
 8/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 19.5779, 19.4556 )
+extents = Vector2( 16.0135, 16.9643 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 15.5729, 13.7348 )
+extents = Vector2( 14.3692, 14.4652 )
 
 [node name="Mundo" type="Node"]
 __meta__ = {
@@ -306,12 +306,14 @@ autoplay = true
 script = ExtResource( 5 )
 
 [node name="Tanque" type="Area2D" parent="Turnos"]
+position = Vector2( 604.625, 499.935 )
+rotation = -6.28319
 collision_layer = 7
 collision_mask = 7
 script = ExtResource( 3 )
 
 [node name="tank" type="Sprite" parent="Turnos/Tanque"]
-position = Vector2( 606.536, 493.58 )
+position = Vector2( 0.406586, -4.7933 )
 scale = Vector2( 0.962379, 0.995109 )
 texture = ExtResource( 8 )
 region_enabled = true
@@ -320,17 +322,18 @@ region_rect = Rect2( 156, 80, 46, 53 )
 [node name="Tween" type="Tween" parent="Turnos/Tanque"]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Turnos/Tanque"]
-position = Vector2( 604.306, 498.762 )
+position = Vector2( 0.046936, 0.0154114 )
 scale = Vector2( 0.861627, 0.837508 )
 shape = SubResource( 7 )
 
 [node name="Area2D3" type="Area2D" parent="Turnos"]
+position = Vector2( 565.721, 573.578 )
 collision_layer = 2147483655
 collision_mask = 7
 script = ExtResource( 3 )
 
 [node name="soldier" type="Sprite" parent="Turnos/Area2D3"]
-position = Vector2( 564.86, 571.243 )
+position = Vector2( 0.0256348, -4.58008 )
 scale = Vector2( 0.887913, 0.88527 )
 texture = ExtResource( 8 )
 region_enabled = true
@@ -339,37 +342,38 @@ region_rect = Rect2( 285, 80, 50, 53 )
 [node name="Tween" type="Tween" parent="Turnos/Area2D3"]
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Turnos/Area2D3"]
-position = Vector2( 565.02, 573.687 )
+position = Vector2( -0.050354, -0.127075 )
 scale = Vector2( 0.861627, 0.837508 )
 shape = SubResource( 7 )
 
 [node name="Area2D" type="Area2D" parent="Turnos"]
+position = Vector2( 409.686, 425.26 )
 priority = 1.0
 collision_layer = 6
 collision_mask = 6
 script = ExtResource( 3 )
 
 [node name="ranger" type="Sprite" parent="Turnos/Area2D"]
-position = Vector2( 605.88, 566.162 )
+position = Vector2( 2.07996, -6.77057 )
 scale = Vector2( 0.861627, 0.837508 )
 texture = ExtResource( 8 )
 region_enabled = true
 region_rect = Rect2( 10, 77, 60, 65 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Turnos/Area2D"]
-position = Vector2( 604.306, 573.406 )
+position = Vector2( 0.0744019, -0.0109558 )
 scale = Vector2( 0.861627, 0.837508 )
 shape = SubResource( 7 )
 
 [node name="Tween" type="Tween" parent="Turnos/Area2D"]
 
 [node name="Area2D2" type="Area2D" parent="Turnos"]
-position = Vector2( 370.943, 205.765 )
+position = Vector2( 370.628, 203.245 )
 collision_layer = 7
 collision_mask = 7
 
 [node name="zombi" type="Sprite" parent="Turnos/Area2D2"]
-position = Vector2( -0.458282, 0.630646 )
+position = Vector2( -0.143311, 2.20555 )
 scale = Vector2( 0.580853, 0.604334 )
 texture = ExtResource( 9 )
 flip_v = true
@@ -377,16 +381,16 @@ region_enabled = true
 region_rect = Rect2( 249, 246, 69, 70 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Turnos/Area2D2"]
-position = Vector2( -0.420471, -2.10225 )
+position = Vector2( -0.105469, 0.102615 )
 shape = SubResource( 8 )
 
 [node name="Area2D4" type="Area2D" parent="Turnos"]
-position = Vector2( 488.841, 166.549 )
+position = Vector2( 488.211, 166.864 )
 collision_layer = 7
 collision_mask = 7
 
 [node name="tanque zombi" type="Sprite" parent="Turnos/Area2D4"]
-position = Vector2( -0.513794, 6.89088 )
+position = Vector2( -0.198792, 5.94597 )
 scale = Vector2( 0.530112, 0.608117 )
 texture = ExtResource( 9 )
 flip_v = true
@@ -394,16 +398,16 @@ region_enabled = true
 region_rect = Rect2( 420, 357, 150, 102 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Turnos/Area2D4"]
-position = Vector2( -0.765747, -0.0671234 )
+position = Vector2( -0.135803, -0.0671234 )
 shape = SubResource( 8 )
 
 [node name="Area2D5" type="Area2D" parent="Turnos"]
-position = Vector2( 604.029, 163.925 )
+position = Vector2( 604.974, 166.13 )
 collision_layer = 6
 collision_mask = 6
 
 [node name="zombi trepa" type="Sprite" parent="Turnos/Area2D5"]
-position = Vector2( -0.42511, -3.42238 )
+position = Vector2( -1.37006, -3.73738 )
 scale = Vector2( 0.913905, 0.871377 )
 texture = ExtResource( 9 )
 flip_v = true
@@ -411,7 +415,7 @@ region_enabled = true
 region_rect = Rect2( 420, 255, 60, 68 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Turnos/Area2D5"]
-position = Vector2( 0.753479, 2.5565 )
+position = Vector2( 0.123535, 0.0366483 )
 shape = SubResource( 8 )
 
 [node name="Extra Assets" type="Node" parent="."]

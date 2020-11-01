@@ -17,19 +17,19 @@ func _physics_process(delta):
 		
 		if Input.is_action_pressed("ui_up"):
 			motion_vector = Vector2( 0, -1)
-			#rotation_degrees = 0
+			rotation_degrees = 0
 			tile_size = 37
 		if Input.is_action_pressed("ui_down"):
 			motion_vector = Vector2( 0, 1)
-			#rotation_degrees = 180
+			rotation_degrees = 180
 			tile_size = 37
 		if Input.is_action_pressed("ui_left"):
 			motion_vector = Vector2( -1, 0)
-			#rotation_degrees = 260
+			rotation_degrees = 260
 			tile_size = 39
 		if Input.is_action_pressed("ui_right"):
 			motion_vector = Vector2( 1, 0)
-			#rotation_degrees = 90
+			rotation_degrees = 90
 			tile_size = 39
 
 		if motion_vector != Vector2():
