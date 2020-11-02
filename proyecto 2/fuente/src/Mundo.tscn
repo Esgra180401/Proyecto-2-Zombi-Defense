@@ -1,10 +1,11 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://GameTheme.ogg" type="AudioStream" id=1]
 [ext_resource path="res://assets/Map_MarketSquare.png" type="Texture" id=2]
 [ext_resource path="res://src/actors/player_movement.gd" type="Script" id=3]
 [ext_resource path="res://assets/top-tree-png-4127.png" type="Texture" id=4]
 [ext_resource path="res://src/Turnos.gd" type="Script" id=5]
+[ext_resource path="res://assets/Bullet.png" type="Texture" id=6]
 [ext_resource path="res://assets/Character Sprites.png" type="Texture" id=8]
 [ext_resource path="res://assets/Zombie Sprites.png" type="Texture" id=9]
 
@@ -257,6 +258,34 @@ points = PoolVector2Array( 155.958, 147.181, -0.0559082, 147.181, -0.0559082, -0
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 16.0135, 16.9643 )
 
+[sub_resource type="Curve" id=34]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, 360 ), 0.0, 0.0, 0, 0, Vector2( 1, 360 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=35]
+curve = SubResource( 34 )
+
+[sub_resource type="Gradient" id=39]
+offsets = PoolRealArray( 0.773973, 1 )
+colors = PoolColorArray( 0.988909, 1, 0, 1, 0.918596, 1, 0, 0 )
+
+[sub_resource type="GradientTexture" id=40]
+gradient = SubResource( 39 )
+
+[sub_resource type="ParticlesMaterial" id=38]
+flag_align_y = true
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 5.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1500.0
+angular_velocity_curve = SubResource( 35 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 4.0
+color_ramp = SubResource( 40 )
+
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 14.3692, 14.4652 )
 
@@ -481,6 +510,15 @@ texture = ExtResource( 8 )
 region_enabled = true
 region_rect = Rect2( 285, 80, 50, 53 )
 
+[node name="Soldier Shooting" type="Particles2D" parent="Turnos/Area2D3/soldier"]
+position = Vector2( 8.61609, -25.0386 )
+scale = Vector2( 0.225247, 0.22592 )
+amount = 5
+lifetime = 0.6
+explosiveness = 0.5
+process_material = SubResource( 38 )
+texture = ExtResource( 6 )
+
 [node name="Tween" type="Tween" parent="Turnos/Area2D3"]
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Turnos/Area2D3"]
@@ -656,7 +694,7 @@ shape = SubResource( 8 )
 
 [node name="Animaciones" type="Node" parent="."]
 
-[node name="Particles2D" type="Particles2D" parent="Animaciones"]
+[node name="Explosion" type="Particles2D" parent="Animaciones"]
 position = Vector2( 454.475, 244.688 )
 emitting = false
 amount = 250
@@ -665,15 +703,14 @@ one_shot = true
 explosiveness = 0.5
 process_material = SubResource( 15 )
 
-[node name="Particles2D" type="Particles2D" parent="Animaciones/Particles2D"]
+[node name="Smoke" type="Particles2D" parent="Animaciones/Explosion"]
 emitting = false
 amount = 500
 lifetime = 0.8
-one_shot = true
 explosiveness = 0.8
 process_material = SubResource( 22 )
 
-[node name="Particles2D2" type="Particles2D" parent="Animaciones"]
+[node name="Poison Atk" type="Particles2D" parent="Animaciones"]
 position = Vector2( 604.987, 165.943 )
 emitting = false
 amount = 500
@@ -682,19 +719,21 @@ one_shot = true
 explosiveness = 0.5
 process_material = SubResource( 27 )
 
-[node name="Particles2D3" type="Particles2D" parent="Animaciones"]
+[node name="Cure" type="Particles2D" parent="Animaciones"]
 position = Vector2( 409.137, 426.536 )
 emitting = false
 amount = 100
-lifetime = 0.7
+lifetime = 0.8
 one_shot = true
 explosiveness = 0.1
 process_material = SubResource( 30 )
 
-[node name="Particles2D4" type="Particles2D" parent="Animaciones"]
-position = Vector2( 467.836, 374.24 )
+[node name="LVL Up" type="Particles2D" parent="Animaciones"]
+position = Vector2( 605.167, 498.972 )
 emitting = false
 amount = 100
 one_shot = true
 explosiveness = 0.5
 process_material = SubResource( 33 )
+
+[node name="Tank Shooting" type="Particles2D" parent="Animaciones"]
