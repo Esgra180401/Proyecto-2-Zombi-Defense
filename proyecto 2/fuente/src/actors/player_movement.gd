@@ -1,4 +1,4 @@
-extends Area2D
+extends "res://src/actors/CharacterStats.gd"
 
 class_name player_movement
 
@@ -8,15 +8,17 @@ var  tile_size = 37
 var last_movement = Vector2(0,0)
 var motion_vector = Vector2()
 var turnos = 3
+var contar=0
+
 signal completed
 
 func _ready():
 	$Tween.connect("tween_completed",self,"_on_Tween_tween_completed")
 	connect("body_entered",self,"go_back")
 func _physics_process(delta):
-	
-	
 	if !moving:
+		if $RayCast2D.is_colliding():
+				damage(strenght)
 		if turnos <= 0:
 				turnos = 3
 				emit_signal("completed")
@@ -48,7 +50,6 @@ func _physics_process(delta):
 				last_movement=motion_vector
 				var new_position = position + motion_vector * tile_size
 				$Tween.interpolate_property ( self, 'position', position, new_position, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-				#That last method's fifth property is how long it takes to go from one tile to the other in seconds.
 				$Tween.start()
 				moving = true
 				motion_vector=Vector2()

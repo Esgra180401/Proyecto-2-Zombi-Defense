@@ -23,7 +23,6 @@ func iniciar():
 	jugar_turno()
 	
 func jugar_turno():
-	print(personaje_activo)
 	personaje_activo.set_physics_process(true)
 	
 	yield(personaje_activo,"completed")
