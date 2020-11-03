@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://GameTheme.ogg" type="AudioStream" id=1]
 [ext_resource path="res://assets/Map_MarketSquare.png" type="Texture" id=2]
@@ -11,6 +11,10 @@
 [ext_resource path="res://assets/Zombie Sprites.png" type="Texture" id=9]
 [ext_resource path="res://assets/Boton Atk.png" type="Texture" id=10]
 [ext_resource path="res://assets/Boton Curar.png" type="Texture" id=11]
+[ext_resource path="res://assets/Rifle.png" type="Texture" id=12]
+[ext_resource path="res://assets/Rocket Launcher.png" type="Texture" id=13]
+[ext_resource path="res://assets/Bow.png" type="Texture" id=14]
+[ext_resource path="res://assets/Blood.png" type="Texture" id=15]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.607843, 0.439216, 0.239216, 1 )
@@ -470,20 +474,38 @@ __meta__ = {
 [node name="GUI" type="Node" parent="."]
 
 [node name="Label" type="Label" parent="GUI"]
-margin_left = 1080.0
-margin_top = -34.0
-margin_right = 1415.0
-margin_bottom = 823.0
+margin_left = 1099.78
+margin_top = -51.3725
+margin_right = 1434.78
+margin_bottom = 805.627
 custom_styles/normal = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Blood" type="Sprite" parent="GUI"]
+position = Vector2( 1237.96, 81.027 )
+rotation = 0.284489
+scale = Vector2( 0.21717, 0.0973622 )
+texture = ExtResource( 15 )
+
+[node name="Blood2" type="Sprite" parent="GUI"]
+position = Vector2( 1237.96, 175.462 )
+rotation = 0.284489
+scale = Vector2( 0.21717, 0.0973622 )
+texture = ExtResource( 15 )
+
+[node name="Blood3" type="Sprite" parent="GUI"]
+position = Vector2( 1237.96, 269.452 )
+rotation = 0.284489
+scale = Vector2( 0.21717, 0.0973622 )
+texture = ExtResource( 15 )
+
 [node name="Ataque" type="Button" parent="GUI"]
-margin_left = 1125.0
-margin_top = 611.0
-margin_right = 1235.0
-margin_bottom = 669.0
+margin_left = 1122.0
+margin_top = 667.0
+margin_right = 1232.0
+margin_bottom = 725.0
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
@@ -493,14 +515,137 @@ __meta__ = {
 }
 
 [node name="Curar" type="Button" parent="GUI"]
-margin_left = 1259.0
-margin_top = 608.0
-margin_right = 1369.0
-margin_bottom = 672.0
+margin_left = 1270.0
+margin_top = 667.0
+margin_right = 1232.0
+margin_bottom = 725.0
 custom_styles/hover = SubResource( 5 )
 custom_styles/pressed = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
 icon = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="GUI"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="GUI"]
+position = Vector2( 1157.34, 86.1425 )
+scale = Vector2( 0.246094, 0.253906 )
+texture = ExtResource( 12 )
+
+[node name="Sprite2" type="Sprite" parent="GUI"]
+position = Vector2( 1157.34, 269.958 )
+scale = Vector2( 0.259748, 0.240413 )
+texture = ExtResource( 13 )
+
+[node name="Sprite3" type="Sprite" parent="GUI"]
+position = Vector2( 1157.34, 174.516 )
+rotation = -0.21293
+scale = Vector2( 0.238592, 0.244117 )
+texture = ExtResource( 14 )
+
+[node name="Label3" type="Label" parent="GUI"]
+margin_left = 1199.0
+margin_top = 65.0
+margin_right = 1284.0
+margin_bottom = 79.0
+custom_colors/font_color = Color( 0.133333, 1, 0, 1 )
+text = "HP:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="GUI"]
+margin_left = 1198.0
+margin_top = 162.0
+margin_right = 1285.0
+margin_bottom = 176.0
+custom_colors/font_color = Color( 0.133333, 1, 0, 1 )
+text = "HP:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="GUI"]
+margin_left = 1198.0
+margin_top = 258.0
+margin_right = 1274.0
+margin_bottom = 272.0
+custom_colors/font_color = Color( 0.133333, 1, 0, 1 )
+text = "HP:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="GUI"]
+margin_left = 1195.0
+margin_top = 87.0
+margin_right = 1266.0
+margin_bottom = 101.0
+custom_colors/font_color = Color( 0.0509804, 0.968627, 0.980392, 1 )
+text = "LVL:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label7" type="Label" parent="GUI"]
+margin_left = 1195.0
+margin_top = 183.0
+margin_right = 1265.0
+margin_bottom = 197.0
+custom_colors/font_color = Color( 0.0509804, 0.968627, 0.980392, 1 )
+text = "LVL:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label8" type="Label" parent="GUI"]
+margin_left = 1195.0
+margin_top = 278.0
+margin_right = 1270.0
+margin_bottom = 292.0
+custom_colors/font_color = Color( 0.0509804, 0.968627, 0.980392, 1 )
+text = "LVL:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label9" type="Label" parent="GUI"]
+margin_left = 1266.0
+margin_top = 76.0
+margin_right = 1353.0
+margin_bottom = 90.0
+custom_colors/font_color = Color( 1, 0.964706, 0, 1 )
+text = "Medkits:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label10" type="Label" parent="GUI"]
+margin_left = 1266.0
+margin_top = 173.0
+margin_right = 1350.0
+margin_bottom = 187.0
+custom_colors/font_color = Color( 1, 0.964706, 0, 1 )
+text = "Medkits:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label11" type="Label" parent="GUI"]
+margin_left = 1266.0
+margin_top = 268.0
+margin_right = 1348.0
+margin_bottom = 282.0
+custom_colors/font_color = Color( 1, 0.964706, 0, 1 )
+text = "Medkits:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -577,7 +722,7 @@ collision_mask = 16
 collide_with_areas = true
 
 [node name="Area2D3" type="Area2D" parent="Turnos"]
-position = Vector2( 565.721, 573.578 )
+position = Vector2( 567.948, 573.578 )
 collision_layer = 2147483655
 collision_mask = 7
 script = ExtResource( 3 )
@@ -629,7 +774,7 @@ maxH = 100
 life = true
 
 [node name="ranger" type="Sprite" parent="Turnos/Area2D"]
-position = Vector2( -1.686, -1.26001 )
+position = Vector2( 1.43214, -6.60541 )
 scale = Vector2( 0.861627, 0.837508 )
 texture = ExtResource( 8 )
 region_enabled = true
