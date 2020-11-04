@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://GameTheme.ogg" type="AudioStream" id=1]
 [ext_resource path="res://assets/Map_MarketSquare.png" type="Texture" id=2]
@@ -15,30 +15,32 @@
 [ext_resource path="res://assets/Rocket Launcher.png" type="Texture" id=13]
 [ext_resource path="res://assets/Bow.png" type="Texture" id=14]
 [ext_resource path="res://assets/Blood.png" type="Texture" id=15]
+[ext_resource path="res://assets/Chains.png" type="Texture" id=16]
+[ext_resource path="res://assets/Zombie Hand.png" type="Texture" id=17]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.607843, 0.439216, 0.239216, 1 )
+bg_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.607843, 0.439216, 0.239216, 1 )
+bg_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.533333, 0.360784, 0.152941, 1 )
+bg_color = Color( 0.282353, 0.12549, 0.0235294, 1 )
 
 [sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.607843, 0.439216, 0.239216, 1 )
-border_color = Color( 0.607843, 0.439216, 0.239216, 1 )
+bg_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
+border_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
 border_blend = true
 corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.607843, 0.439216, 0.239216, 1 )
+bg_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
 
 [sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.533333, 0.360784, 0.152941, 1 )
+bg_color = Color( 0.282353, 0.12549, 0.0235294, 1 )
 
 [sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.607843, 0.439216, 0.239216, 1 )
+bg_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
 draw_center = false
 border_color = Color( 0.607843, 0.439216, 0.239216, 1 )
 border_blend = true
@@ -292,32 +294,32 @@ points = PoolVector2Array( 155.958, 147.181, -0.0559082, 147.181, -0.0559082, -0
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 16.0135, 16.9643 )
 
-[sub_resource type="RectangleShape2D" id=20]
+[sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 14.3692, 14.4652 )
 
-[sub_resource type="Gradient" id=21]
+[sub_resource type="Gradient" id=16]
 offsets = PoolRealArray( 0.00186916, 0.143925, 0.409346, 0.545794, 0.998131 )
 colors = PoolColorArray( 0.897461, 0.896228, 0.771255, 1, 0.916992, 0.849508, 0.265068, 1, 0.84668, 0.484771, 0.125679, 1, 0.938193, 0, 0, 1, 0.858398, 0, 0, 1 )
 
-[sub_resource type="GradientTexture" id=22]
-gradient = SubResource( 21 )
+[sub_resource type="GradientTexture" id=17]
+gradient = SubResource( 16 )
 
-[sub_resource type="Curve" id=23]
+[sub_resource type="Curve" id=18]
 min_value = -400.0
 max_value = 400.0
 _data = [ Vector2( 0, 400 ), 0.0, 13089.4, 0, 0, Vector2( 0.187225, -30.9091 ), -1500.83, -1500.83, 0, 0, Vector2( 1, 69.0909 ), 1133.9, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=24]
-curve = SubResource( 23 )
+[sub_resource type="CurveTexture" id=19]
+curve = SubResource( 18 )
 
-[sub_resource type="Curve" id=25]
+[sub_resource type="Curve" id=20]
 max_value = 2.6
 _data = [ Vector2( 0, 2.46409 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.407727 ), 2.12728, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=26]
-curve = SubResource( 25 )
+[sub_resource type="CurveTexture" id=21]
+curve = SubResource( 20 )
 
-[sub_resource type="ParticlesMaterial" id=27]
+[sub_resource type="ParticlesMaterial" id=22]
 emission_shape = 1
 emission_sphere_radius = 2.89
 flag_disable_z = true
@@ -327,36 +329,36 @@ initial_velocity = 100.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 linear_accel = 100.0
-linear_accel_curve = SubResource( 24 )
+linear_accel_curve = SubResource( 19 )
 scale = 3.0
 scale_random = 1.0
-scale_curve = SubResource( 26 )
-color_ramp = SubResource( 22 )
+scale_curve = SubResource( 21 )
+color_ramp = SubResource( 17 )
 
-[sub_resource type="Gradient" id=28]
+[sub_resource type="Gradient" id=23]
 offsets = PoolRealArray( 0, 0.917757 )
 colors = PoolColorArray( 0.227539, 0.223095, 0.223095, 1, 0.219608, 0.219608, 0.219608, 0 )
 
-[sub_resource type="GradientTexture" id=29]
-gradient = SubResource( 28 )
+[sub_resource type="GradientTexture" id=24]
+gradient = SubResource( 23 )
 
-[sub_resource type="Curve" id=30]
+[sub_resource type="Curve" id=25]
 min_value = -200.0
 max_value = 200.0
 _data = [ Vector2( 0.00358423, 200 ), 0.0, 13886.6, 0, 0, Vector2( 0.102151, -64.0909 ), 0.0, 0.0, 0, 0, Vector2( 1, -67.7273 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=31]
-curve = SubResource( 30 )
+[sub_resource type="CurveTexture" id=26]
+curve = SubResource( 25 )
 
-[sub_resource type="Curve" id=32]
+[sub_resource type="Curve" id=27]
 min_value = 0.99
 max_value = 5.0
 _data = [ Vector2( 0, 0.99 ), 0.0, 0.0, 0, 0, Vector2( 1, 3.61473 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=33]
-curve = SubResource( 32 )
+[sub_resource type="CurveTexture" id=28]
+curve = SubResource( 27 )
 
-[sub_resource type="ParticlesMaterial" id=34]
+[sub_resource type="ParticlesMaterial" id=29]
 emission_shape = 1
 emission_sphere_radius = 2.0
 flag_disable_z = true
@@ -367,35 +369,35 @@ orbit_velocity = 0.15
 orbit_velocity_random = 1.0
 linear_accel = 100.0
 linear_accel_random = 0.5
-linear_accel_curve = SubResource( 31 )
+linear_accel_curve = SubResource( 26 )
 scale = 4.0
 scale_random = 1.0
-scale_curve = SubResource( 33 )
-color_ramp = SubResource( 29 )
+scale_curve = SubResource( 28 )
+color_ramp = SubResource( 24 )
 
-[sub_resource type="Gradient" id=35]
+[sub_resource type="Gradient" id=30]
 offsets = PoolRealArray( 0.208904, 0.75 )
 colors = PoolColorArray( 0.21395, 0.0246468, 0.450684, 1, 0.0330505, 0.528809, 0.117775, 0 )
 
-[sub_resource type="GradientTexture" id=36]
-gradient = SubResource( 35 )
+[sub_resource type="GradientTexture" id=31]
+gradient = SubResource( 30 )
 
-[sub_resource type="Curve" id=37]
+[sub_resource type="Curve" id=32]
 min_value = -200.0
 max_value = 200.0
 _data = [ Vector2( 0, -1.36362 ), 0.0, 0.0, 0, 0, Vector2( 1, -200 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=38]
-curve = SubResource( 37 )
+[sub_resource type="CurveTexture" id=33]
+curve = SubResource( 32 )
 
-[sub_resource type="Curve" id=56]
+[sub_resource type="Curve" id=34]
 max_value = 7.0
 _data = [ Vector2( 0, 0 ), 0.0, -0.741941, 0, 0, Vector2( 0.984127, 2.47273 ), -2.3699, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=57]
-curve = SubResource( 56 )
+[sub_resource type="CurveTexture" id=35]
+curve = SubResource( 34 )
 
-[sub_resource type="ParticlesMaterial" id=39]
+[sub_resource type="ParticlesMaterial" id=36]
 emission_shape = 1
 emission_sphere_radius = 0.01
 flag_disable_z = true
@@ -405,18 +407,18 @@ initial_velocity = 219.23
 orbit_velocity = 0.2
 orbit_velocity_random = 0.0
 linear_accel = 2.0
-linear_accel_curve = SubResource( 38 )
+linear_accel_curve = SubResource( 33 )
 scale = 7.0
-scale_curve = SubResource( 57 )
-color_ramp = SubResource( 36 )
+scale_curve = SubResource( 35 )
+color_ramp = SubResource( 31 )
 
-[sub_resource type="Gradient" id=40]
+[sub_resource type="Gradient" id=37]
 colors = PoolColorArray( 0.171875, 1, 0, 1, 0.148438, 1, 0, 0.203922 )
 
-[sub_resource type="GradientTexture" id=41]
-gradient = SubResource( 40 )
+[sub_resource type="GradientTexture" id=38]
+gradient = SubResource( 37 )
 
-[sub_resource type="ParticlesMaterial" id=42]
+[sub_resource type="ParticlesMaterial" id=39]
 emission_shape = 1
 emission_sphere_radius = 20.7
 flag_disable_z = true
@@ -426,15 +428,15 @@ initial_velocity = 50.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 2.0
-color_ramp = SubResource( 41 )
+color_ramp = SubResource( 38 )
 
-[sub_resource type="Gradient" id=43]
+[sub_resource type="Gradient" id=40]
 colors = PoolColorArray( 0.959961, 1, 0, 1, 0.960784, 1, 0, 0.415686 )
 
-[sub_resource type="GradientTexture" id=44]
-gradient = SubResource( 43 )
+[sub_resource type="GradientTexture" id=41]
+gradient = SubResource( 40 )
 
-[sub_resource type="ParticlesMaterial" id=45]
+[sub_resource type="ParticlesMaterial" id=42]
 emission_shape = 1
 emission_sphere_radius = 2.0
 flag_disable_z = true
@@ -444,23 +446,23 @@ initial_velocity = 200.0
 orbit_velocity = 2.0
 orbit_velocity_random = 0.0
 scale = 2.0
-color_ramp = SubResource( 44 )
+color_ramp = SubResource( 41 )
 
-[sub_resource type="Gradient" id=46]
+[sub_resource type="Gradient" id=43]
 offsets = PoolRealArray( 0.119863, 0.59589 )
 colors = PoolColorArray( 1, 0.960938, 0, 1, 1, 0, 0, 1 )
 
-[sub_resource type="GradientTexture" id=47]
-gradient = SubResource( 46 )
+[sub_resource type="GradientTexture" id=44]
+gradient = SubResource( 43 )
 
-[sub_resource type="Curve" id=54]
+[sub_resource type="Curve" id=45]
 max_value = 4.0
 _data = [ Vector2( 0, 1.66673 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=55]
-curve = SubResource( 54 )
+[sub_resource type="CurveTexture" id=46]
+curve = SubResource( 45 )
 
-[sub_resource type="ParticlesMaterial" id=48]
+[sub_resource type="ParticlesMaterial" id=47]
 flag_disable_z = true
 direction = Vector3( 0, -1, 0 )
 spread = 31.91
@@ -469,25 +471,25 @@ initial_velocity = 110.91
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 3.0
-scale_curve = SubResource( 55 )
-color_ramp = SubResource( 47 )
+scale_curve = SubResource( 46 )
+color_ramp = SubResource( 44 )
 
-[sub_resource type="Gradient" id=49]
+[sub_resource type="Gradient" id=48]
 offsets = PoolRealArray( 0.0753425, 0.308219, 0.599315, 0.784247 )
 colors = PoolColorArray( 0.294118, 0.290196, 0.290196, 0.0588235, 0.219608, 0.215686, 0.215686, 1, 0.222656, 0.222656, 0.222656, 1, 0.270588, 0.270588, 0.270588, 0 )
 
-[sub_resource type="GradientTexture" id=50]
-gradient = SubResource( 49 )
+[sub_resource type="GradientTexture" id=49]
+gradient = SubResource( 48 )
 
-[sub_resource type="Curve" id=51]
+[sub_resource type="Curve" id=50]
 min_value = 0.5
 max_value = 4.0
 _data = [ Vector2( 0, 0.5 ), 0.0, 0.0, 0, 0, Vector2( 1, 2.5642 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=52]
-curve = SubResource( 51 )
+[sub_resource type="CurveTexture" id=51]
+curve = SubResource( 50 )
 
-[sub_resource type="ParticlesMaterial" id=53]
+[sub_resource type="ParticlesMaterial" id=52]
 flag_disable_z = true
 direction = Vector3( 0, -1, 0 )
 spread = 29.72
@@ -497,43 +499,43 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 4.0
 scale_random = 1.0
-scale_curve = SubResource( 52 )
-color_ramp = SubResource( 50 )
+scale_curve = SubResource( 51 )
+color_ramp = SubResource( 49 )
 
-[sub_resource type="Curve" id=15]
+[sub_resource type="Curve" id=53]
 min_value = -360.0
 max_value = 360.0
 _data = [ Vector2( 0, 360 ), 0.0, 0.0, 0, 0, Vector2( 1, 360 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=16]
-curve = SubResource( 15 )
+[sub_resource type="CurveTexture" id=54]
+curve = SubResource( 53 )
 
-[sub_resource type="Gradient" id=17]
+[sub_resource type="Gradient" id=55]
 offsets = PoolRealArray( 0.773973, 1 )
 colors = PoolColorArray( 0.988909, 1, 0, 1, 0.918596, 1, 0, 0 )
 
-[sub_resource type="GradientTexture" id=18]
-gradient = SubResource( 17 )
+[sub_resource type="GradientTexture" id=56]
+gradient = SubResource( 55 )
 
-[sub_resource type="ParticlesMaterial" id=19]
+[sub_resource type="ParticlesMaterial" id=57]
 flag_align_y = true
 flag_disable_z = true
 direction = Vector3( 0, -1, 0 )
 spread = 5.0
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 1500.0
-angular_velocity_curve = SubResource( 16 )
+angular_velocity_curve = SubResource( 54 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 4.0
-color_ramp = SubResource( 18 )
+color_ramp = SubResource( 56 )
 
 [sub_resource type="ParticlesMaterial" id=58]
 flag_disable_z = true
-direction = Vector3( 0, -1, 0 )
-spread = 18.82
+direction = Vector3( 0, 1, 0 )
+spread = 105.0
 gravity = Vector3( 0, 98, 0 )
-initial_velocity = 78.79
+initial_velocity = 151.53
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 1.5
@@ -557,23 +559,68 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Zombie Hand" type="Sprite" parent="GUI"]
+position = Vector2( 1344.44, 564.565 )
+scale = Vector2( 0.0832015, 0.0797378 )
+texture = ExtResource( 17 )
+region_enabled = true
+region_rect = Rect2( 521, 195, 1574, 1918 )
+
 [node name="Blood" type="Sprite" parent="GUI"]
-position = Vector2( 1223.67, 81.027 )
+position = Vector2( 1224.57, 66.6758 )
 rotation = 0.284489
-scale = Vector2( 0.21717, 0.0973622 )
+scale = Vector2( 0.252577, 0.0994809 )
+texture = ExtResource( 15 )
+
+[node name="Blood4" type="Sprite" parent="GUI"]
+position = Vector2( 1274.93, 66.1286 )
+rotation = -0.21293
+scale = Vector2( 0.0771894, 0.0246998 )
+texture = ExtResource( 15 )
+
+[node name="Blood5" type="Sprite" parent="GUI"]
+position = Vector2( 1272.85, 206.752 )
+rotation = -0.21293
+scale = Vector2( 0.076731, 0.0202362 )
+texture = ExtResource( 15 )
+
+[node name="Blood6" type="Sprite" parent="GUI"]
+position = Vector2( 1274.33, 349.457 )
+rotation = -0.21293
+scale = Vector2( 0.0764562, 0.0213096 )
 texture = ExtResource( 15 )
 
 [node name="Blood2" type="Sprite" parent="GUI"]
-position = Vector2( 1223.67, 175.462 )
+position = Vector2( 1224.31, 209.937 )
 rotation = 0.284489
-scale = Vector2( 0.21717, 0.0973622 )
+scale = Vector2( 0.253, 0.099 )
 texture = ExtResource( 15 )
 
 [node name="Blood3" type="Sprite" parent="GUI"]
-position = Vector2( 1223.67, 270.246 )
+position = Vector2( 1224.87, 352.142 )
 rotation = 0.284489
-scale = Vector2( 0.21717, 0.0973622 )
+scale = Vector2( 0.253, 0.099 )
 texture = ExtResource( 15 )
+
+[node name="Chains" type="Sprite" parent="GUI"]
+position = Vector2( 1159.73, 141.747 )
+scale = Vector2( 1.01982, 1 )
+texture = ExtResource( 16 )
+
+[node name="Chains2" type="Sprite" parent="GUI"]
+position = Vector2( 1159.73, 284.913 )
+scale = Vector2( 1.01982, 1 )
+texture = ExtResource( 16 )
+
+[node name="Chains3" type="Sprite" parent="GUI"]
+position = Vector2( 1179.95, 429.535 )
+scale = Vector2( 1.01982, 1 )
+texture = ExtResource( 16 )
+
+[node name="Chains4" type="Sprite" parent="GUI"]
+position = Vector2( 1197.78, 639.43 )
+scale = Vector2( 1.01982, 1 )
+texture = ExtResource( 16 )
 
 [node name="Ataque" type="Button" parent="GUI"]
 margin_left = 1077.98
@@ -610,26 +657,26 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="GUI"]
-position = Vector2( 1157.34, 86.1425 )
-scale = Vector2( 0.246094, 0.253906 )
+position = Vector2( 1140.99, 66.2233 )
+scale = Vector2( 0.35526, 0.377007 )
 texture = ExtResource( 12 )
 
 [node name="Sprite2" type="Sprite" parent="GUI"]
-position = Vector2( 1157.34, 269.958 )
-scale = Vector2( 0.259748, 0.240413 )
+position = Vector2( 1141.58, 351.419 )
+scale = Vector2( 0.373559, 0.379773 )
 texture = ExtResource( 13 )
 
 [node name="Sprite3" type="Sprite" parent="GUI"]
-position = Vector2( 1157.34, 174.516 )
+position = Vector2( 1134.15, 203.652 )
 rotation = -0.21293
-scale = Vector2( 0.238592, 0.244117 )
+scale = Vector2( 0.331854, 0.323759 )
 texture = ExtResource( 14 )
 
 [node name="Label3" type="Label" parent="GUI"]
-margin_left = 1199.0
-margin_top = 65.0
-margin_right = 1284.0
-margin_bottom = 79.0
+margin_left = 1192.0
+margin_top = 54.0
+margin_right = 1255.0
+margin_bottom = 68.0
 custom_colors/font_color = Color( 0.133333, 1, 0, 1 )
 text = "HP:"
 __meta__ = {
@@ -637,10 +684,10 @@ __meta__ = {
 }
 
 [node name="Label4" type="Label" parent="GUI"]
-margin_left = 1198.0
-margin_top = 162.0
+margin_left = 1192.0
+margin_top = 194.703
 margin_right = 1285.0
-margin_bottom = 176.0
+margin_bottom = 208.703
 custom_colors/font_color = Color( 0.133333, 1, 0, 1 )
 text = "HP:"
 __meta__ = {
@@ -648,10 +695,10 @@ __meta__ = {
 }
 
 [node name="Label5" type="Label" parent="GUI"]
-margin_left = 1198.0
-margin_top = 258.0
+margin_left = 1192.0
+margin_top = 341.245
 margin_right = 1274.0
-margin_bottom = 272.0
+margin_bottom = 355.245
 custom_colors/font_color = Color( 0.133333, 1, 0, 1 )
 text = "HP:"
 __meta__ = {
@@ -659,10 +706,10 @@ __meta__ = {
 }
 
 [node name="Label6" type="Label" parent="GUI"]
-margin_left = 1195.0
-margin_top = 87.0
-margin_right = 1266.0
-margin_bottom = 101.0
+margin_left = 1188.0
+margin_top = 69.0
+margin_right = 1258.0
+margin_bottom = 83.0
 custom_colors/font_color = Color( 0.0509804, 0.968627, 0.980392, 1 )
 text = "LVL:"
 __meta__ = {
@@ -670,10 +717,10 @@ __meta__ = {
 }
 
 [node name="Label7" type="Label" parent="GUI"]
-margin_left = 1195.0
-margin_top = 183.0
-margin_right = 1265.0
-margin_bottom = 197.0
+margin_left = 1188.0
+margin_top = 210.946
+margin_right = 1263.81
+margin_bottom = 224.946
 custom_colors/font_color = Color( 0.0509804, 0.968627, 0.980392, 1 )
 text = "LVL:"
 __meta__ = {
@@ -681,10 +728,10 @@ __meta__ = {
 }
 
 [node name="Label8" type="Label" parent="GUI"]
-margin_left = 1195.0
-margin_top = 278.0
-margin_right = 1270.0
-margin_bottom = 292.0
+margin_left = 1188.0
+margin_top = 355.893
+margin_right = 1268.81
+margin_bottom = 369.893
 custom_colors/font_color = Color( 0.0509804, 0.968627, 0.980392, 1 )
 text = "LVL:"
 __meta__ = {
@@ -692,34 +739,34 @@ __meta__ = {
 }
 
 [node name="Label9" type="Label" parent="GUI"]
-margin_left = 1266.0
-margin_top = 76.0
-margin_right = 1353.0
-margin_bottom = 90.0
-custom_colors/font_color = Color( 1, 0.964706, 0, 1 )
-text = "Medkits:"
+margin_left = 1255.89
+margin_top = 60.5403
+margin_right = 1342.89
+margin_bottom = 74.5403
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Kits:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label10" type="Label" parent="GUI"]
-margin_left = 1266.0
-margin_top = 173.0
-margin_right = 1350.0
-margin_bottom = 187.0
-custom_colors/font_color = Color( 1, 0.964706, 0, 1 )
-text = "Medkits:"
+margin_left = 1254.0
+margin_top = 201.541
+margin_right = 1343.46
+margin_bottom = 215.541
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Kits:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label11" type="Label" parent="GUI"]
-margin_left = 1266.0
-margin_top = 268.0
-margin_right = 1348.0
-margin_bottom = 282.0
-custom_colors/font_color = Color( 1, 0.964706, 0, 1 )
-text = "Medkits:"
+margin_left = 1254.0
+margin_top = 347.082
+margin_right = 1340.86
+margin_bottom = 361.082
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Kits:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -970,7 +1017,7 @@ region_rect = Rect2( 249, 246, 69, 70 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Extra Assets/Area2D2"]
 position = Vector2( -0.105469, 0.102615 )
-shape = SubResource( 20 )
+shape = SubResource( 15 )
 
 [node name="Area2D4" type="Area2D" parent="Extra Assets"]
 position = Vector2( 488.211, 166.864 )
@@ -992,7 +1039,7 @@ region_rect = Rect2( 420, 357, 150, 102 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Extra Assets/Area2D4"]
 position = Vector2( -0.135803, -0.0671234 )
-shape = SubResource( 20 )
+shape = SubResource( 15 )
 
 [node name="Area2D5" type="Area2D" parent="Extra Assets"]
 position = Vector2( 604.974, 166.13 )
@@ -1014,7 +1061,7 @@ region_rect = Rect2( 420, 255, 60, 68 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Extra Assets/Area2D5"]
 position = Vector2( 0.123535, 0.0366483 )
-shape = SubResource( 20 )
+shape = SubResource( 15 )
 
 [node name="Animaciones" type="Node" parent="."]
 
@@ -1025,7 +1072,7 @@ amount = 250
 lifetime = 0.8
 one_shot = true
 explosiveness = 0.5
-process_material = SubResource( 27 )
+process_material = SubResource( 22 )
 
 [node name="Smoke" type="Particles2D" parent="Animaciones/Explosion"]
 emitting = false
@@ -1033,7 +1080,7 @@ amount = 500
 lifetime = 0.8
 one_shot = true
 explosiveness = 0.8
-process_material = SubResource( 34 )
+process_material = SubResource( 29 )
 
 [node name="Poison Atk" type="Particles2D" parent="Animaciones"]
 position = Vector2( 604.987, 165.943 )
@@ -1042,7 +1089,7 @@ amount = 500
 lifetime = 0.5
 one_shot = true
 explosiveness = 0.5
-process_material = SubResource( 39 )
+process_material = SubResource( 36 )
 
 [node name="Cure" type="Particles2D" parent="Animaciones"]
 position = Vector2( 409.137, 426.536 )
@@ -1051,7 +1098,7 @@ amount = 100
 lifetime = 0.8
 one_shot = true
 explosiveness = 0.1
-process_material = SubResource( 42 )
+process_material = SubResource( 39 )
 
 [node name="LVL Up" type="Particles2D" parent="Animaciones"]
 position = Vector2( 605.167, 498.972 )
@@ -1059,7 +1106,7 @@ emitting = false
 amount = 100
 one_shot = true
 explosiveness = 0.5
-process_material = SubResource( 45 )
+process_material = SubResource( 42 )
 
 [node name="Tank Shooting" type="Particles2D" parent="Animaciones"]
 position = Vector2( 613.385, 470.904 )
@@ -1068,7 +1115,7 @@ amount = 30
 lifetime = 0.8
 one_shot = true
 explosiveness = 0.84
-process_material = SubResource( 48 )
+process_material = SubResource( 47 )
 
 [node name="Smoke" type="Particles2D" parent="Animaciones/Tank Shooting"]
 position = Vector2( 0.188965, -3.76892 )
@@ -1077,7 +1124,7 @@ amount = 50
 lifetime = 0.8
 one_shot = true
 explosiveness = 0.71
-process_material = SubResource( 53 )
+process_material = SubResource( 52 )
 
 [node name="Soldier Shooting" type="Particles2D" parent="Animaciones"]
 position = Vector2( 575.624, 546.832 )
@@ -1085,14 +1132,15 @@ scale = Vector2( 0.2, 0.2 )
 emitting = false
 amount = 5
 lifetime = 0.6
+one_shot = true
 explosiveness = 0.5
-process_material = SubResource( 19 )
+process_material = SubResource( 57 )
 texture = ExtResource( 6 )
 
 [node name="Bow Shot" type="Particles2D" parent="Animaciones"]
 position = Vector2( 415.029, 404.135 )
 emitting = false
-amount = 7
+amount = 10
 one_shot = true
 explosiveness = 0.98
 process_material = SubResource( 58 )
