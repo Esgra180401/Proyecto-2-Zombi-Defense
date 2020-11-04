@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://GameTheme.ogg" type="AudioStream" id=1]
 [ext_resource path="res://assets/Map_MarketSquare.png" type="Texture" id=2]
@@ -27,6 +27,9 @@ bg_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.282353, 0.12549, 0.0235294, 1 )
 
+[sub_resource type="StyleBoxFlat" id=59]
+bg_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
+
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
 border_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
@@ -38,6 +41,9 @@ bg_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
 
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.282353, 0.12549, 0.0235294, 1 )
+
+[sub_resource type="StyleBoxFlat" id=60]
+bg_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
 
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
@@ -629,6 +635,7 @@ margin_right = 1187.98
 margin_bottom = 725.0
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
+custom_styles/disabled = SubResource( 59 )
 custom_styles/normal = SubResource( 4 )
 icon = ExtResource( 10 )
 __meta__ = {
@@ -642,6 +649,7 @@ margin_right = 1232.0
 margin_bottom = 725.0
 custom_styles/hover = SubResource( 5 )
 custom_styles/pressed = SubResource( 6 )
+custom_styles/disabled = SubResource( 60 )
 custom_styles/normal = SubResource( 7 )
 icon = ExtResource( 11 )
 __meta__ = {
@@ -1020,7 +1028,7 @@ position = Vector2( -0.105469, 0.102615 )
 shape = SubResource( 15 )
 
 [node name="Area2D4" type="Area2D" parent="Extra Assets"]
-position = Vector2( 488.211, 166.864 )
+position = Vector2( 487.089, 203.905 )
 collision_layer = 23
 collision_mask = 23
 script = ExtResource( 7 )
@@ -1042,7 +1050,7 @@ position = Vector2( -0.135803, -0.0671234 )
 shape = SubResource( 15 )
 
 [node name="Area2D5" type="Area2D" parent="Extra Assets"]
-position = Vector2( 604.974, 166.13 )
+position = Vector2( 604.974, 203.171 )
 collision_layer = 22
 collision_mask = 22
 script = ExtResource( 7 )
@@ -1083,7 +1091,7 @@ explosiveness = 0.8
 process_material = SubResource( 29 )
 
 [node name="Poison Atk" type="Particles2D" parent="Animaciones"]
-position = Vector2( 604.987, 165.943 )
+position = Vector2( 604.987, 203.545 )
 emitting = false
 amount = 500
 lifetime = 0.5
@@ -1129,7 +1137,6 @@ process_material = SubResource( 52 )
 [node name="Soldier Shooting" type="Particles2D" parent="Animaciones"]
 position = Vector2( 575.624, 546.832 )
 scale = Vector2( 0.2, 0.2 )
-emitting = false
 amount = 5
 lifetime = 0.6
 one_shot = true

@@ -9,6 +9,7 @@ var last_movement = Vector2(0,0)
 var motion_vector = Vector2()
 var turnos = 3
 var contar=0
+var collider = null
 
 signal completed
 
@@ -18,7 +19,11 @@ func _ready():
 func _physics_process(delta):
 	if !moving:
 		if $RayCast2D.is_colliding():
-				damage(strenght)
+				if $RayCast2D.get_collider()==null:
+					collider = null
+				else:
+					collider = $RayCast2D.get_collider()
+				
 		if turnos <= 0:
 				turnos = 3
 				emit_signal("completed")
