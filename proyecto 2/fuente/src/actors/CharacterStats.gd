@@ -11,11 +11,12 @@ export var life: bool
 func alive():
 	if health == 0:
 		life = false
-func heal():
-	if inventario > 0:
-		health += maxH/4
-		if health > maxH:
-			health = 0 + maxH
+func heal(player):
+	if player.inventario > 0:
+		player.health += (player.maxH)/4
+		player.inventario -= 1
+		if player.health > player.maxH:
+			player.health = 0 + player.maxH
 func drops(item):
 	if item == "lvl":
 		level += 1

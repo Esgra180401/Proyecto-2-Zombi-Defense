@@ -14,10 +14,11 @@ func _ready():
 	
 func _button_pressed1():
 	if turns.personaje_activo.collider == null:
-		
+		print("miss")
 	else:
 		turns.personaje_activo.damage(turns.personaje_activo.strenght,turns.personaje_activo.collider)
 		turns.personaje_activo.turnos -= 1
 	
 func _button_pressed2():
+	turns.personaje_activo.heal(turns.personaje_activo)
 	turns.personaje_activo.turnos -= 1
