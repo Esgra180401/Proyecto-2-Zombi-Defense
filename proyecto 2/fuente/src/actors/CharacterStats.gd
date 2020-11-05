@@ -26,9 +26,9 @@ func drops(item):
 			health = 0 + maxH
 	else:
 		strenght += 10
-func damage(pwr):
-	health-=pwr
-	if health < 0 :
-		health = 0
+func damage(pwr,target):
+	target.health -= pwr
+	if target.health < 0 :
+		target.health = 0
 	
 
