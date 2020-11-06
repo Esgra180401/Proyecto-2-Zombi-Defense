@@ -15,6 +15,7 @@ func heal(player):
 	if player.inventario > 0:
 		player.health += (player.maxH)/4
 		player.inventario -= 1
+		player.turnos -= 1
 		if player.health > player.maxH:
 			player.health = 0 + player.maxH
 func drops(item):

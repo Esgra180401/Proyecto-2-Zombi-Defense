@@ -20,5 +20,7 @@ func _button_pressed1():
 		turns.personaje_activo.turnos -= 1
 	
 func _button_pressed2():
+	if turns.personaje_activo.inventario > 0:
+		turns.personaje_activo.get_node("Cure").set_emitting(true)
 	turns.personaje_activo.heal(turns.personaje_activo)
-	turns.personaje_activo.turnos -= 1
+
