@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area2D",
+"class": "EnemyMovement",
+"language": "GDScript",
+"path": "res://src/EnemyMovement.gd"
+}, {
 "base": "Node",
 "class": "Turnos",
 "language": "GDScript",
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://src/actors/player_movement.gd"
 } ]
 _global_script_class_icons={
+"EnemyMovement": "",
 "Turnos": "",
 "player_movement": ""
 }

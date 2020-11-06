@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=2]
+[gd_scene load_steps=94 format=2]
 
 [ext_resource path="res://GameTheme.ogg" type="AudioStream" id=1]
 [ext_resource path="res://assets/Map_MarketSquare.png" type="Texture" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/top-tree-png-4127.png" type="Texture" id=4]
 [ext_resource path="res://src/Turnos.gd" type="Script" id=5]
 [ext_resource path="res://assets/Bullet.png" type="Texture" id=6]
-[ext_resource path="res://src/actors/CharacterStats.gd" type="Script" id=7]
+[ext_resource path="res://src/EnemyMovement.gd" type="Script" id=7]
 [ext_resource path="res://assets/Character Sprites.png" type="Texture" id=8]
 [ext_resource path="res://assets/Zombie Sprites.png" type="Texture" id=9]
 [ext_resource path="res://assets/Boton Atk.png" type="Texture" id=10]
@@ -53,40 +53,40 @@ draw_center = false
 border_color = Color( 0.607843, 0.439216, 0.239216, 1 )
 border_blend = true
 
-[sub_resource type="DynamicFont" id=66]
-font_data = ExtResource( 19 )
-
-[sub_resource type="DynamicFont" id=67]
-font_data = ExtResource( 19 )
-
-[sub_resource type="DynamicFont" id=68]
-font_data = ExtResource( 19 )
-
-[sub_resource type="DynamicFont" id=69]
-font_data = ExtResource( 19 )
-
-[sub_resource type="DynamicFont" id=70]
-font_data = ExtResource( 19 )
-
-[sub_resource type="DynamicFont" id=62]
-font_data = ExtResource( 19 )
-
-[sub_resource type="DynamicFont" id=63]
-font_data = ExtResource( 19 )
-
-[sub_resource type="DynamicFont" id=64]
-font_data = ExtResource( 19 )
-
-[sub_resource type="DynamicFont" id=65]
-font_data = ExtResource( 19 )
-
 [sub_resource type="DynamicFont" id=10]
 font_data = ExtResource( 19 )
 
-[sub_resource type="ConvexPolygonShape2D" id=11]
+[sub_resource type="DynamicFont" id=11]
+font_data = ExtResource( 19 )
+
+[sub_resource type="DynamicFont" id=12]
+font_data = ExtResource( 19 )
+
+[sub_resource type="DynamicFont" id=13]
+font_data = ExtResource( 19 )
+
+[sub_resource type="DynamicFont" id=14]
+font_data = ExtResource( 19 )
+
+[sub_resource type="DynamicFont" id=15]
+font_data = ExtResource( 19 )
+
+[sub_resource type="DynamicFont" id=16]
+font_data = ExtResource( 19 )
+
+[sub_resource type="DynamicFont" id=17]
+font_data = ExtResource( 19 )
+
+[sub_resource type="DynamicFont" id=18]
+font_data = ExtResource( 19 )
+
+[sub_resource type="DynamicFont" id=19]
+font_data = ExtResource( 19 )
+
+[sub_resource type="ConvexPolygonShape2D" id=20]
 points = PoolVector2Array( 38.7022, 37.0408, 0.0959473, 37.2734, 0.0959473, -0.170105, 38.9348, 0.0625 )
 
-[sub_resource type="TileSet" id=12]
+[sub_resource type="TileSet" id=21]
 0/name = "Map_MarketSquare.png 0"
 0/texture = ExtResource( 2 )
 0/tex_offset = Vector2( 0, 0 )
@@ -111,14 +111,14 @@ points = PoolVector2Array( 38.7022, 37.0408, 0.0959473, 37.2734, 0.0959473, -0.1
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape = SubResource( 11 )
+2/shape = SubResource( 20 )
 2/shape_one_way = false
 2/shape_one_way_margin = 1.0
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 11 ),
+"shape": SubResource( 20 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
@@ -165,10 +165,10 @@ points = PoolVector2Array( 38.7022, 37.0408, 0.0959473, 37.2734, 0.0959473, -0.1
 6/shapes = [  ]
 6/z_index = 0
 
-[sub_resource type="ConvexPolygonShape2D" id=13]
+[sub_resource type="ConvexPolygonShape2D" id=22]
 points = PoolVector2Array( 39.0122, 36.1292, -0.127106, 36.024, -0.127106, -0.0455627, 39.038, 0.0890198 )
 
-[sub_resource type="TileSet" id=14]
+[sub_resource type="TileSet" id=23]
 0/name = "Map_MarketSquare.png 0"
 0/texture = ExtResource( 2 )
 0/tex_offset = Vector2( 0, 0 )
@@ -179,22 +179,22 @@ points = PoolVector2Array( 39.0122, 36.1292, -0.127106, 36.024, -0.127106, -0.04
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 13 )
+0/shape = SubResource( 22 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 13 ),
+"shape": SubResource( 22 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="ConvexPolygonShape2D" id=15]
+[sub_resource type="ConvexPolygonShape2D" id=24]
 points = PoolVector2Array( 155.958, 147.181, -0.0559082, 147.181, -0.0559082, -0.112396, 155.958, -0.112396 )
 
-[sub_resource type="TileSet" id=16]
+[sub_resource type="TileSet" id=25]
 0/name = "Map_MarketSquare.png 0"
 0/texture = ExtResource( 2 )
 0/tex_offset = Vector2( 0, 0 )
@@ -205,14 +205,14 @@ points = PoolVector2Array( 155.958, 147.181, -0.0559082, 147.181, -0.0559082, -0
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 15 )
+0/shape = SubResource( 24 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 15 ),
+"shape": SubResource( 24 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
@@ -329,13 +329,33 @@ points = PoolVector2Array( 155.958, 147.181, -0.0559082, 147.181, -0.0559082, -0
 8/shapes = [  ]
 8/z_index = 0
 
-[sub_resource type="Gradient" id=17]
+[sub_resource type="NavigationPolygon" id=26]
+vertices = PoolVector2Array( -32, 808, -32, 664, 8, 664, 312, 672, 312, 736, 272, 736, 128, 664, 360, 768, 360, 696, 480, 696, 1056, 808, 480, 616, 752, 616, 752, 656, 936, 512, 856, 512, 856, 408, 936, 408, 936, 256, 1048, 256, 1048, 152, 936, 152, 936, 0, 1056, -32, 1056, 144, 120, 0, 120, 152, 0, 152, -40, -32, 192, 408, 192, 520, 120, 520, 120, 400, 120, 648, -40, 648, 0, 256, 120, 264, 272, 768, 936, 648, 1056, 200, 1048, 200 )
+polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 3, 4, 5, 6 ), PoolIntArray( 7, 8, 9, 10 ), PoolIntArray( 9, 11, 12, 13 ), PoolIntArray( 14, 15, 16, 17 ), PoolIntArray( 17, 18, 19 ), PoolIntArray( 20, 21, 22, 23, 24 ), PoolIntArray( 25, 26, 27, 28 ), PoolIntArray( 29, 30, 31, 32 ), PoolIntArray( 31, 33, 34 ), PoolIntArray( 35, 36, 32, 34 ), PoolIntArray( 0, 2, 6, 5, 37 ), PoolIntArray( 10, 0, 37, 7 ), PoolIntArray( 10, 9, 13, 38 ), PoolIntArray( 32, 31, 34 ), PoolIntArray( 35, 34, 28, 27 ), PoolIntArray( 25, 28, 23, 22 ), PoolIntArray( 20, 24, 39, 40 ), PoolIntArray( 19, 40, 39, 10 ), PoolIntArray( 19, 10, 38, 14 ), PoolIntArray( 19, 14, 17 ) ]
+outlines = [ PoolVector2Array( -32, 808, 1056, 808, 1056, 200, 1056, 144, 1056, -32, -40, -32, -40, 648, 120, 648, 120, 520, 192, 520, 192, 408, 120, 400, 120, 264, 0, 256, 0, 152, 120, 152, 120, 0, 936, 0, 936, 152, 1048, 152, 1048, 200, 1048, 256, 936, 256, 936, 408, 856, 408, 856, 512, 936, 512, 936, 648, 752, 656, 752, 616, 480, 616, 480, 696, 360, 696, 360, 768, 272, 768, 272, 736, 312, 736, 312, 672, 128, 664, 8, 664, -32, 664 ) ]
+
+[sub_resource type="NavigationPolygon" id=27]
+vertices = PoolVector2Array( 472, 296, 472, 368, 392, 368, 392, 296 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 3 ) ]
+outlines = [ PoolVector2Array( 392, 296, 392, 296, 392, 368, 472, 368, 472, 296 ) ]
+
+[sub_resource type="NavigationPolygon" id=28]
+vertices = PoolVector2Array( 392, 592, 392, 624, 272, 624, 312, 592, 272, 520, 312, 552, 392, 520, 392, 552 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 3, 2, 4, 5 ), PoolIntArray( 5, 4, 6, 7 ) ]
+outlines = [ PoolVector2Array( 392, 624, 272, 624, 272, 520, 392, 520, 392, 552, 312, 552, 312, 592, 392, 592 ) ]
+
+[sub_resource type="NavigationPolygon" id=29]
+vertices = PoolVector2Array( 544, 512, 544, 592, 504, 592, 504, 552, 472, 512, 472, 552 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 0, 3, 5 ) ]
+outlines = [ PoolVector2Array( 544, 592, 504, 592, 504, 552, 472, 552, 472, 512, 544, 512 ) ]
+
+[sub_resource type="Gradient" id=30]
 colors = PoolColorArray( 0.171875, 1, 0, 1, 0.148438, 1, 0, 0.203922 )
 
-[sub_resource type="GradientTexture" id=18]
-gradient = SubResource( 17 )
+[sub_resource type="GradientTexture" id=31]
+gradient = SubResource( 30 )
 
-[sub_resource type="ParticlesMaterial" id=19]
+[sub_resource type="ParticlesMaterial" id=32]
 emission_shape = 1
 emission_sphere_radius = 20.7
 flag_disable_z = true
@@ -345,37 +365,37 @@ initial_velocity = 50.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 2.0
-color_ramp = SubResource( 18 )
+color_ramp = SubResource( 31 )
 
-[sub_resource type="RectangleShape2D" id=20]
+[sub_resource type="RectangleShape2D" id=33]
 extents = Vector2( 16.0135, 16.9643 )
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=34]
 extents = Vector2( 14.3692, 14.4652 )
 
-[sub_resource type="Gradient" id=22]
+[sub_resource type="Gradient" id=35]
 offsets = PoolRealArray( 0.00186916, 0.143925, 0.409346, 0.545794, 0.998131 )
 colors = PoolColorArray( 0.897461, 0.896228, 0.771255, 1, 0.916992, 0.849508, 0.265068, 1, 0.84668, 0.484771, 0.125679, 1, 0.938193, 0, 0, 1, 0.858398, 0, 0, 1 )
 
-[sub_resource type="GradientTexture" id=23]
-gradient = SubResource( 22 )
+[sub_resource type="GradientTexture" id=36]
+gradient = SubResource( 35 )
 
-[sub_resource type="Curve" id=24]
+[sub_resource type="Curve" id=37]
 min_value = -400.0
 max_value = 400.0
 _data = [ Vector2( 0, 400 ), 0.0, 13089.4, 0, 0, Vector2( 0.187225, -30.9091 ), -1500.83, -1500.83, 0, 0, Vector2( 1, 69.0909 ), 1133.9, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=25]
-curve = SubResource( 24 )
+[sub_resource type="CurveTexture" id=38]
+curve = SubResource( 37 )
 
-[sub_resource type="Curve" id=26]
+[sub_resource type="Curve" id=39]
 max_value = 2.6
 _data = [ Vector2( 0, 2.46409 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.407727 ), 2.12728, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=27]
-curve = SubResource( 26 )
+[sub_resource type="CurveTexture" id=40]
+curve = SubResource( 39 )
 
-[sub_resource type="ParticlesMaterial" id=28]
+[sub_resource type="ParticlesMaterial" id=41]
 emission_shape = 1
 emission_sphere_radius = 2.89
 flag_disable_z = true
@@ -385,36 +405,36 @@ initial_velocity = 100.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 linear_accel = 100.0
-linear_accel_curve = SubResource( 25 )
+linear_accel_curve = SubResource( 38 )
 scale = 3.0
 scale_random = 1.0
-scale_curve = SubResource( 27 )
-color_ramp = SubResource( 23 )
+scale_curve = SubResource( 40 )
+color_ramp = SubResource( 36 )
 
-[sub_resource type="Gradient" id=29]
+[sub_resource type="Gradient" id=42]
 offsets = PoolRealArray( 0, 0.917757 )
 colors = PoolColorArray( 0.227539, 0.223095, 0.223095, 1, 0.219608, 0.219608, 0.219608, 0 )
 
-[sub_resource type="GradientTexture" id=30]
-gradient = SubResource( 29 )
+[sub_resource type="GradientTexture" id=43]
+gradient = SubResource( 42 )
 
-[sub_resource type="Curve" id=31]
+[sub_resource type="Curve" id=44]
 min_value = -200.0
 max_value = 200.0
 _data = [ Vector2( 0.00358423, 200 ), 0.0, 13886.6, 0, 0, Vector2( 0.102151, -64.0909 ), 0.0, 0.0, 0, 0, Vector2( 1, -67.7273 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=32]
-curve = SubResource( 31 )
+[sub_resource type="CurveTexture" id=45]
+curve = SubResource( 44 )
 
-[sub_resource type="Curve" id=33]
+[sub_resource type="Curve" id=46]
 min_value = 0.99
 max_value = 5.0
 _data = [ Vector2( 0, 0.99 ), 0.0, 0.0, 0, 0, Vector2( 1, 3.61473 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=34]
-curve = SubResource( 33 )
+[sub_resource type="CurveTexture" id=47]
+curve = SubResource( 46 )
 
-[sub_resource type="ParticlesMaterial" id=35]
+[sub_resource type="ParticlesMaterial" id=48]
 emission_shape = 1
 emission_sphere_radius = 2.0
 flag_disable_z = true
@@ -425,35 +445,35 @@ orbit_velocity = 0.15
 orbit_velocity_random = 1.0
 linear_accel = 100.0
 linear_accel_random = 0.5
-linear_accel_curve = SubResource( 32 )
+linear_accel_curve = SubResource( 45 )
 scale = 4.0
 scale_random = 1.0
-scale_curve = SubResource( 34 )
-color_ramp = SubResource( 30 )
+scale_curve = SubResource( 47 )
+color_ramp = SubResource( 43 )
 
-[sub_resource type="Gradient" id=36]
+[sub_resource type="Gradient" id=49]
 offsets = PoolRealArray( 0.208904, 0.75 )
 colors = PoolColorArray( 0.21395, 0.0246468, 0.450684, 1, 0.0330505, 0.528809, 0.117775, 0 )
 
-[sub_resource type="GradientTexture" id=37]
-gradient = SubResource( 36 )
+[sub_resource type="GradientTexture" id=50]
+gradient = SubResource( 49 )
 
-[sub_resource type="Curve" id=38]
+[sub_resource type="Curve" id=51]
 min_value = -200.0
 max_value = 200.0
 _data = [ Vector2( 0, -1.36362 ), 0.0, 0.0, 0, 0, Vector2( 1, -200 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=39]
-curve = SubResource( 38 )
+[sub_resource type="CurveTexture" id=52]
+curve = SubResource( 51 )
 
-[sub_resource type="Curve" id=40]
+[sub_resource type="Curve" id=53]
 max_value = 7.0
 _data = [ Vector2( 0, 0 ), 0.0, -0.741941, 0, 0, Vector2( 0.984127, 2.47273 ), -2.3699, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=41]
-curve = SubResource( 40 )
+[sub_resource type="CurveTexture" id=54]
+curve = SubResource( 53 )
 
-[sub_resource type="ParticlesMaterial" id=42]
+[sub_resource type="ParticlesMaterial" id=55]
 emission_shape = 1
 emission_sphere_radius = 0.01
 flag_disable_z = true
@@ -463,18 +483,18 @@ initial_velocity = 219.23
 orbit_velocity = 0.2
 orbit_velocity_random = 0.0
 linear_accel = 2.0
-linear_accel_curve = SubResource( 39 )
+linear_accel_curve = SubResource( 52 )
 scale = 7.0
-scale_curve = SubResource( 41 )
-color_ramp = SubResource( 37 )
+scale_curve = SubResource( 54 )
+color_ramp = SubResource( 50 )
 
-[sub_resource type="Gradient" id=43]
+[sub_resource type="Gradient" id=56]
 colors = PoolColorArray( 0.959961, 1, 0, 1, 0.960784, 1, 0, 0.415686 )
 
-[sub_resource type="GradientTexture" id=44]
-gradient = SubResource( 43 )
+[sub_resource type="GradientTexture" id=57]
+gradient = SubResource( 56 )
 
-[sub_resource type="ParticlesMaterial" id=45]
+[sub_resource type="ParticlesMaterial" id=58]
 emission_shape = 1
 emission_sphere_radius = 2.0
 flag_disable_z = true
@@ -484,23 +504,23 @@ initial_velocity = 200.0
 orbit_velocity = 2.0
 orbit_velocity_random = 0.0
 scale = 2.0
-color_ramp = SubResource( 44 )
+color_ramp = SubResource( 57 )
 
-[sub_resource type="Gradient" id=46]
+[sub_resource type="Gradient" id=59]
 offsets = PoolRealArray( 0.119863, 0.59589 )
 colors = PoolColorArray( 1, 0.960938, 0, 1, 1, 0, 0, 1 )
 
-[sub_resource type="GradientTexture" id=47]
-gradient = SubResource( 46 )
+[sub_resource type="GradientTexture" id=60]
+gradient = SubResource( 59 )
 
-[sub_resource type="Curve" id=48]
+[sub_resource type="Curve" id=61]
 max_value = 4.0
 _data = [ Vector2( 0, 1.66673 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=49]
-curve = SubResource( 48 )
+[sub_resource type="CurveTexture" id=62]
+curve = SubResource( 61 )
 
-[sub_resource type="ParticlesMaterial" id=50]
+[sub_resource type="ParticlesMaterial" id=63]
 flag_disable_z = true
 direction = Vector3( 0, -1, 0 )
 spread = 31.91
@@ -509,25 +529,25 @@ initial_velocity = 110.91
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 3.0
-scale_curve = SubResource( 49 )
-color_ramp = SubResource( 47 )
+scale_curve = SubResource( 62 )
+color_ramp = SubResource( 60 )
 
-[sub_resource type="Gradient" id=51]
+[sub_resource type="Gradient" id=64]
 offsets = PoolRealArray( 0.0753425, 0.308219, 0.599315, 0.784247 )
 colors = PoolColorArray( 0.294118, 0.290196, 0.290196, 0.0588235, 0.219608, 0.215686, 0.215686, 1, 0.222656, 0.222656, 0.222656, 1, 0.270588, 0.270588, 0.270588, 0 )
 
-[sub_resource type="GradientTexture" id=52]
-gradient = SubResource( 51 )
+[sub_resource type="GradientTexture" id=65]
+gradient = SubResource( 64 )
 
-[sub_resource type="Curve" id=53]
+[sub_resource type="Curve" id=66]
 min_value = 0.5
 max_value = 4.0
 _data = [ Vector2( 0, 0.5 ), 0.0, 0.0, 0, 0, Vector2( 1, 2.5642 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=54]
-curve = SubResource( 53 )
+[sub_resource type="CurveTexture" id=67]
+curve = SubResource( 66 )
 
-[sub_resource type="ParticlesMaterial" id=55]
+[sub_resource type="ParticlesMaterial" id=68]
 flag_disable_z = true
 direction = Vector3( 0, -1, 0 )
 spread = 29.72
@@ -537,38 +557,38 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 4.0
 scale_random = 1.0
-scale_curve = SubResource( 54 )
-color_ramp = SubResource( 52 )
+scale_curve = SubResource( 67 )
+color_ramp = SubResource( 65 )
 
-[sub_resource type="Curve" id=56]
+[sub_resource type="Curve" id=69]
 min_value = -360.0
 max_value = 360.0
 _data = [ Vector2( 0, 360 ), 0.0, 0.0, 0, 0, Vector2( 1, 360 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=57]
-curve = SubResource( 56 )
+[sub_resource type="CurveTexture" id=70]
+curve = SubResource( 69 )
 
-[sub_resource type="Gradient" id=58]
+[sub_resource type="Gradient" id=71]
 offsets = PoolRealArray( 0.773973, 1 )
 colors = PoolColorArray( 0.988909, 1, 0, 1, 0.918596, 1, 0, 0 )
 
-[sub_resource type="GradientTexture" id=59]
-gradient = SubResource( 58 )
+[sub_resource type="GradientTexture" id=72]
+gradient = SubResource( 71 )
 
-[sub_resource type="ParticlesMaterial" id=60]
+[sub_resource type="ParticlesMaterial" id=73]
 flag_align_y = true
 flag_disable_z = true
 direction = Vector3( 0, -1, 0 )
 spread = 5.0
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 1500.0
-angular_velocity_curve = SubResource( 57 )
+angular_velocity_curve = SubResource( 70 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 4.0
-color_ramp = SubResource( 59 )
+color_ramp = SubResource( 72 )
 
-[sub_resource type="ParticlesMaterial" id=61]
+[sub_resource type="ParticlesMaterial" id=74]
 flag_disable_z = true
 direction = Vector3( 0, 1, 0 )
 spread = 105.0
@@ -723,7 +743,7 @@ margin_left = 1192.0
 margin_top = 54.0
 margin_right = 1255.0
 margin_bottom = 68.0
-custom_fonts/font = SubResource( 66 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0.133333, 1, 0, 1 )
 text = "HP:"
 __meta__ = {
@@ -735,7 +755,7 @@ margin_left = 1191.67
 margin_top = 194.703
 margin_right = 1284.67
 margin_bottom = 209.703
-custom_fonts/font = SubResource( 67 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0.133333, 1, 0, 1 )
 text = "HP:"
 __meta__ = {
@@ -747,7 +767,7 @@ margin_left = 1192.0
 margin_top = 341.245
 margin_right = 1274.0
 margin_bottom = 355.245
-custom_fonts/font = SubResource( 68 )
+custom_fonts/font = SubResource( 12 )
 custom_colors/font_color = Color( 0.133333, 1, 0, 1 )
 text = "HP:"
 __meta__ = {
@@ -759,7 +779,7 @@ margin_left = 1182.95
 margin_top = 69.0
 margin_right = 1252.95
 margin_bottom = 84.0
-custom_fonts/font = SubResource( 69 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0.0509804, 0.968627, 0.980392, 1 )
 text = "LVL:"
 __meta__ = {
@@ -771,7 +791,7 @@ margin_left = 1182.65
 margin_top = 210.501
 margin_right = 1258.46
 margin_bottom = 225.501
-custom_fonts/font = SubResource( 70 )
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0.0509804, 0.968627, 0.980392, 1 )
 text = "LVL:"
 __meta__ = {
@@ -783,7 +803,7 @@ margin_left = 1183.1
 margin_top = 356.338
 margin_right = 1263.91
 margin_bottom = 371.338
-custom_fonts/font = SubResource( 62 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0.0509804, 0.968627, 0.980392, 1 )
 text = "LVL:"
 __meta__ = {
@@ -795,7 +815,7 @@ margin_left = 1255.89
 margin_top = 59.5403
 margin_right = 1342.89
 margin_bottom = 74.5403
-custom_fonts/font = SubResource( 63 )
+custom_fonts/font = SubResource( 16 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Kits:"
 __meta__ = {
@@ -807,7 +827,7 @@ margin_left = 1255.0
 margin_top = 203.857
 margin_right = 1343.46
 margin_bottom = 218.857
-custom_fonts/font = SubResource( 64 )
+custom_fonts/font = SubResource( 17 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Kits:"
 __meta__ = {
@@ -819,7 +839,7 @@ margin_left = 1254.0
 margin_top = 346.082
 margin_right = 1340.86
 margin_bottom = 361.082
-custom_fonts/font = SubResource( 65 )
+custom_fonts/font = SubResource( 18 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Kits:"
 __meta__ = {
@@ -831,36 +851,99 @@ margin_left = 1078.0
 margin_top = 462.0
 margin_right = 1264.0
 margin_bottom = 597.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 19 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Map" type="Node" parent="."]
 
-[node name="TileMap" type="TileMap" parent="Map"]
-tile_set = SubResource( 12 )
+[node name="Navigation2D" type="Navigation2D" parent="Map"]
+
+[node name="TileMap" type="TileMap" parent="Map/Navigation2D"]
+tile_set = SubResource( 21 )
 cell_size = Vector2( 39, 37 )
 format = 1
 tile_data = PoolIntArray( -1, 2, 0, -65536, 2, 0, -65535, 2, 0, -65534, 2, 0, -65533, 2, 0, -65532, 2, 0, -65531, 2, 0, -65530, 2, 0, -65529, 2, 0, -65528, 2, 0, -65527, 2, 0, -65526, 2, 0, -65525, 2, 0, -65524, 2, 0, -65523, 2, 0, -65522, 2, 0, -65521, 2, 0, -65520, 2, 0, -65519, 2, 0, -65518, 2, 0, -65517, 2, 0, -65516, 2, 0, -65515, 2, 0, -65514, 2, 0, -65513, 2, 0, -65512, 2, 0, -65511, 2, 0, -65510, 2, 0, -65509, 2, 0, 65535, 2, 0, 5, 4, 0, 6, 4, 0, 8, 536870914, 0, 9, 536870914, 0, 10, 536870914, 0, 11, 536870914, 0, 12, 536870914, 0, 13, 536870914, 0, 14, 536870914, 0, 15, 536870914, 0, 16, 536870914, 0, 17, 536870914, 0, 18, 536870914, 0, 20, 4, 0, 21, 4, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 131071, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 4, 0, 65544, 536870914, 0, 65545, 536870914, 0, 65546, 536870914, 0, 65547, 536870914, 0, 65548, 536870914, 0, 65549, 536870914, 0, 65550, 536870914, 0, 65551, 536870914, 0, 65552, 536870914, 0, 65553, 536870914, 0, 65554, 536870914, 0, 65556, 4, 0, 65557, 2, 0, 65558, 2, 0, 196607, 2, 0, 131076, 2, 0, 131077, 2, 0, 131078, 4, 0, 131080, 536870914, 0, 131081, 536870914, 0, 131082, 536870914, 0, 131083, 536870914, 0, 131084, 536870914, 0, 131085, 536870914, 0, 131086, 536870914, 0, 131087, 536870914, 0, 131088, 536870914, 0, 131089, 536870914, 0, 131090, 2, 0, 131092, 4, 0, 131093, 2, 0, 131094, 2, 0, 262143, 2, 0, 196613, 4, 0, 196614, 4, 0, 196615, 536870916, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 196626, 536870916, 0, 196627, 0, 0, 196628, 4, 0, 196629, 4, 0, 327679, 2, 0, 262144, 4, 0, 262145, 4, 0, 262146, 4, 0, 262147, 4, 0, 262148, 4, 0, 262149, 4, 0, 262150, 4, 0, 262151, 536870916, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 536870916, 0, 262162, 536870916, 0, 262163, 0, 0, 262164, 4, 0, 262165, 4, 0, 262166, 4, 0, 262167, 4, 0, 262168, 4, 0, 262169, 4, 0, 262170, 4, 0, 393215, 2, 0, 327680, 536870916, 0, 327681, 536870916, 0, 327682, 536870916, 0, 327683, 536870916, 0, 327684, 536870916, 0, 327685, 0, 0, 327686, 536870916, 0, 327687, 536870916, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327702, 0, 0, 327703, 0, 0, 327704, 0, 0, 327705, 0, 0, 327706, 0, 0, 458751, 2, 0, 393216, 536870916, 0, 393217, 536870916, 0, 393218, 536870916, 0, 393219, 536870916, 0, 393220, 536870916, 0, 393221, 536870916, 0, 393222, 536870916, 0, 393223, 536870916, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393237, 0, 0, 393238, 0, 0, 393239, 0, 0, 393240, 0, 0, 393241, 0, 0, 393242, 0, 0, 524287, 2, 0, 458759, 536870916, 0, 458760, 0, 0, 458761, 5, 0, 458762, 5, 0, 458763, 5, 0, 458764, 5, 0, 458765, 5, 0, 458766, 5, 0, 458767, 5, 0, 458768, 5, 0, 458769, 5, 0, 458770, 0, 0, 458771, 0, 0, 458778, 0, 0, 589823, 2, 0, 524292, 536870914, 0, 524293, 536870914, 0, 524295, 536870916, 0, 524296, 0, 0, 524297, 5, 0, 524298, 2, 0, 524299, 2, 0, 524300, 5, 0, 524301, 5, 0, 524302, 5, 0, 524303, 2, 0, 524304, 2, 0, 524305, 5, 0, 524306, 0, 0, 524307, 0, 0, 524309, 536870914, 0, 524310, 536870914, 0, 524314, 0, 0, 655359, 2, 0, 589828, 536870914, 0, 589829, 536870914, 0, 589831, 536870916, 0, 589832, 0, 0, 589833, 5, 0, 589834, 2, 0, 589835, 2, 0, 589836, 5, 0, 589837, 5, 0, 589838, 5, 0, 589839, 2, 0, 589840, 2, 0, 589841, 5, 0, 589842, 0, 0, 589843, 0, 0, 589845, 536870914, 0, 589846, 536870914, 0, 589850, 0, 0, 720895, 2, 0, 655367, 536870916, 0, 655368, 0, 0, 655369, 5, 0, 655370, 5, 0, 655371, 5, 0, 655372, 5, 0, 655373, 5, 0, 655374, 5, 0, 655375, 5, 0, 655376, 5, 0, 655377, 5, 0, 655378, 0, 0, 655379, 0, 0, 655386, 0, 0, 786431, 2, 0, 720896, 2, 0, 720897, 2, 0, 720898, 2, 0, 720899, 2, 0, 720900, 2, 0, 720901, 0, 0, 720902, 0, 0, 720903, 536870916, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 2, 0, 720919, 2, 0, 720920, 2, 0, 720921, 2, 0, 720922, 2, 0, 851967, 2, 0, 786432, 2, 0, 786433, 2, 0, 786434, 2, 0, 786435, 2, 0, 786436, 2, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 2, 0, 786455, 2, 0, 786456, 2, 0, 786457, 2, 0, 786458, 2, 0, 917503, 2, 0, 851968, 2, 0, 851969, 2, 0, 851970, 2, 0, 851971, 2, 0, 851972, 2, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 2, 0, 851991, 2, 0, 851992, 2, 0, 851993, 2, 0, 851994, 2, 0, 983039, 2, 0, 917509, 0, 0, 917510, 0, 0, 917511, 2, 0, 917512, 2, 0, 917513, 2, 0, 917514, 0, 0, 917515, 0, 0, 917516, 2, 0, 917517, 2, 0, 917518, 0, 0, 917519, 0, 0, 917520, 2, 0, 917521, 2, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917530, 0, 0, 1048575, 2, 0, 983045, 0, 0, 983046, 0, 0, 983047, 2, 0, 983048, 2, 0, 983049, 0, 0, 983050, 0, 0, 983051, 0, 0, 983052, 0, 0, 983053, 2, 0, 983054, 0, 0, 983055, 0, 0, 983056, 2, 0, 983057, 0, 0, 983058, 0, 0, 983059, 0, 0, 983060, 0, 0, 983061, 0, 0, 983066, 0, 0, 1114111, 2, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 2, 0, 1048584, 2, 0, 1048585, 2, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048602, 0, 0, 1179647, 2, 0, 1114117, 0, 0, 1114118, 0, 0, 1114119, 0, 0, 1114120, 0, 0, 1114121, 0, 0, 1114122, 0, 0, 1114123, 0, 0, 1114124, 2, 0, 1114125, 2, 0, 1114126, 2, 0, 1114127, 2, 0, 1114128, 2, 0, 1114129, 2, 0, 1114130, 2, 0, 1114131, 0, 0, 1114132, 0, 0, 1114133, 0, 0, 1114138, 0, 0, 1245183, 2, 0, 1179648, 2, 0, 1179649, 2, 0, 1179650, 2, 0, 1179651, 2, 0, 1179652, 2, 0, 1179653, 2, 0, 1179654, 2, 0, 1179655, 2, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 2, 0, 1179661, 2, 0, 1179662, 2, 0, 1179663, 2, 0, 1179664, 2, 0, 1179665, 2, 0, 1179666, 2, 0, 1179667, 2, 0, 1179668, 2, 0, 1179669, 2, 0, 1179670, 2, 0, 1179671, 2, 0, 1179672, 2, 0, 1179673, 2, 0, 1179674, 2, 0, 1310719, 2, 0, 1245184, 2, 0, 1245185, 2, 0, 1245186, 2, 0, 1245187, 2, 0, 1245188, 2, 0, 1245189, 2, 0, 1245190, 2, 0, 1245191, 2, 0, 1245192, 0, 0, 1245193, 2, 0, 1245194, 2, 0, 1245195, 2, 0, 1245196, 2, 0, 1245197, 2, 0, 1245198, 2, 0, 1245199, 2, 0, 1245200, 2, 0, 1245201, 2, 0, 1245202, 2, 0, 1245203, 2, 0, 1245204, 2, 0, 1245205, 2, 0, 1245206, 2, 0, 1245207, 2, 0, 1245208, 2, 0, 1245209, 2, 0, 1245210, 2, 0, 1376255, 2, 0, 1310720, 2, 0, 1310721, 2, 0, 1310722, 2, 0, 1310723, 2, 0, 1310724, 2, 0, 1310725, 2, 0, 1310726, 2, 0, 1310727, 2, 0, 1310728, 2, 0, 1310729, 2, 0, 1310730, 2, 0, 1310731, 2, 0, 1310732, 2, 0, 1310733, 2, 0, 1310734, 2, 0, 1310735, 2, 0, 1310736, 2, 0, 1310737, 2, 0, 1310738, 2, 0, 1310739, 2, 0, 1310740, 2, 0, 1310741, 2, 0, 1310742, 2, 0, 1310743, 2, 0, 1310744, 2, 0, 1310745, 2, 0, 1310746, 2, 0, 1441791, 2, 0, 1376256, 2, 0, 1376257, 2, 0, 1376258, 2, 0, 1376259, 2, 0, 1376260, 2, 0, 1376261, 2, 0, 1376262, 2, 0, 1376276, 2, 0, 1376277, 2, 0, 1376278, 2, 0, 1376279, 2, 0, 1376280, 2, 0, 1376281, 2, 0, 1376282, 2, 0 )
 
-[node name="TileMap3" type="TileMap" parent="Map"]
+[node name="TileMap3" type="TileMap" parent="Map/Navigation2D"]
 visible = false
-tile_set = SubResource( 14 )
+tile_set = SubResource( 23 )
 cell_size = Vector2( 39, 37 )
 collision_use_kinematic = true
 collision_layer = 3
 format = 1
 tile_data = PoolIntArray( -1, 536870912, 0, -65536, 536870912, 0, -65535, 536870912, 0, -65534, 536870912, 0, -65533, 536870912, 0, -65532, 536870912, 0, -65531, 536870912, 0, -65530, 536870912, 0, -65529, 536870912, 0, -65528, 536870912, 0, -65527, 536870912, 0, -65526, 536870912, 0, -65525, 536870912, 0, -65524, 536870912, 0, -65523, 536870912, 0, -65522, 536870912, 0, -65521, 536870912, 0, -65520, 536870912, 0, -65519, 536870912, 0, -65518, 536870912, 0, -65517, 536870912, 0, -65516, 536870912, 0, -65515, 536870912, 0, -65514, 536870912, 0, -65513, 536870912, 0, -65512, 536870912, 0, -65511, 536870912, 0, -65510, 536870912, 0, -65509, 536870912, 0, 65535, 536870912, 0, 0, 536870912, 0, 1, 536870912, 0, 2, 536870912, 0, 24, 536870912, 0, 25, 536870912, 0, 26, 536870912, 0, 27, 536870912, 0, 131071, 536870912, 0, 65536, 536870912, 0, 65537, 536870912, 0, 65538, 536870912, 0, 65560, 536870912, 0, 65561, 536870912, 0, 65562, 536870912, 0, 65563, 536870912, 0, 196607, 536870912, 0, 131072, 536870912, 0, 131073, 536870912, 0, 131074, 536870912, 0, 131096, 536870912, 0, 131097, 536870912, 0, 131098, 536870912, 0, 131099, 536870912, 0, 262143, 536870912, 0, 196608, 536870912, 0, 196609, 536870912, 0, 196610, 536870912, 0, 196632, 536870912, 0, 196633, 536870912, 0, 196634, 536870912, 0, 196635, 536870912, 0, 327679, 536870912, 0, 262171, 536870912, 0, 393215, 536870912, 0, 327707, 536870912, 0, 458751, 536870912, 0, 393243, 536870912, 0, 524287, 536870912, 0, 458752, 536870912, 0, 458753, 536870912, 0, 458754, 536870912, 0, 458776, 536870912, 0, 458777, 536870912, 0, 458778, 536870912, 0, 458779, 536870912, 0, 589823, 536870912, 0, 524288, 536870912, 0, 524289, 536870912, 0, 524290, 536870912, 0, 524312, 536870912, 0, 524313, 536870912, 0, 524314, 536870912, 0, 524315, 536870912, 0, 655359, 536870912, 0, 589824, 536870912, 0, 589825, 536870912, 0, 589826, 536870912, 0, 589848, 536870912, 0, 589849, 536870912, 0, 589850, 536870912, 0, 589851, 536870912, 0, 720895, 536870912, 0, 655360, 536870912, 0, 655361, 536870912, 0, 655362, 536870912, 0, 655384, 536870912, 0, 655385, 536870912, 0, 655386, 536870912, 0, 655387, 536870912, 0, 786431, 536870912, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720918, 0, 0, 720919, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0, 720923, 536870912, 0, 851967, 536870912, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 536870912, 0, 917503, 536870912, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851990, 0, 0, 851991, 0, 0, 851992, 0, 0, 851993, 0, 0, 851994, 0, 0, 851995, 536870912, 0, 983039, 536870912, 0, 917504, 536870912, 0, 917505, 536870912, 0, 917506, 536870912, 0, 917528, 536870912, 0, 917529, 536870912, 0, 917530, 536870912, 0, 917531, 536870912, 0, 1048575, 536870912, 0, 983040, 536870912, 0, 983041, 536870912, 0, 983042, 536870912, 0, 983064, 536870912, 0, 983065, 536870912, 0, 983066, 536870912, 0, 983067, 536870912, 0, 1114111, 536870912, 0, 1048576, 536870912, 0, 1048577, 536870912, 0, 1048578, 536870912, 0, 1048600, 536870912, 0, 1048601, 536870912, 0, 1048602, 536870912, 0, 1048603, 536870912, 0, 1179647, 536870912, 0, 1114112, 536870912, 0, 1114113, 536870912, 0, 1114114, 536870912, 0, 1114124, 0, 0, 1114125, 0, 0, 1114126, 0, 0, 1114127, 0, 0, 1114128, 0, 0, 1114129, 0, 0, 1114130, 0, 0, 1114136, 536870912, 0, 1114137, 536870912, 0, 1114138, 536870912, 0, 1114139, 536870912, 0, 1245183, 536870912, 0, 1179648, 536870912, 0, 1179649, 536870912, 0, 1179650, 536870912, 0, 1179651, 536870912, 0, 1179652, 536870912, 0, 1179653, 536870912, 0, 1179654, 536870912, 0, 1179655, 536870912, 0, 1179660, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1179663, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1179666, 0, 0, 1179667, 536870912, 0, 1179668, 536870912, 0, 1179669, 536870912, 0, 1179670, 536870912, 0, 1179671, 536870912, 0, 1179672, 536870912, 0, 1179673, 536870912, 0, 1179674, 536870912, 0, 1179675, 536870912, 0, 1310719, 536870912, 0, 1245184, 536870912, 0, 1245185, 536870912, 0, 1245186, 536870912, 0, 1245187, 536870912, 0, 1245188, 536870912, 0, 1245189, 536870912, 0, 1245190, 536870912, 0, 1245191, 536870912, 0, 1245193, 0, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1245199, 0, 0, 1245200, 0, 0, 1245201, 0, 0, 1245202, 0, 0, 1245203, 536870912, 0, 1245204, 536870912, 0, 1245205, 536870912, 0, 1245206, 536870912, 0, 1245207, 536870912, 0, 1245208, 536870912, 0, 1245209, 536870912, 0, 1245210, 536870912, 0, 1245211, 536870912, 0, 1376255, 536870912, 0, 1310720, 536870912, 0, 1310721, 536870912, 0, 1310722, 536870912, 0, 1310723, 536870912, 0, 1310724, 536870912, 0, 1310725, 536870912, 0, 1310726, 536870912, 0, 1310727, 536870912, 0, 1310728, 536870912, 0, 1310729, 536870912, 0, 1310730, 536870912, 0, 1310731, 536870912, 0, 1310732, 536870912, 0, 1310733, 536870912, 0, 1310734, 536870912, 0, 1310735, 536870912, 0, 1310736, 536870912, 0, 1310737, 536870912, 0, 1310738, 536870912, 0, 1310739, 536870912, 0, 1310740, 536870912, 0, 1310741, 536870912, 0, 1310742, 536870912, 0, 1310743, 536870912, 0, 1310744, 536870912, 0, 1310745, 536870912, 0, 1310746, 536870912, 0, 1310747, 536870912, 0, 1441791, 536870912, 0, 1376256, 536870912, 0, 1376257, 536870912, 0, 1376258, 536870912, 0, 1376259, 536870912, 0, 1376260, 536870912, 0, 1376261, 536870912, 0, 1376262, 536870912, 0, 1376263, 536870912, 0, 1376264, 536870912, 0, 1376265, 536870912, 0, 1376266, 536870912, 0, 1376267, 536870912, 0, 1376268, 536870912, 0, 1376269, 536870912, 0, 1376270, 536870912, 0, 1376271, 536870912, 0, 1376272, 536870912, 0, 1376273, 536870912, 0, 1376274, 536870912, 0, 1376275, 536870912, 0, 1376276, 536870912, 0, 1376277, 536870912, 0, 1376278, 536870912, 0, 1376279, 536870912, 0, 1376280, 536870912, 0, 1376281, 536870912, 0, 1376282, 536870912, 0, 1376283, 536870912, 0 )
 
-[node name="TileMap2" type="TileMap" parent="Map"]
-tile_set = SubResource( 16 )
+[node name="TileMap2" type="TileMap" parent="Map/Navigation2D"]
+tile_set = SubResource( 25 )
 cell_size = Vector2( 39, 37 )
 collision_use_kinematic = true
 format = 1
 tile_data = PoolIntArray( 0, 536870912, 0, 4, 536870918, 0, 7, 2, 0, 10, 3, 0, 14, 536870915, 0, 17, 536870914, 0, 19, 6, 0, 23, 0, 0, 65555, 8, 0, 131091, 8, 0, 196615, 8, 0, 196616, 8, 0, 196617, 8, 0, 196618, 8, 0, 196619, 8, 0, 196620, 8, 0, 196621, 8, 0, 196622, 8, 0, 196623, 8, 0, 196624, 8, 0, 196625, 8, 0, 196626, 8, 0, 196627, 8, 0, 458752, 536870912, 0, 458756, 536870918, 0, 458759, 8, 0, 458771, 6, 0, 458775, 0, 0, 524295, 8, 0, 524298, 7, 0, 524303, 7, 0, 524307, 8, 0, 589831, 8, 0, 589843, 8, 0, 655367, 8, 0, 655379, 8, 0, 720903, 8, 0, 917504, 536870912, 0, 917508, 536870918, 0, 917523, 6, 0, 917527, 0, 0 )
 
-[node name="Map_MarketSquare" type="Sprite" parent="Map"]
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Map/Navigation2D"]
+navpoly = SubResource( 26 )
+
+[node name="NavigationPolygonInstance2" type="NavigationPolygonInstance" parent="Map/Navigation2D"]
+navpoly = SubResource( 27 )
+
+[node name="NavigationPolygonInstance3" type="NavigationPolygonInstance" parent="Map/Navigation2D"]
+position = Vector2( 192, 0 )
+navpoly = SubResource( 27 )
+
+[node name="NavigationPolygonInstance4" type="NavigationPolygonInstance" parent="Map/Navigation2D"]
+position = Vector2( -232, 8 )
+navpoly = SubResource( 27 )
+
+[node name="NavigationPolygonInstance5" type="NavigationPolygonInstance" parent="Map/Navigation2D"]
+position = Vector2( 424, 0 )
+navpoly = SubResource( 27 )
+
+[node name="NavigationPolygonInstance6" type="NavigationPolygonInstance" parent="Map/Navigation2D"]
+position = Vector2( 424, 264 )
+navpoly = SubResource( 27 )
+
+[node name="NavigationPolygonInstance7" type="NavigationPolygonInstance" parent="Map/Navigation2D"]
+position = Vector2( -232, 256 )
+navpoly = SubResource( 27 )
+
+[node name="NavigationPolygonInstance8" type="NavigationPolygonInstance" parent="Map/Navigation2D"]
+position = Vector2( -232, -256 )
+navpoly = SubResource( 27 )
+
+[node name="NavigationPolygonInstance9" type="NavigationPolygonInstance" parent="Map/Navigation2D"]
+position = Vector2( 424, -256 )
+navpoly = SubResource( 27 )
+
+[node name="NavigationPolygonInstance10" type="NavigationPolygonInstance" parent="Map/Navigation2D"]
+position = Vector2( 160, -264 )
+navpoly = SubResource( 27 )
+
+[node name="NavigationPolygonInstance11" type="NavigationPolygonInstance" parent="Map/Navigation2D"]
+position = Vector2( 32, -256 )
+navpoly = SubResource( 27 )
+
+[node name="NavigationPolygonInstance12" type="NavigationPolygonInstance" parent="Map/Navigation2D"]
+position = Vector2( -88, -288 )
+navpoly = SubResource( 27 )
+
+[node name="NavigationPolygonInstance13" type="NavigationPolygonInstance" parent="Map/Navigation2D"]
+position = Vector2( 273.472, -288 )
+navpoly = SubResource( 27 )
+
+[node name="NavigationPolygonInstance14" type="NavigationPolygonInstance" parent="Map/Navigation2D"]
+navpoly = SubResource( 28 )
+
+[node name="NavigationPolygonInstance15" type="NavigationPolygonInstance" parent="Map/Navigation2D"]
+navpoly = SubResource( 29 )
+
+[node name="NavigationPolygonInstance16" type="NavigationPolygonInstance" parent="Map/Navigation2D"]
+position = Vector2( 108.748, 1064 )
+rotation = -1.5708
+navpoly = SubResource( 29 )
+
+[node name="Map_MarketSquare" type="Sprite" parent="Map/Navigation2D"]
 position = Vector2( 528, 664 )
 scale = Vector2( 1.01608, 1.02381 )
 texture = ExtResource( 2 )
@@ -904,14 +987,14 @@ amount = 100
 lifetime = 0.8
 one_shot = true
 explosiveness = 0.1
-process_material = SubResource( 19 )
+process_material = SubResource( 32 )
 
 [node name="Tween" type="Tween" parent="Turnos/Tanque"]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Turnos/Tanque"]
 position = Vector2( 0.046936, 0.0154114 )
 scale = Vector2( 0.861627, 0.837508 )
-shape = SubResource( 20 )
+shape = SubResource( 33 )
 
 [node name="RayCast2D" type="RayCast2D" parent="Turnos/Tanque"]
 enabled = true
@@ -944,14 +1027,14 @@ amount = 100
 lifetime = 0.8
 one_shot = true
 explosiveness = 0.1
-process_material = SubResource( 19 )
+process_material = SubResource( 32 )
 
 [node name="Tween" type="Tween" parent="Turnos/Area2D3"]
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Turnos/Area2D3"]
 position = Vector2( -0.050354, -0.127075 )
 scale = Vector2( 0.861627, 0.837508 )
-shape = SubResource( 20 )
+shape = SubResource( 33 )
 
 [node name="RayCast2D" type="RayCast2D" parent="Turnos/Area2D3"]
 enabled = true
@@ -984,12 +1067,12 @@ amount = 100
 lifetime = 0.8
 one_shot = true
 explosiveness = 0.1
-process_material = SubResource( 19 )
+process_material = SubResource( 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Turnos/Area2D"]
 position = Vector2( 0.0744019, -0.0109558 )
 scale = Vector2( 0.861627, 0.837508 )
-shape = SubResource( 20 )
+shape = SubResource( 33 )
 
 [node name="Tween" type="Tween" parent="Turnos/Area2D"]
 
@@ -998,6 +1081,32 @@ enabled = true
 cast_to = Vector2( 0, -400 )
 collision_mask = 16
 collide_with_areas = true
+
+[node name="Area2D2" type="Area2D" parent="Turnos"]
+position = Vector2( 370.628, 203.245 )
+collision_layer = 23
+collision_mask = 23
+script = ExtResource( 7 )
+target1 = NodePath("../Tanque")
+posicion = NodePath(".")
+
+[node name="zombi" type="Sprite" parent="Turnos/Area2D2"]
+position = Vector2( -0.143311, 2.20555 )
+scale = Vector2( 0.580853, 0.604334 )
+texture = ExtResource( 9 )
+flip_v = true
+region_enabled = true
+region_rect = Rect2( 249, 246, 69, 70 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Turnos/Area2D2"]
+position = Vector2( -0.105469, 0.102615 )
+shape = SubResource( 34 )
+
+[node name="Tween" type="Tween" parent="Turnos/Area2D2"]
+
+[node name="RayCast2D" type="RayCast2D" parent="Turnos/Area2D2"]
+position = Vector2( 0, 0.660004 )
+enabled = true
 
 [node name="Extra Assets" type="Node" parent="."]
 
@@ -1091,37 +1200,10 @@ position = Vector2( 157.373, 462.877 )
 scale = Vector2( 0.456573, 0.494131 )
 texture = ExtResource( 4 )
 
-[node name="Area2D2" type="Area2D" parent="Extra Assets"]
-position = Vector2( 370.628, 203.245 )
-collision_layer = 23
-collision_mask = 23
-script = ExtResource( 7 )
-health = 200
-strenght = 100
-maxH = 200
-life = true
-
-[node name="zombi" type="Sprite" parent="Extra Assets/Area2D2"]
-position = Vector2( -0.143311, 2.20555 )
-scale = Vector2( 0.580853, 0.604334 )
-texture = ExtResource( 9 )
-flip_v = true
-region_enabled = true
-region_rect = Rect2( 249, 246, 69, 70 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Extra Assets/Area2D2"]
-position = Vector2( -0.105469, 0.102615 )
-shape = SubResource( 21 )
-
 [node name="Area2D4" type="Area2D" parent="Extra Assets"]
 position = Vector2( 487.089, 203.905 )
 collision_layer = 23
 collision_mask = 23
-script = ExtResource( 7 )
-health = 1000
-strenght = 200
-maxH = 1000
-life = true
 
 [node name="tanque zombi" type="Sprite" parent="Extra Assets/Area2D4"]
 position = Vector2( -0.198792, 5.94597 )
@@ -1133,17 +1215,12 @@ region_rect = Rect2( 420, 357, 150, 102 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Extra Assets/Area2D4"]
 position = Vector2( -0.135803, -0.0671234 )
-shape = SubResource( 21 )
+shape = SubResource( 34 )
 
 [node name="Area2D5" type="Area2D" parent="Extra Assets"]
 position = Vector2( 604.974, 203.171 )
 collision_layer = 22
 collision_mask = 22
-script = ExtResource( 7 )
-health = 50
-strenght = 150
-maxH = 50
-life = true
 
 [node name="zombi trepa" type="Sprite" parent="Extra Assets/Area2D5"]
 position = Vector2( -1.37006, -3.73738 )
@@ -1155,7 +1232,7 @@ region_rect = Rect2( 420, 255, 60, 68 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Extra Assets/Area2D5"]
 position = Vector2( 0.123535, 0.0366483 )
-shape = SubResource( 21 )
+shape = SubResource( 34 )
 
 [node name="Animaciones" type="Node" parent="."]
 
@@ -1166,7 +1243,7 @@ amount = 250
 lifetime = 0.8
 one_shot = true
 explosiveness = 0.5
-process_material = SubResource( 28 )
+process_material = SubResource( 41 )
 
 [node name="Smoke" type="Particles2D" parent="Animaciones/Explosion"]
 emitting = false
@@ -1174,7 +1251,7 @@ amount = 500
 lifetime = 0.8
 one_shot = true
 explosiveness = 0.8
-process_material = SubResource( 35 )
+process_material = SubResource( 48 )
 
 [node name="Poison Atk" type="Particles2D" parent="Animaciones"]
 position = Vector2( 604.987, 203.545 )
@@ -1183,7 +1260,7 @@ amount = 500
 lifetime = 0.5
 one_shot = true
 explosiveness = 0.5
-process_material = SubResource( 42 )
+process_material = SubResource( 55 )
 
 [node name="LVL Up" type="Particles2D" parent="Animaciones"]
 position = Vector2( 605.167, 498.972 )
@@ -1191,7 +1268,7 @@ emitting = false
 amount = 100
 one_shot = true
 explosiveness = 0.5
-process_material = SubResource( 45 )
+process_material = SubResource( 58 )
 
 [node name="Tank Shooting" type="Particles2D" parent="Animaciones"]
 position = Vector2( 613.385, 470.904 )
@@ -1200,7 +1277,7 @@ amount = 30
 lifetime = 0.8
 one_shot = true
 explosiveness = 0.84
-process_material = SubResource( 50 )
+process_material = SubResource( 63 )
 
 [node name="Smoke" type="Particles2D" parent="Animaciones/Tank Shooting"]
 position = Vector2( 0.188965, -3.76892 )
@@ -1209,7 +1286,7 @@ amount = 50
 lifetime = 0.8
 one_shot = true
 explosiveness = 0.71
-process_material = SubResource( 55 )
+process_material = SubResource( 68 )
 
 [node name="Soldier Shooting" type="Particles2D" parent="Animaciones"]
 position = Vector2( 575.624, 546.832 )
@@ -1219,7 +1296,7 @@ amount = 5
 lifetime = 0.6
 one_shot = true
 explosiveness = 0.5
-process_material = SubResource( 60 )
+process_material = SubResource( 73 )
 texture = ExtResource( 6 )
 
 [node name="Bow Shot" type="Particles2D" parent="Animaciones"]
@@ -1228,4 +1305,4 @@ emitting = false
 amount = 10
 one_shot = true
 explosiveness = 0.98
-process_material = SubResource( 61 )
+process_material = SubResource( 74 )

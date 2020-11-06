@@ -26,8 +26,7 @@ func jugar_turno():
 	personaje_activo.set_physics_process(true)
 	
 	yield(personaje_activo,"completed")
-	print(personaje_activo.health)
-	print(personaje_activo.collider)
+	
 	personaje_activo.set_physics_process(false)
 	new_index=(personaje_activo.get_index()+1)
 	if new_index==get_child_count():
