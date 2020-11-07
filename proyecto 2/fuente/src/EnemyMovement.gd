@@ -33,11 +33,9 @@ func _ready():
 	$Tween.connect("tween_completed",self,"_on_Tween_tween_completed")
 	connect("body_entered",self,"go_back")
 func _physics_process(delta):
-	print("procesing")
+
 	actual = get_node(posicion).get_position()
 	if !moving:
-		print(get_node(posicion))
-		print("moving")
 		if $RayCast2D.is_colliding():
 				if $RayCast2D.get_collider()==null:
 					collider = null
@@ -73,12 +71,12 @@ func _physics_process(delta):
 				rotation_degrees = 270
 				tile_size = 39
 				turnos-=1
-			elif actual[1]<(follow.get_position())[0]-30:
+			elif actual[1]<(follow.get_position())[1]-30:
 				motion_vector = Vector2( 0, 1)
 				rotation_degrees = 180
 				tile_size = 37
 				turnos-=1
-			elif actual[1]>(follow.get_position())[0]+30:
+			elif actual[1]>(follow.get_position())[1]+30:
 				motion_vector = Vector2( 0, -1)
 				rotation_degrees = 0
 				tile_size = 37

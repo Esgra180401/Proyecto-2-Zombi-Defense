@@ -24,9 +24,9 @@ func iniciar():
 	
 func jugar_turno():
 	personaje_activo.set_physics_process(true)
-	print("iniciar",personaje_activo)
+
 	yield(personaje_activo,"completed")
-	print("termiando",personaje_activo)
+
 	new_index=(personaje_activo.get_index()+1)
 	if new_index==get_child_count():
 		new_index = 0

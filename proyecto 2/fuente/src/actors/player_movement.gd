@@ -7,7 +7,7 @@ var moving = false
 var  tile_size = 37
 var last_movement = Vector2(0,0)
 var motion_vector = Vector2()
-var turnos = 3
+var turnos = 10
 var contar=0
 var collider = null
 var new_position
@@ -26,7 +26,7 @@ func _physics_process(delta):
 					collider = $RayCast2D.get_collider()
 				
 		if turnos <= 0:
-				turnos = 3
+				turnos = 10
 				emit_signal("completed")
 				set_physics_process(false)
 				
