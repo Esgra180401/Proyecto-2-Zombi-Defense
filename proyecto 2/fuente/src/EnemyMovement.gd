@@ -6,6 +6,9 @@ onready var objetivo = get_node(target1).get_position()
 export (NodePath) var posicion
 onready var actual = get_node(posicion).get_position()
 
+export (NodePath) var nav
+onready var navi = get_node(nav)
+
 class_name EnemyMovement
 
 
@@ -20,7 +23,12 @@ var collider = null
 signal completed
 
 func _ready():
-	
+	var p1 = Vector2(objetivo[0],objetivo[1])
+	var p2 = Vector2(actual[0],actual[1])
+	print(actual)
+	print(objetivo)
+	var path = navi.get_simple_path(p1,p2,false)
+	print(path)
 	$Tween.connect("tween_completed",self,"_on_Tween_tween_completed")
 	connect("body_entered",self,"go_back")
 func _physics_process(delta):
