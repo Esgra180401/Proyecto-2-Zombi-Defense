@@ -10,6 +10,7 @@ var motion_vector = Vector2()
 var turnos = 3
 var contar=0
 var collider = null
+var new_position
 
 signal completed
 
@@ -27,6 +28,7 @@ func _physics_process(delta):
 		if turnos <= 0:
 				turnos = 3
 				emit_signal("completed")
+				set_physics_process(false)
 				
 				
 		else:
@@ -53,7 +55,7 @@ func _physics_process(delta):
 
 			if motion_vector != Vector2():
 				last_movement=motion_vector
-				var new_position = position + motion_vector * tile_size
+				new_position = position + motion_vector * tile_size
 				$Tween.interpolate_property ( self, 'position', position, new_position, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 				$Tween.start()
 				moving = true
@@ -79,7 +81,7 @@ func go_back(object):
 		turnos+=1
 	if turnos>3:
 		turnos = 3
-	var new_position = position + motion_vector * tile_size
+	new_position = position + motion_vector * tile_size
 	$Tween.interpolate_property ( self, 'position', position, new_position, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$Tween.start()
 	moving = true

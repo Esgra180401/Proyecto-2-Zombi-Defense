@@ -24,17 +24,15 @@ func iniciar():
 	
 func jugar_turno():
 	personaje_activo.set_physics_process(true)
-	
+	print("iniciar",personaje_activo)
 	yield(personaje_activo,"completed")
-	
-	personaje_activo.set_physics_process(false)
+	print("termiando",personaje_activo)
 	new_index=(personaje_activo.get_index()+1)
 	if new_index==get_child_count():
 		new_index = 0
 		personaje_activo=get_child(new_index)
 		jugar_turno()
 	else:
-		
 		personaje_activo=get_child(new_index)
 		jugar_turno()
 

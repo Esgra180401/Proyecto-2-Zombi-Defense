@@ -1,13 +1,14 @@
 extends "res://src/actors/CharacterStats.gd"
 
 export (NodePath) var target1
-onready var objetivo = get_node(target1).get_position()
+
+export (NodePath) var target2
+
+export (NodePath) var target3
+
+export (NodePath) var target4
 
 export (NodePath) var posicion
-onready var actual = get_node(posicion).get_position()
-
-export (NodePath) var nav
-onready var navi = get_node(nav)
 
 class_name EnemyMovement
 
@@ -16,42 +17,75 @@ var moving = false
 var  tile_size = 37
 var last_movement = Vector2(0,0)
 var motion_vector = Vector2()
-var turnos = 3
+var turnos = 5
 var contar=0
 var collider = null
+var follow
+var actual
+var new_position
+var sonido1
+var sonido2
+var sonido3
 
 signal completed
 
 func _ready():
-	var p1 = Vector2(objetivo[0],objetivo[1])
-	var p2 = Vector2(actual[0],actual[1])
-	print(actual)
-	print(objetivo)
-	var path = navi.get_simple_path(p1,p2,false)
-	print(path)
 	$Tween.connect("tween_completed",self,"_on_Tween_tween_completed")
 	connect("body_entered",self,"go_back")
 func _physics_process(delta):
+	print("procesing")
+	actual = get_node(posicion).get_position()
 	if !moving:
+		print(get_node(posicion))
+		print("moving")
 		if $RayCast2D.is_colliding():
 				if $RayCast2D.get_collider()==null:
 					collider = null
 				else:
-					collider = $RayCast2D.get_collider()
-				
+					damage(get_node(posicion).strenght,$RayCast2D.get_collider())
+					turnos=0
+		sonido1=get_node(target1).noiseLVL
+		sonido2=get_node(target2).noiseLVL
+		sonido3=get_node(target3).noiseLVL
+		
+		if sonido1==0 and sonido2==0 and sonido3==0:
+			follow = get_node(target4)
+		elif sonido1 > sonido2 and sonido1 > sonido3:
+			follow = get_node(target1)
+		elif sonido1 < sonido2 and sonido2 > sonido3:
+			follow = get_node(target2)
+		else:
+			follow = get_node(target3)
+		
 		if turnos <= 0:
-				turnos = 3
+				turnos = 5
 				emit_signal("completed")
-				
-				
+				set_physics_process(false)
 		else:
 			
-			#cambiar el motion vector
-			
-			turnos-=1
+			if actual[0]<(follow.get_position())[0]-30:
+				motion_vector = Vector2( 1, 0)
+				rotation_degrees = 90
+				tile_size = 39
+				turnos-=1
+			elif actual[0]>(follow.get_position())[0]+30:
+				motion_vector = Vector2( -1, 0)
+				rotation_degrees = 270
+				tile_size = 39
+				turnos-=1
+			elif actual[1]<(follow.get_position())[0]-30:
+				motion_vector = Vector2( 0, 1)
+				rotation_degrees = 180
+				tile_size = 37
+				turnos-=1
+			elif actual[1]>(follow.get_position())[0]+30:
+				motion_vector = Vector2( 0, -1)
+				rotation_degrees = 0
+				tile_size = 37
+				turnos-=1
 			if motion_vector != Vector2():
 				last_movement=motion_vector
-				var new_position = position + motion_vector * tile_size
+				new_position = position + motion_vector * tile_size
 				$Tween.interpolate_property ( self, 'position', position, new_position, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 				$Tween.start()
 				moving = true
@@ -59,29 +93,7 @@ func _physics_process(delta):
 			
 		
 func go_back(object):
-	if last_movement == Vector2(0,1):
-		motion_vector = Vector2( 0, -1)
-		tile_size = 13
-		turnos+=1
-	elif last_movement == Vector2(0,-1):
-		motion_vector = Vector2( 0, 1)
-		tile_size = 13
-		turnos+=1
-	elif last_movement == Vector2(-1,0):
-		motion_vector = Vector2( 1, 0)
-		tile_size = 14
-		turnos+=1
-	else:
-		motion_vector = Vector2( -1, 0)
-		tile_size = 14
-		turnos+=1
-	if turnos>3:
-		turnos = 3
-	var new_position = position + motion_vector * tile_size
-	$Tween.interpolate_property ( self, 'position', position, new_position, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-	$Tween.start()
-	moving = true
-	motion_vector=Vector2()
+	pass
 		
 #This function is connected to the tween node's tween_completed signal.
 func _on_Tween_tween_completed(object, key):

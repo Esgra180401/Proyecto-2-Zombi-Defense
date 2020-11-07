@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=2]
+[gd_scene load_steps=90 format=2]
 
 [ext_resource path="res://GameTheme.ogg" type="AudioStream" id=1]
 [ext_resource path="res://assets/Map_MarketSquare.png" type="Texture" id=2]
@@ -82,16 +82,6 @@ font_data = ExtResource( 19 )
 
 [sub_resource type="DynamicFont" id=19]
 font_data = ExtResource( 19 )
-
-[sub_resource type="NavigationPolygon" id=74]
-vertices = PoolVector2Array( 117, 0, 936, 0, 936, 148, 117, 148, 1053, 148, 1053, 259, 936, 259, 117, 259, 858, 407, 195, 407, 936, 407, 858, 518, 936, 518, 936, 666, 741, 666, 741, 629, 468, 629, 468, 703, 351, 703, 312, 666, 351, 740, 312, 740, 273, 666, 117, 666, 117, 518, 195, 518, 117, 407, 0, 259, 0, 148 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 2, 4, 5, 6 ), PoolIntArray( 7, 3, 2, 6, 8, 9 ), PoolIntArray( 6, 10, 8 ), PoolIntArray( 11, 12, 13, 14, 15 ), PoolIntArray( 16, 17, 18, 19 ), PoolIntArray( 18, 20, 21, 19 ), PoolIntArray( 22, 23, 24, 25, 16 ), PoolIntArray( 9, 26, 7 ), PoolIntArray( 7, 27, 28, 3 ), PoolIntArray( 9, 8, 11, 15, 16, 25 ), PoolIntArray( 19, 22, 16 ) ]
-outlines = [ PoolVector2Array( 117, 0, 117, 148, 0, 148, 0, 259, 117, 259, 117, 407, 195, 407, 195, 518, 117, 518, 117, 666, 273, 666, 312, 666, 312, 740, 351, 740, 351, 703, 468, 703, 468, 629, 741, 629, 741, 666, 936, 666, 936, 518, 858, 518, 858, 407, 936, 407, 936, 259, 1053, 259, 1053, 148, 936, 148, 936, 0 ) ]
-
-[sub_resource type="NavigationPolygon" id=73]
-vertices = PoolVector2Array( 565.588, 202.712, 487.588, 202.712, 97.5876, 165.712, 214.588, 165.712, 97.5876, 313.712, 19.5876, 313.712, 19.5876, 165.712, -253.412, -204.288, -58.4124, -204.288, -136.412, -167.288, -214.412, -167.288, 370.588, -204.288, 565.588, -204.288, 526.588, -167.288, 448.588, -167.288, 526.588, 424.712, 565.588, 461.712, 370.588, 461.712, 448.588, 424.712, -253.412, -56.2881, -214.412, -93.2881, 565.588, -56.2881, 526.588, -93.2881, 565.588, 54.7119, 526.588, 165.712, 526.588, 91.7119, -136.412, 350.712, -97.4124, 313.712, -97.4124, 387.712, -136.412, 424.712, -97.4124, 424.712, 565.588, 313.712, 526.588, 350.712, 487.588, 313.712, 448.588, 350.712, -58.4124, -93.2881, -136.412, -93.2881, 370.588, -93.2881, 448.588, -93.2881, 175.588, 350.712, 253.588, 313.712, 253.588, 387.712, 97.5876, 424.712, 175.588, 313.712, 370.588, 424.712, 136.588, -93.2881, 136.588, -204.288, 175.588, -204.288, 175.588, -93.2881, 682.588, -56.2881, 682.588, 54.7119, 448.588, 91.7119, 448.588, 165.712, 292.588, 165.712, 292.588, 91.7119, 19.5876, 387.712, -19.4124, 387.712, -19.4124, 350.712, 19.5876, 350.712, 331.588, 350.712, 331.588, 313.712, 292.588, 387.712, 292.588, 350.712, 136.588, 350.712, 97.5876, 350.712, 19.5876, 424.712, 97.5876, 498.712, -19.4124, 498.712, -58.4124, 461.712, -19.4124, 535.712, -58.4124, 535.712, -253.412, 54.7119, -370.412, 54.7119, -370.412, -56.2881, 19.5876, 91.7119, -136.412, 91.7119, -214.412, 91.7119, -253.412, 202.712, -214.412, 165.712, -175.412, 202.712, -136.412, 165.712, -175.412, 313.712, -214.412, 350.712, -97.4124, 461.712, -214.412, 424.712, -253.412, 461.712, 214.588, 91.7119, 97.5876, 91.7119, -253.412, 313.712 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 2, 1, 4, 5, 6 ), PoolIntArray( 7, 8, 9, 10 ), PoolIntArray( 11, 12, 13, 14 ), PoolIntArray( 15, 16, 17, 18 ), PoolIntArray( 19, 7, 10, 20 ), PoolIntArray( 13, 12, 21, 22 ), PoolIntArray( 23, 0, 24, 25 ), PoolIntArray( 26, 27, 28, 29 ), PoolIntArray( 29, 28, 30 ), PoolIntArray( 31, 16, 15, 32 ), PoolIntArray( 33, 31, 32, 34 ), PoolIntArray( 9, 8, 35, 36 ), PoolIntArray( 37, 11, 14, 38 ), PoolIntArray( 39, 40, 41, 42 ), PoolIntArray( 40, 39, 43 ), PoolIntArray( 18, 17, 44 ), PoolIntArray( 45, 46, 47, 48 ), PoolIntArray( 21, 49, 50, 23 ), PoolIntArray( 51, 52, 53, 54 ), PoolIntArray( 6, 5, 27 ), PoolIntArray( 55, 56, 57, 58 ), PoolIntArray( 59, 60, 34, 18, 44 ), PoolIntArray( 61, 62, 59, 44 ), PoolIntArray( 61, 44, 42, 41 ), PoolIntArray( 63, 39, 42 ), PoolIntArray( 55, 64, 63, 42, 65 ), PoolIntArray( 42, 66, 67, 68, 65 ), PoolIntArray( 67, 69, 70, 68 ), PoolIntArray( 71, 72, 73, 19 ), PoolIntArray( 22, 21, 23, 74, 75, 38 ), PoolIntArray( 37, 38, 75 ), PoolIntArray( 48, 37, 75 ), PoolIntArray( 45, 48, 75 ), PoolIntArray( 35, 45, 75 ), PoolIntArray( 36, 35, 75 ), PoolIntArray( 19, 20, 36, 75, 76, 71 ), PoolIntArray( 77, 71, 76, 78 ), PoolIntArray( 79, 77, 78, 80 ), PoolIntArray( 33, 34, 60, 1 ), PoolIntArray( 81, 79, 80, 27 ), PoolIntArray( 23, 25, 51 ), PoolIntArray( 52, 24, 0 ), PoolIntArray( 27, 26, 82, 81 ), PoolIntArray( 75, 74, 6, 27, 80 ), PoolIntArray( 1, 60, 40 ), PoolIntArray( 1, 40, 43 ), PoolIntArray( 1, 43, 4 ), PoolIntArray( 58, 5, 4, 64 ), PoolIntArray( 55, 58, 64 ), PoolIntArray( 30, 65, 68, 83 ), PoolIntArray( 29, 30, 83 ), PoolIntArray( 84, 29, 83, 85 ), PoolIntArray( 23, 51, 54 ), PoolIntArray( 53, 52, 0 ), PoolIntArray( 23, 54, 86 ), PoolIntArray( 3, 53, 0 ), PoolIntArray( 86, 3, 2, 87 ), PoolIntArray( 23, 86, 87 ), PoolIntArray( 23, 87, 74 ), PoolIntArray( 88, 81, 82 ), PoolIntArray( 85, 88, 82, 84 ), PoolIntArray( 83, 84, 83 ) ]
-outlines = [ PoolVector2Array( -370.412, -56.2881, -370.412, 54.7119, -253.412, 54.7119, -253.412, 202.712, -175.412, 202.712, -175.412, 313.712, -253.412, 313.712, -253.412, 461.712, -97.4124, 461.712, -97.4124, 461.712, -58.4124, 461.712, -58.4124, 535.712, -19.4124, 535.712, -19.4124, 498.712, 97.5876, 498.712, 97.5876, 424.712, 370.588, 424.712, 370.588, 461.712, 565.588, 461.712, 565.588, 313.712, 487.588, 313.712, 487.588, 202.712, 565.588, 202.712, 565.588, 54.7119, 682.588, 54.7119, 682.588, -56.2881, 565.588, -56.2881, 565.588, -204.288, 370.588, -204.288, 370.588, -93.2881, 175.588, -93.2881, 175.588, -204.288, 136.588, -204.288, 136.588, -93.2881, -58.4124, -93.2881, -58.4124, -204.288, -253.412, -204.288, -253.412, -56.2881 ), PoolVector2Array( 19.5876, 91.7119, 97.5876, 91.7119, 97.5876, 165.712, 19.5876, 165.712 ), PoolVector2Array( 214.588, 91.7119, 214.588, 165.712, 292.588, 165.712, 292.588, 91.7119 ), PoolVector2Array( 448.588, 91.7119, 448.588, 165.712, 526.588, 165.712, 526.588, 91.7119 ), PoolVector2Array( 526.588, -167.288, 448.588, -167.288, 448.588, -93.2881, 526.588, -93.2881 ), PoolVector2Array( -136.412, -167.288, -214.412, -167.288, -214.412, -93.2881, -136.412, -93.2881 ), PoolVector2Array( -136.412, 91.7119, -214.412, 91.7119, -214.412, 165.712, -136.412, 165.712 ), PoolVector2Array( -136.412, 350.712, -214.412, 350.712, -214.412, 424.712, -136.412, 424.712 ), PoolVector2Array( 19.5876, 313.712, -97.4124, 313.712, -97.4124, 387.712, -97.4124, 424.712, 19.5876, 424.712, 19.5876, 387.712, -19.4124, 387.712, -19.4124, 350.712, 19.5876, 350.712 ), PoolVector2Array( 97.5876, 313.712, 97.5876, 350.712, 136.588, 350.712, 175.588, 350.712, 175.588, 313.712 ), PoolVector2Array( 253.588, 313.712, 253.588, 387.712, 292.588, 387.712, 292.588, 350.712, 331.588, 350.712, 331.588, 313.712 ), PoolVector2Array( 448.588, 350.712, 448.588, 424.712, 526.588, 424.712, 526.588, 350.712 ) ]
 
 [sub_resource type="ConvexPolygonShape2D" id=22]
 points = PoolVector2Array( 38.7022, 37.0408, 0.0959473, 37.2734, 0.0959473, -0.170105, 38.9348, 0.0625 )
@@ -836,7 +826,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label12" type="Label" parent="GUI"]
+[node name="ResumenDTurno" type="Label" parent="GUI"]
 margin_left = 1078.0
 margin_top = 462.0
 margin_right = 1264.0
@@ -847,17 +837,6 @@ __meta__ = {
 }
 
 [node name="Map" type="Node" parent="."]
-
-[node name="Navigation2D2" type="Navigation2D" parent="Map"]
-
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Map/Navigation2D2"]
-navpoly = SubResource( 74 )
-
-[node name="Navigation2D" type="Navigation2D" parent="Map"]
-position = Vector2( 370.412, 204.288 )
-
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Map/Navigation2D"]
-navpoly = SubResource( 73 )
 
 [node name="TileMap" type="TileMap" parent="Map"]
 tile_set = SubResource( 23 )
@@ -882,7 +861,7 @@ format = 1
 tile_data = PoolIntArray( 0, 536870912, 0, 4, 536870918, 0, 7, 2, 0, 10, 3, 0, 14, 536870915, 0, 17, 536870914, 0, 19, 6, 0, 23, 0, 0, 65555, 8, 0, 131091, 8, 0, 196615, 8, 0, 196616, 8, 0, 196617, 8, 0, 196618, 8, 0, 196619, 8, 0, 196620, 8, 0, 196621, 8, 0, 196622, 8, 0, 196623, 8, 0, 196624, 8, 0, 196625, 8, 0, 196626, 8, 0, 196627, 8, 0, 458752, 536870912, 0, 458756, 536870918, 0, 458759, 8, 0, 458771, 6, 0, 458775, 0, 0, 524295, 8, 0, 524298, 7, 0, 524303, 7, 0, 524307, 8, 0, 589831, 8, 0, 589843, 8, 0, 655367, 8, 0, 655379, 8, 0, 720903, 8, 0, 917504, 536870912, 0, 917508, 536870918, 0, 917523, 6, 0, 917527, 0, 0 )
 
 [node name="Map_MarketSquare" type="Sprite" parent="Map"]
-position = Vector2( 528, 664 )
+position = Vector2( 525.796, 663.755 )
 scale = Vector2( 1.01608, 1.02381 )
 texture = ExtResource( 2 )
 region_enabled = true
@@ -900,8 +879,8 @@ script = ExtResource( 5 )
 [node name="Tanque" type="Area2D" parent="Turnos"]
 position = Vector2( 604.625, 499.935 )
 rotation = -6.28319
-collision_layer = 7
-collision_mask = 7
+collision_layer = 135
+collision_mask = 135
 script = ExtResource( 3 )
 health = 250
 strenght = 250
@@ -941,9 +920,9 @@ collision_mask = 16
 collide_with_areas = true
 
 [node name="Area2D3" type="Area2D" parent="Turnos"]
-position = Vector2( 567.948, 573.578 )
-collision_layer = 2147483655
-collision_mask = 7
+position = Vector2( 565.673, 575.64 )
+collision_layer = 2147483783
+collision_mask = 135
 script = ExtResource( 3 )
 health = 200
 strenght = 100
@@ -981,10 +960,10 @@ collision_mask = 16
 collide_with_areas = true
 
 [node name="Area2D" type="Area2D" parent="Turnos"]
-position = Vector2( 409.686, 425.26 )
+position = Vector2( 448.799, 463.322 )
 priority = 1.0
-collision_layer = 6
-collision_mask = 6
+collision_layer = 134
+collision_mask = 134
 script = ExtResource( 3 )
 health = 100
 strenght = 175
@@ -1021,19 +1000,20 @@ collision_mask = 16
 collide_with_areas = true
 
 [node name="Area2D2" type="Area2D" parent="Turnos"]
-position = Vector2( 370.628, 203.245 )
+position = Vector2( 371.007, 203.427 )
 collision_layer = 23
 collision_mask = 23
 script = ExtResource( 7 )
 target1 = NodePath("../Tanque")
+target2 = NodePath("../Area2D3")
+target3 = NodePath("../Area2D")
+target4 = NodePath("../../Map/Map_MarketSquare")
 posicion = NodePath(".")
-nav = NodePath("../../Map/Navigation2D")
 
 [node name="zombi" type="Sprite" parent="Turnos/Area2D2"]
-position = Vector2( -0.143311, 2.20555 )
+position = Vector2( -0.143311, 0.0866241 )
 scale = Vector2( 0.580853, 0.604334 )
 texture = ExtResource( 9 )
-flip_v = true
 region_enabled = true
 region_rect = Rect2( 249, 246, 69, 70 )
 
@@ -1044,8 +1024,71 @@ shape = SubResource( 32 )
 [node name="Tween" type="Tween" parent="Turnos/Area2D2"]
 
 [node name="RayCast2D" type="RayCast2D" parent="Turnos/Area2D2"]
-position = Vector2( 0, 0.660004 )
+position = Vector2( 3.05176e-05, 0.130249 )
 enabled = true
+cast_to = Vector2( 0, -50 )
+collision_mask = 128
+collide_with_areas = true
+
+[node name="Area2D4" type="Area2D" parent="Turnos"]
+position = Vector2( 487.089, 203.905 )
+collision_layer = 23
+collision_mask = 23
+script = ExtResource( 7 )
+target1 = NodePath("../Tanque")
+target2 = NodePath("../Area2D3")
+target3 = NodePath("../Area2D")
+target4 = NodePath("../../Map/Map_MarketSquare")
+posicion = NodePath(".")
+
+[node name="tanque zombi" type="Sprite" parent="Turnos/Area2D4"]
+position = Vector2( -0.198792, -10.4757 )
+scale = Vector2( 0.530112, 0.608117 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 420, 357, 150, 102 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Turnos/Area2D4"]
+position = Vector2( -0.135803, -0.0671234 )
+shape = SubResource( 32 )
+
+[node name="Tween" type="Tween" parent="Turnos/Area2D4"]
+
+[node name="RayCast2D" type="RayCast2D" parent="Turnos/Area2D4"]
+enabled = true
+cast_to = Vector2( 0, -50 )
+collision_mask = 128
+collide_with_areas = true
+
+[node name="Area2D5" type="Area2D" parent="Turnos"]
+position = Vector2( 604.974, 203.171 )
+collision_layer = 22
+collision_mask = 22
+script = ExtResource( 7 )
+target1 = NodePath("../Tanque")
+target2 = NodePath("../Area2D3")
+target3 = NodePath("../Area2D")
+target4 = NodePath("../../Map/Map_MarketSquare")
+posicion = NodePath(".")
+
+[node name="zombi trepa" type="Sprite" parent="Turnos/Area2D5"]
+position = Vector2( -1.37006, 3.14912 )
+scale = Vector2( 0.913905, 0.871377 )
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 420, 255, 60, 68 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Turnos/Area2D5"]
+position = Vector2( 0.123535, 0.0366483 )
+shape = SubResource( 32 )
+
+[node name="Tween" type="Tween" parent="Turnos/Area2D5"]
+
+[node name="RayCast2D" type="RayCast2D" parent="Turnos/Area2D5"]
+enabled = true
+cast_to = Vector2( 0, -50 )
+collision_mask = 128
+collide_with_areas = true
 
 [node name="Extra Assets" type="Node" parent="."]
 
@@ -1138,40 +1181,6 @@ texture = ExtResource( 4 )
 position = Vector2( 157.373, 462.877 )
 scale = Vector2( 0.456573, 0.494131 )
 texture = ExtResource( 4 )
-
-[node name="Area2D4" type="Area2D" parent="Extra Assets"]
-position = Vector2( 487.089, 203.905 )
-collision_layer = 23
-collision_mask = 23
-
-[node name="tanque zombi" type="Sprite" parent="Extra Assets/Area2D4"]
-position = Vector2( -0.198792, 5.94597 )
-scale = Vector2( 0.530112, 0.608117 )
-texture = ExtResource( 9 )
-flip_v = true
-region_enabled = true
-region_rect = Rect2( 420, 357, 150, 102 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Extra Assets/Area2D4"]
-position = Vector2( -0.135803, -0.0671234 )
-shape = SubResource( 32 )
-
-[node name="Area2D5" type="Area2D" parent="Extra Assets"]
-position = Vector2( 604.974, 203.171 )
-collision_layer = 22
-collision_mask = 22
-
-[node name="zombi trepa" type="Sprite" parent="Extra Assets/Area2D5"]
-position = Vector2( -1.37006, -3.73738 )
-scale = Vector2( 0.913905, 0.871377 )
-texture = ExtResource( 9 )
-flip_v = true
-region_enabled = true
-region_rect = Rect2( 420, 255, 60, 68 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Extra Assets/Area2D5"]
-position = Vector2( 0.123535, 0.0366483 )
-shape = SubResource( 32 )
 
 [node name="Animaciones" type="Node" parent="."]
 

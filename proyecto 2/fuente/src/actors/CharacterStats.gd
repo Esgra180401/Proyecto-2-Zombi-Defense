@@ -29,6 +29,7 @@ func drops(item):
 	else:
 		strenght += 10
 func damage(pwr,target):
+	print("hit")
 	target.health -= pwr
 	if target.health < 0 :
 		target.health = 0
