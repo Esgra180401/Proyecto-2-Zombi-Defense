@@ -673,10 +673,6 @@ kits3 = NodePath("../GUI/Kits Tank")
 
 [node name="Trepador" parent="Turnos" instance=ExtResource( 8 )]
 
-[node name="EnemyTimer" type="Timer" parent="Turnos"]
-wait_time = 5.0
-one_shot = true
-
 [node name="Extra Assets" type="Node" parent="."]
 
 [node name="top-tree-png-4127" type="Sprite" parent="Extra Assets"]
@@ -778,4 +774,3 @@ amount = 100
 one_shot = true
 explosiveness = 0.5
 process_material = SubResource( 80 )
-[connection signal="timeout" from="Turnos/EnemyTimer" to="Turnos" method="_on_EnemyTimer_timeout"]

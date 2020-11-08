@@ -35,7 +35,7 @@ var string
 signal completed
 
 func _ready():
-	
+	set_physics_process(false)
 	$Tween.connect("tween_completed",self,"_on_Tween_tween_completed")
 	connect("body_entered",self,"go_back")
 func _physics_process(delta):
