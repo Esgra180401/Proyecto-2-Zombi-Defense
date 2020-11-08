@@ -14,6 +14,7 @@ export (NodePath) var Resumen
 onready var sumary = get_node(Resumen)
 
 export var turnos: int
+export var MaxTturnos: int
 
 class_name EnemyMovement
 
@@ -55,7 +56,7 @@ func _physics_process(delta):
 			follow = get_node(target3)
 		
 		if turnos <= 0:
-				turnos = 5
+				turnos = 0+MaxTturnos
 				emit_signal("completed")
 				set_physics_process(false)
 				
@@ -63,6 +64,7 @@ func _physics_process(delta):
 					if $RayCast2D.get_collider()==null:
 						collider = null
 					else:
+						$RayCast2D.get_collider().get_node("Blood Splat").set_emitting(true)
 						string = get_node(posicion).get_name() + " ataco a "+$RayCast2D.get_collider().get_name() +"\n"+$RayCast2D.get_collider().get_name()+" perdio " + str(get_node(posicion).strenght)+"HP"
 						sumary.set_text(string)
 						damage(get_node(posicion).strenght,$RayCast2D.get_collider())

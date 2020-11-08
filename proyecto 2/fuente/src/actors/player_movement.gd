@@ -24,6 +24,8 @@ func _physics_process(delta):
 					collider = null
 				else:
 					collider = $RayCast2D.get_collider()
+		else:
+			collider = null
 				
 		if turnos <= 0:
 				turnos = 10

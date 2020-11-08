@@ -23,6 +23,18 @@ func _button_pressed1():
 	else:
 		string=turns.personaje_activo.get_name() + " ataco a " + turns.personaje_activo.collider.get_name()+"\n"+turns.personaje_activo.collider.get_name()+" perdio "+str(turns.personaje_activo.strenght)+"HP"
 		sumary.set_text(string)
+		if turns.personaje_activo.get_name() == "Tanque":
+			turns.personaje_activo.get_node("Tank Shooting").set_emitting(true)
+			turns.personaje_activo.get_node("Smoke").set_emitting(true)
+			turns.personaje_activo.get_node("Rocket").set_emitting(true)
+			turns.personaje_activo.collider.get_node("Explosion").set_emitting(true)
+			turns.personaje_activo.collider.get_node("Smoke").set_emitting(true)
+		elif turns.personaje_activo.get_name() == "Ranger":
+			turns.personaje_activo.collider.get_node("Blood Splat").set_emitting(true)
+			turns.personaje_activo.get_node("Bow Shot").set_emitting(true)
+		else:
+			turns.personaje_activo.collider.get_node("Blood Splat").set_emitting(true)
+			turns.personaje_activo.get_node("Soldier Shooting").set_emitting(true)
 		turns.personaje_activo.damage(turns.personaje_activo.strenght,turns.personaje_activo.collider)
 		turns.personaje_activo.turnos = 0
 	

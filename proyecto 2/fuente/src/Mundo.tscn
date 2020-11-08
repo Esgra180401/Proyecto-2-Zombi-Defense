@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=2]
+[gd_scene load_steps=102 format=2]
 
 [ext_resource path="res://GameTheme.ogg" type="AudioStream" id=1]
 [ext_resource path="res://assets/Map_MarketSquare.png" type="Texture" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://assets/Zombie Hand.png" type="Texture" id=17]
 [ext_resource path="res://src/Botones.gd" type="Script" id=18]
 [ext_resource path="res://assets/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=19]
+[ext_resource path="res://assets/Arrow.png" type="Texture" id=20]
+[ext_resource path="res://assets/Rocket.png" type="Texture" id=21]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
@@ -350,6 +352,146 @@ color_ramp = SubResource( 27 )
 [sub_resource type="RectangleShape2D" id=29]
 extents = Vector2( 16.0135, 16.9643 )
 
+[sub_resource type="Curve" id=65]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, 360 ), 0.0, 0.0, 0, 0, Vector2( 1, 360 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=66]
+curve = SubResource( 65 )
+
+[sub_resource type="Gradient" id=67]
+offsets = PoolRealArray( 0.773973, 1 )
+colors = PoolColorArray( 0.988909, 1, 0, 1, 0.918596, 1, 0, 0 )
+
+[sub_resource type="GradientTexture" id=68]
+gradient = SubResource( 67 )
+
+[sub_resource type="ParticlesMaterial" id=69]
+flag_align_y = true
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 5.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1500.0
+angular_velocity_curve = SubResource( 66 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 4.0
+color_ramp = SubResource( 68 )
+
+[sub_resource type="Gradient" id=76]
+colors = PoolColorArray( 0.733333, 0.0352941, 0.0352941, 1, 0.733333, 0.0352941, 0.0352941, 0.443137 )
+
+[sub_resource type="GradientTexture" id=77]
+gradient = SubResource( 76 )
+
+[sub_resource type="Curve" id=78]
+max_value = 5.0
+_data = [ Vector2( 0, 5 ), 0.0, 0.0, 0, 0, Vector2( 0.983696, 1.78826 ), 0.743434, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=79]
+curve = SubResource( 78 )
+
+[sub_resource type="ParticlesMaterial" id=80]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 180.0
+gravity = Vector3( 0, 70, 0 )
+initial_velocity = 78.13
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 79 )
+color_ramp = SubResource( 77 )
+
+[sub_resource type="Gradient" id=71]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0.215686 )
+
+[sub_resource type="GradientTexture" id=72]
+gradient = SubResource( 71 )
+
+[sub_resource type="ParticlesMaterial" id=70]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 453.61
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 72 )
+
+[sub_resource type="Gradient" id=55]
+offsets = PoolRealArray( 0.119863, 0.59589 )
+colors = PoolColorArray( 1, 0.960938, 0, 1, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=56]
+gradient = SubResource( 55 )
+
+[sub_resource type="Curve" id=57]
+max_value = 4.0
+_data = [ Vector2( 0, 1.66673 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=58]
+curve = SubResource( 57 )
+
+[sub_resource type="ParticlesMaterial" id=59]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 31.91
+gravity = Vector3( 0, 9.8, 0 )
+initial_velocity = 110.91
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 3.0
+scale_curve = SubResource( 58 )
+color_ramp = SubResource( 56 )
+
+[sub_resource type="Gradient" id=60]
+offsets = PoolRealArray( 0.0753425, 0.308219, 0.599315, 0.784247 )
+colors = PoolColorArray( 0.294118, 0.290196, 0.290196, 0.0588235, 0.219608, 0.215686, 0.215686, 1, 0.222656, 0.222656, 0.222656, 1, 0.270588, 0.270588, 0.270588, 0 )
+
+[sub_resource type="GradientTexture" id=61]
+gradient = SubResource( 60 )
+
+[sub_resource type="Curve" id=62]
+min_value = 0.5
+max_value = 4.0
+_data = [ Vector2( 0, 0.5 ), 0.0, 0.0, 0, 0, Vector2( 1, 2.5642 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=63]
+curve = SubResource( 62 )
+
+[sub_resource type="ParticlesMaterial" id=64]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 29.72
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 70.55
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 4.0
+scale_random = 1.0
+scale_curve = SubResource( 63 )
+color_ramp = SubResource( 61 )
+
+[sub_resource type="Gradient" id=73]
+offsets = PoolRealArray( 0.547826, 0.681159 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=74]
+gradient = SubResource( 73 )
+
+[sub_resource type="ParticlesMaterial" id=75]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 510.42
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.15
+color_ramp = SubResource( 74 )
+
 [sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 14.985, 14.7417 )
 
@@ -485,99 +627,6 @@ orbit_velocity = 2.0
 orbit_velocity_random = 0.0
 scale = 2.0
 color_ramp = SubResource( 53 )
-
-[sub_resource type="Gradient" id=55]
-offsets = PoolRealArray( 0.119863, 0.59589 )
-colors = PoolColorArray( 1, 0.960938, 0, 1, 1, 0, 0, 1 )
-
-[sub_resource type="GradientTexture" id=56]
-gradient = SubResource( 55 )
-
-[sub_resource type="Curve" id=57]
-max_value = 4.0
-_data = [ Vector2( 0, 1.66673 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=58]
-curve = SubResource( 57 )
-
-[sub_resource type="ParticlesMaterial" id=59]
-flag_disable_z = true
-direction = Vector3( 0, -1, 0 )
-spread = 31.91
-gravity = Vector3( 0, 9.8, 0 )
-initial_velocity = 110.91
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 3.0
-scale_curve = SubResource( 58 )
-color_ramp = SubResource( 56 )
-
-[sub_resource type="Gradient" id=60]
-offsets = PoolRealArray( 0.0753425, 0.308219, 0.599315, 0.784247 )
-colors = PoolColorArray( 0.294118, 0.290196, 0.290196, 0.0588235, 0.219608, 0.215686, 0.215686, 1, 0.222656, 0.222656, 0.222656, 1, 0.270588, 0.270588, 0.270588, 0 )
-
-[sub_resource type="GradientTexture" id=61]
-gradient = SubResource( 60 )
-
-[sub_resource type="Curve" id=62]
-min_value = 0.5
-max_value = 4.0
-_data = [ Vector2( 0, 0.5 ), 0.0, 0.0, 0, 0, Vector2( 1, 2.5642 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=63]
-curve = SubResource( 62 )
-
-[sub_resource type="ParticlesMaterial" id=64]
-flag_disable_z = true
-direction = Vector3( 0, -1, 0 )
-spread = 29.72
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 70.55
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 4.0
-scale_random = 1.0
-scale_curve = SubResource( 63 )
-color_ramp = SubResource( 61 )
-
-[sub_resource type="Curve" id=65]
-min_value = -360.0
-max_value = 360.0
-_data = [ Vector2( 0, 360 ), 0.0, 0.0, 0, 0, Vector2( 1, 360 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=66]
-curve = SubResource( 65 )
-
-[sub_resource type="Gradient" id=67]
-offsets = PoolRealArray( 0.773973, 1 )
-colors = PoolColorArray( 0.988909, 1, 0, 1, 0.918596, 1, 0, 0 )
-
-[sub_resource type="GradientTexture" id=68]
-gradient = SubResource( 67 )
-
-[sub_resource type="ParticlesMaterial" id=69]
-flag_align_y = true
-flag_disable_z = true
-direction = Vector3( 0, -1, 0 )
-spread = 5.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 1500.0
-angular_velocity_curve = SubResource( 66 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 4.0
-color_ramp = SubResource( 68 )
-
-[sub_resource type="ParticlesMaterial" id=70]
-flag_disable_z = true
-direction = Vector3( 0, 1, 0 )
-spread = 105.0
-gravity = Vector3( 0, 98, 0 )
-initial_velocity = 151.53
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 1.5
-color = Color( 0.00392157, 0.980392, 0.956863, 1 )
 
 [node name="Mundo" type="Node"]
 __meta__ = {
@@ -876,7 +925,6 @@ region_rect = Rect2( 305, 469, 501, 287 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Music"]
 stream = ExtResource( 1 )
-autoplay = true
 
 [node name="Turnos" type="Node" parent="."]
 script = ExtResource( 5 )
@@ -891,49 +939,6 @@ LVL3 = NodePath("../GUI/LVL Tank")
 kits1 = NodePath("../GUI/Kits Soldier")
 kits2 = NodePath("../GUI/Kits Ranger")
 kits3 = NodePath("../GUI/Kits Tank")
-
-[node name="Tanque" type="Area2D" parent="Turnos"]
-position = Vector2( 527.814, 129.123 )
-rotation = -6.28319
-collision_layer = 135
-collision_mask = 135
-script = ExtResource( 3 )
-health = 250
-strenght = 250
-noiseLVL = 10
-inventario = 2
-maxH = 500
-life = true
-
-[node name="tank" type="Sprite" parent="Turnos/Tanque"]
-position = Vector2( 0.406586, -4.7933 )
-scale = Vector2( 0.962379, 0.995109 )
-texture = ExtResource( 8 )
-region_enabled = true
-region_rect = Rect2( 156, 80, 46, 53 )
-
-[node name="Cure" type="Particles2D" parent="Turnos/Tanque"]
-position = Vector2( 0.512024, -0.398926 )
-rotation = 4.46638e-06
-emitting = false
-amount = 100
-lifetime = 0.8
-one_shot = true
-explosiveness = 0.1
-process_material = SubResource( 28 )
-
-[node name="Tween" type="Tween" parent="Turnos/Tanque"]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Turnos/Tanque"]
-position = Vector2( 0.046936, 0.0154114 )
-scale = Vector2( 0.861627, 0.837508 )
-shape = SubResource( 29 )
-
-[node name="RayCast2D" type="RayCast2D" parent="Turnos/Tanque"]
-enabled = true
-cast_to = Vector2( 0, -200 )
-collision_mask = 16
-collide_with_areas = true
 
 [node name="Soldado" type="Area2D" parent="Turnos"]
 position = Vector2( 565.673, 575.64 )
@@ -972,9 +977,29 @@ shape = SubResource( 29 )
 
 [node name="RayCast2D" type="RayCast2D" parent="Turnos/Soldado"]
 enabled = true
-cast_to = Vector2( 0, -300 )
+cast_to = Vector2( 0, -150 )
 collision_mask = 16
 collide_with_areas = true
+
+[node name="Soldier Shooting" type="Particles2D" parent="Turnos/Soldado"]
+position = Vector2( 7.6748, -24.6482 )
+scale = Vector2( 0.2, 0.2 )
+emitting = false
+amount = 5
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.5
+process_material = SubResource( 69 )
+texture = ExtResource( 6 )
+
+[node name="Blood Splat" type="Particles2D" parent="Turnos/Soldado"]
+position = Vector2( 0.0440063, 0.098999 )
+emitting = false
+amount = 100
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.48
+process_material = SubResource( 80 )
 
 [node name="Ranger" type="Area2D" parent="Turnos"]
 position = Vector2( 448.799, 463.322 )
@@ -1017,6 +1042,106 @@ cast_to = Vector2( 0, -400 )
 collision_mask = 16
 collide_with_areas = true
 
+[node name="Bow Shot" type="Particles2D" parent="Turnos/Ranger"]
+position = Vector2( 2.37823, -26.1219 )
+emitting = false
+amount = 1
+lifetime = 0.8
+one_shot = true
+process_material = SubResource( 70 )
+texture = ExtResource( 20 )
+
+[node name="Blood Splat" type="Particles2D" parent="Turnos/Ranger"]
+position = Vector2( -0.0605774, -0.0567017 )
+emitting = false
+amount = 100
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.48
+process_material = SubResource( 80 )
+
+[node name="Tanque" type="Area2D" parent="Turnos"]
+position = Vector2( 527.602, 130.25 )
+rotation = -4.46638e-06
+collision_layer = 135
+collision_mask = 135
+script = ExtResource( 3 )
+health = 250
+strenght = 250
+noiseLVL = 10
+inventario = 2
+maxH = 500
+life = true
+
+[node name="tank" type="Sprite" parent="Turnos/Tanque"]
+position = Vector2( 0.406586, -4.7933 )
+scale = Vector2( 0.962379, 0.995109 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 156, 80, 46, 53 )
+
+[node name="Cure" type="Particles2D" parent="Turnos/Tanque"]
+position = Vector2( 0.512024, -0.398926 )
+rotation = 4.46638e-06
+emitting = false
+amount = 100
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.1
+process_material = SubResource( 28 )
+
+[node name="Tween" type="Tween" parent="Turnos/Tanque"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Turnos/Tanque"]
+position = Vector2( 0.046936, 0.0154114 )
+scale = Vector2( 0.861627, 0.837508 )
+shape = SubResource( 29 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Turnos/Tanque"]
+enabled = true
+cast_to = Vector2( 0, -300 )
+collision_mask = 16
+collide_with_areas = true
+
+[node name="Tank Shooting" type="Particles2D" parent="Turnos/Tanque"]
+position = Vector2( 8.6236, -28.3648 )
+rotation = 4.46638e-06
+emitting = false
+amount = 30
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.84
+process_material = SubResource( 59 )
+
+[node name="Smoke" type="Particles2D" parent="Turnos/Tanque"]
+position = Vector2( 9.16785, -20.3437 )
+rotation = 4.46638e-06
+emitting = false
+amount = 50
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.71
+process_material = SubResource( 64 )
+
+[node name="Rocket" type="Particles2D" parent="Turnos/Tanque"]
+position = Vector2( 8.67657, -33.2364 )
+emitting = false
+amount = 1
+lifetime = 0.8
+one_shot = true
+process_material = SubResource( 75 )
+texture = ExtResource( 21 )
+
+[node name="Blood Splat" type="Particles2D" parent="Turnos/Tanque"]
+position = Vector2( -0.0483398, -0.128265 )
+rotation = 4.46638e-06
+emitting = false
+amount = 100
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.48
+process_material = SubResource( 80 )
+
 [node name="Zombie" type="Area2D" parent="Turnos"]
 position = Vector2( 487.548, 425.914 )
 collision_layer = 23
@@ -1029,6 +1154,7 @@ target4 = NodePath("../../Map/Map_MarketSquare")
 posicion = NodePath("../Zombie")
 Resumen = NodePath("../../GUI/ResumenDTurno")
 turnos = 7
+MaxTturnos = 7
 
 [node name="zombi" type="Sprite" parent="Turnos/Zombie"]
 position = Vector2( -0.143311, 0.0866241 )
@@ -1050,6 +1176,33 @@ cast_to = Vector2( 0, -50 )
 collision_mask = 128
 collide_with_areas = true
 
+[node name="Explosion" type="Particles2D" parent="Turnos/Zombie"]
+position = Vector2( 0.31485, 0.202637 )
+emitting = false
+amount = 250
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.5
+process_material = SubResource( 37 )
+
+[node name="Smoke" type="Particles2D" parent="Turnos/Zombie"]
+position = Vector2( 0.0142517, -0.098053 )
+emitting = false
+amount = 500
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.8
+process_material = SubResource( 44 )
+
+[node name="Blood Splat" type="Particles2D" parent="Turnos/Zombie"]
+position = Vector2( -0.0398865, -0.125305 )
+emitting = false
+amount = 100
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.48
+process_material = SubResource( 80 )
+
 [node name="Zombie Tanque" type="Area2D" parent="Turnos"]
 position = Vector2( 525.759, 462.414 )
 collision_layer = 23
@@ -1062,6 +1215,7 @@ target4 = NodePath("../../Map/Map_MarketSquare")
 posicion = NodePath("../Zombie Tanque")
 Resumen = NodePath("../../GUI/ResumenDTurno")
 turnos = 4
+MaxTturnos = 4
 
 [node name="tanque zombi" type="Sprite" parent="Turnos/Zombie Tanque"]
 position = Vector2( -0.198792, -10.4757 )
@@ -1082,6 +1236,33 @@ cast_to = Vector2( 0, -50 )
 collision_mask = 128
 collide_with_areas = true
 
+[node name="Explosion" type="Particles2D" parent="Turnos/Zombie Tanque"]
+position = Vector2( -0.0350952, -0.00637817 )
+emitting = false
+amount = 250
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.5
+process_material = SubResource( 37 )
+
+[node name="Smoke" type="Particles2D" parent="Turnos/Zombie Tanque"]
+position = Vector2( -0.0350952, -0.00639343 )
+emitting = false
+amount = 500
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.8
+process_material = SubResource( 44 )
+
+[node name="Blood Splat" type="Particles2D" parent="Turnos/Zombie Tanque"]
+position = Vector2( 0.125793, 0.0827637 )
+emitting = false
+amount = 100
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.48
+process_material = SubResource( 80 )
+
 [node name="Trepador" type="Area2D" parent="Turnos"]
 position = Vector2( 644.174, 463.799 )
 collision_layer = 22
@@ -1094,6 +1275,7 @@ target4 = NodePath("../../Map/Map_MarketSquare")
 posicion = NodePath("../Trepador")
 Resumen = NodePath("../../GUI/ResumenDTurno")
 turnos = 5
+MaxTturnos = 5
 
 [node name="zombi trepa" type="Sprite" parent="Turnos/Trepador"]
 position = Vector2( -1.37006, 3.14912 )
@@ -1113,6 +1295,42 @@ enabled = true
 cast_to = Vector2( 0, -50 )
 collision_mask = 128
 collide_with_areas = true
+
+[node name="Explosion" type="Particles2D" parent="Turnos/Trepador"]
+position = Vector2( -0.0551758, -0.0670319 )
+emitting = false
+amount = 250
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.5
+process_material = SubResource( 37 )
+
+[node name="Smoke" type="Particles2D" parent="Turnos/Trepador"]
+position = Vector2( -0.0550537, -0.0670319 )
+emitting = false
+amount = 500
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.8
+process_material = SubResource( 44 )
+
+[node name="Poison Atk" type="Particles2D" parent="Turnos/Trepador"]
+position = Vector2( -39.187, -260.254 )
+emitting = false
+amount = 500
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.5
+process_material = SubResource( 51 )
+
+[node name="Blood Splat" type="Particles2D" parent="Turnos/Trepador"]
+position = Vector2( 0.511475, 0.0325623 )
+emitting = false
+amount = 100
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.48
+process_material = SubResource( 80 )
 
 [node name="Extra Assets" type="Node" parent="."]
 
@@ -1208,32 +1426,6 @@ texture = ExtResource( 4 )
 
 [node name="Animaciones" type="Node" parent="."]
 
-[node name="Explosion" type="Particles2D" parent="Animaciones"]
-position = Vector2( 454.475, 244.688 )
-emitting = false
-amount = 250
-lifetime = 0.8
-one_shot = true
-explosiveness = 0.5
-process_material = SubResource( 37 )
-
-[node name="Smoke" type="Particles2D" parent="Animaciones/Explosion"]
-emitting = false
-amount = 500
-lifetime = 0.8
-one_shot = true
-explosiveness = 0.8
-process_material = SubResource( 44 )
-
-[node name="Poison Atk" type="Particles2D" parent="Animaciones"]
-position = Vector2( 604.987, 203.545 )
-emitting = false
-amount = 500
-lifetime = 0.5
-one_shot = true
-explosiveness = 0.5
-process_material = SubResource( 51 )
-
 [node name="LVL Up" type="Particles2D" parent="Animaciones"]
 position = Vector2( 605.167, 498.972 )
 emitting = false
@@ -1241,40 +1433,3 @@ amount = 100
 one_shot = true
 explosiveness = 0.5
 process_material = SubResource( 54 )
-
-[node name="Tank Shooting" type="Particles2D" parent="Animaciones"]
-position = Vector2( 613.385, 470.904 )
-emitting = false
-amount = 30
-lifetime = 0.8
-one_shot = true
-explosiveness = 0.84
-process_material = SubResource( 59 )
-
-[node name="Smoke" type="Particles2D" parent="Animaciones/Tank Shooting"]
-position = Vector2( 0.188965, -3.76892 )
-emitting = false
-amount = 50
-lifetime = 0.8
-one_shot = true
-explosiveness = 0.71
-process_material = SubResource( 64 )
-
-[node name="Soldier Shooting" type="Particles2D" parent="Animaciones"]
-position = Vector2( 575.624, 546.832 )
-scale = Vector2( 0.2, 0.2 )
-emitting = false
-amount = 5
-lifetime = 0.6
-one_shot = true
-explosiveness = 0.5
-process_material = SubResource( 69 )
-texture = ExtResource( 6 )
-
-[node name="Bow Shot" type="Particles2D" parent="Animaciones"]
-position = Vector2( 415.029, 404.135 )
-emitting = false
-amount = 10
-one_shot = true
-explosiveness = 0.98
-process_material = SubResource( 70 )
