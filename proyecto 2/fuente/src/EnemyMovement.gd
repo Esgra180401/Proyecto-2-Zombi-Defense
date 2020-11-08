@@ -10,6 +10,11 @@ export (NodePath) var target4
 
 export (NodePath) var posicion
 
+export (NodePath) var Resumen
+onready var sumary = get_node(Resumen)
+
+export var turnos: int
+
 class_name EnemyMovement
 
 
@@ -17,7 +22,6 @@ var moving = false
 var  tile_size = 37
 var last_movement = Vector2(0,0)
 var motion_vector = Vector2()
-var turnos = 5
 var contar=0
 var collider = null
 var follow
@@ -26,6 +30,7 @@ var new_position
 var sonido1
 var sonido2
 var sonido3
+var string
 
 signal completed
 
@@ -36,12 +41,6 @@ func _physics_process(delta):
 
 	actual = get_node(posicion).get_position()
 	if !moving:
-		if $RayCast2D.is_colliding():
-				if $RayCast2D.get_collider()==null:
-					collider = null
-				else:
-					damage(get_node(posicion).strenght,$RayCast2D.get_collider())
-					turnos=0
 		sonido1=get_node(target1).noiseLVL
 		sonido2=get_node(target2).noiseLVL
 		sonido3=get_node(target3).noiseLVL
@@ -59,6 +58,15 @@ func _physics_process(delta):
 				turnos = 5
 				emit_signal("completed")
 				set_physics_process(false)
+				
+		elif $RayCast2D.is_colliding():
+					if $RayCast2D.get_collider()==null:
+						collider = null
+					else:
+						string = get_node(posicion).get_name() + " ataco a "+$RayCast2D.get_collider().get_name() +"\n"+$RayCast2D.get_collider().get_name()+" perdio " + str(get_node(posicion).strenght)+"HP"
+						sumary.set_text(string)
+						damage(get_node(posicion).strenght,$RayCast2D.get_collider())
+						turnos=0
 		else:
 			
 			if actual[0]<(follow.get_position())[0]-30:
@@ -81,13 +89,27 @@ func _physics_process(delta):
 				rotation_degrees = 0
 				tile_size = 37
 				turnos-=1
+			else:
+				motion_vector = Vector2( 0, 1)
+				rotation_degrees = 180
+				tile_size = 37
+				turnos-=1
 			if motion_vector != Vector2():
-				last_movement=motion_vector
-				new_position = position + motion_vector * tile_size
-				$Tween.interpolate_property ( self, 'position', position, new_position, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-				$Tween.start()
-				moving = true
-				motion_vector=Vector2()
+				if $RayCast2D.is_colliding():
+					if $RayCast2D.get_collider()==null:
+						collider = null
+					else:
+						string = get_node(posicion).get_name() + " ataco a "+$RayCast2D.get_collider().get_name() +"\n"+$RayCast2D.get_collider().get_name()+" perdio " + str(get_node(posicion).strenght)+"HP"
+						sumary.set_text(string)
+						damage(get_node(posicion).strenght,$RayCast2D.get_collider())
+						turnos=0
+				else:		
+					last_movement=motion_vector
+					new_position = position + motion_vector * tile_size
+					$Tween.interpolate_property ( self, 'position', position, new_position, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+					$Tween.start()
+					moving = true
+					motion_vector=Vector2()
 			
 		
 func go_back(object):

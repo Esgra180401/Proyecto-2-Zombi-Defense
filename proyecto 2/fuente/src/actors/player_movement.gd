@@ -79,8 +79,8 @@ func go_back(object):
 		motion_vector = Vector2( -1, 0)
 		tile_size = 14
 		turnos+=1
-	if turnos>3:
-		turnos = 3
+	if turnos>10:
+		turnos = 10
 	new_position = position + motion_vector * tile_size
 	$Tween.interpolate_property ( self, 'position', position, new_position, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$Tween.start()

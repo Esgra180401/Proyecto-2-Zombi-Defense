@@ -590,6 +590,7 @@ script = ExtResource( 18 )
 turn = NodePath("../Turnos")
 BtnAtk = NodePath("Ataque")
 BtnCure = NodePath("Curar")
+Resumen = NodePath("ResumenDTurno")
 
 [node name="Label" type="Label" parent="GUI"]
 margin_left = -39.0
@@ -602,8 +603,8 @@ __meta__ = {
 }
 
 [node name="Zombie Hand" type="Sprite" parent="GUI"]
-position = Vector2( 1344.44, 564.565 )
-scale = Vector2( 0.0832015, 0.0797378 )
+position = Vector2( 1364.04, 583.635 )
+scale = Vector2( 0.0636816, 0.0598521 )
 texture = ExtResource( 17 )
 region_enabled = true
 region_rect = Rect2( 521, 195, 1574, 1918 )
@@ -718,7 +719,7 @@ rotation = -0.21293
 scale = Vector2( 0.331854, 0.323759 )
 texture = ExtResource( 14 )
 
-[node name="Label3" type="Label" parent="GUI"]
+[node name="Vida Soldier" type="Label" parent="GUI"]
 margin_left = 1192.0
 margin_top = 54.0
 margin_right = 1255.0
@@ -730,7 +731,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label4" type="Label" parent="GUI"]
+[node name="Vida Ranger" type="Label" parent="GUI"]
 margin_left = 1191.67
 margin_top = 194.703
 margin_right = 1284.67
@@ -742,7 +743,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label5" type="Label" parent="GUI"]
+[node name="Vida Tank" type="Label" parent="GUI"]
 margin_left = 1192.0
 margin_top = 341.245
 margin_right = 1274.0
@@ -754,7 +755,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label6" type="Label" parent="GUI"]
+[node name="LVL Soldier" type="Label" parent="GUI"]
 margin_left = 1182.95
 margin_top = 69.0
 margin_right = 1252.95
@@ -766,7 +767,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label7" type="Label" parent="GUI"]
+[node name="LVL Ranger" type="Label" parent="GUI"]
 margin_left = 1182.65
 margin_top = 210.501
 margin_right = 1258.46
@@ -778,7 +779,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label8" type="Label" parent="GUI"]
+[node name="LVL Tank" type="Label" parent="GUI"]
 margin_left = 1183.1
 margin_top = 356.338
 margin_right = 1263.91
@@ -790,7 +791,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label9" type="Label" parent="GUI"]
+[node name="Kits Soldier" type="Label" parent="GUI"]
 margin_left = 1255.89
 margin_top = 59.5403
 margin_right = 1342.89
@@ -802,7 +803,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label10" type="Label" parent="GUI"]
+[node name="Kits Ranger" type="Label" parent="GUI"]
 margin_left = 1255.0
 margin_top = 203.857
 margin_right = 1343.46
@@ -814,7 +815,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label11" type="Label" parent="GUI"]
+[node name="Kits Tank" type="Label" parent="GUI"]
 margin_left = 1254.0
 margin_top = 346.082
 margin_right = 1340.86
@@ -827,11 +828,15 @@ __meta__ = {
 }
 
 [node name="ResumenDTurno" type="Label" parent="GUI"]
-margin_left = 1078.0
-margin_top = 462.0
-margin_right = 1264.0
-margin_bottom = 597.0
+margin_left = 1082.29
+margin_top = 499.021
+margin_right = 1298.29
+margin_bottom = 568.021
 custom_fonts/font = SubResource( 19 )
+text = "No dejes que los zombies
+toquen la base
+
+Alejalos de la bandera!!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -875,6 +880,17 @@ autoplay = true
 
 [node name="Turnos" type="Node" parent="."]
 script = ExtResource( 5 )
+Boton_Atk = NodePath("../GUI/Ataque")
+Boton_Cur = NodePath("../GUI/Curar")
+Vida1 = NodePath("../GUI/Vida Soldier")
+Vida2 = NodePath("../GUI/Vida Ranger")
+Vida3 = NodePath("../GUI/Vida Tank")
+LVL1 = NodePath("../GUI/LVL Soldier")
+LVL2 = NodePath("../GUI/LVL Ranger")
+LVL3 = NodePath("../GUI/LVL Tank")
+kits1 = NodePath("../GUI/Kits Soldier")
+kits2 = NodePath("../GUI/Kits Ranger")
+kits3 = NodePath("../GUI/Kits Tank")
 
 [node name="Tanque" type="Area2D" parent="Turnos"]
 position = Vector2( 527.814, 129.123 )
@@ -885,7 +901,7 @@ script = ExtResource( 3 )
 health = 250
 strenght = 250
 noiseLVL = 10
-inventario = 5
+inventario = 2
 maxH = 500
 life = true
 
@@ -919,7 +935,7 @@ cast_to = Vector2( 0, -200 )
 collision_mask = 16
 collide_with_areas = true
 
-[node name="Area2D3" type="Area2D" parent="Turnos"]
+[node name="Soldado" type="Area2D" parent="Turnos"]
 position = Vector2( 565.673, 575.64 )
 collision_layer = 2147483783
 collision_mask = 135
@@ -927,17 +943,18 @@ script = ExtResource( 3 )
 health = 200
 strenght = 100
 noiseLVL = 5
+inventario = 2
 maxH = 200
 life = true
 
-[node name="soldier" type="Sprite" parent="Turnos/Area2D3"]
+[node name="soldier" type="Sprite" parent="Turnos/Soldado"]
 position = Vector2( 0.0256348, -4.58008 )
 scale = Vector2( 0.887913, 0.88527 )
 texture = ExtResource( 8 )
 region_enabled = true
 region_rect = Rect2( 285, 80, 50, 53 )
 
-[node name="Cure" type="Particles2D" parent="Turnos/Area2D3"]
+[node name="Cure" type="Particles2D" parent="Turnos/Soldado"]
 position = Vector2( 0.189026, -0.0419922 )
 emitting = false
 amount = 100
@@ -946,20 +963,20 @@ one_shot = true
 explosiveness = 0.1
 process_material = SubResource( 28 )
 
-[node name="Tween" type="Tween" parent="Turnos/Area2D3"]
+[node name="Tween" type="Tween" parent="Turnos/Soldado"]
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Turnos/Area2D3"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Turnos/Soldado"]
 position = Vector2( -0.050354, -0.127075 )
 scale = Vector2( 0.861627, 0.837508 )
 shape = SubResource( 29 )
 
-[node name="RayCast2D" type="RayCast2D" parent="Turnos/Area2D3"]
+[node name="RayCast2D" type="RayCast2D" parent="Turnos/Soldado"]
 enabled = true
 cast_to = Vector2( 0, -300 )
 collision_mask = 16
 collide_with_areas = true
 
-[node name="Area2D" type="Area2D" parent="Turnos"]
+[node name="Ranger" type="Area2D" parent="Turnos"]
 position = Vector2( 448.799, 463.322 )
 priority = 1.0
 collision_layer = 134
@@ -967,17 +984,18 @@ collision_mask = 134
 script = ExtResource( 3 )
 health = 100
 strenght = 175
+inventario = 2
 maxH = 100
 life = true
 
-[node name="ranger" type="Sprite" parent="Turnos/Area2D"]
+[node name="ranger" type="Sprite" parent="Turnos/Ranger"]
 position = Vector2( 1.43214, -6.60541 )
 scale = Vector2( 0.861627, 0.837508 )
 texture = ExtResource( 8 )
 region_enabled = true
 region_rect = Rect2( 10, 78, 60, 64 )
 
-[node name="Cure" type="Particles2D" parent="Turnos/Area2D"]
+[node name="Cure" type="Particles2D" parent="Turnos/Ranger"]
 position = Vector2( 0.451019, -0.723999 )
 emitting = false
 amount = 100
@@ -986,105 +1004,111 @@ one_shot = true
 explosiveness = 0.1
 process_material = SubResource( 28 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Turnos/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Turnos/Ranger"]
 position = Vector2( 0.0744019, -0.0109558 )
 scale = Vector2( 0.861627, 0.837508 )
 shape = SubResource( 29 )
 
-[node name="Tween" type="Tween" parent="Turnos/Area2D"]
+[node name="Tween" type="Tween" parent="Turnos/Ranger"]
 
-[node name="RayCast2D" type="RayCast2D" parent="Turnos/Area2D"]
+[node name="RayCast2D" type="RayCast2D" parent="Turnos/Ranger"]
 enabled = true
 cast_to = Vector2( 0, -400 )
 collision_mask = 16
 collide_with_areas = true
 
-[node name="Area2D2" type="Area2D" parent="Turnos"]
+[node name="Zombie" type="Area2D" parent="Turnos"]
 position = Vector2( 487.548, 425.914 )
 collision_layer = 23
 collision_mask = 23
 script = ExtResource( 7 )
 target1 = NodePath("../Tanque")
-target2 = NodePath("../Area2D3")
-target3 = NodePath("../Area2D")
+target2 = NodePath("../Soldado")
+target3 = NodePath("../Ranger")
 target4 = NodePath("../../Map/Map_MarketSquare")
-posicion = NodePath(".")
+posicion = NodePath("../Zombie")
+Resumen = NodePath("../../GUI/ResumenDTurno")
+turnos = 7
 
-[node name="zombi" type="Sprite" parent="Turnos/Area2D2"]
+[node name="zombi" type="Sprite" parent="Turnos/Zombie"]
 position = Vector2( -0.143311, 0.0866241 )
 scale = Vector2( 0.580853, 0.604334 )
 texture = ExtResource( 9 )
 region_enabled = true
 region_rect = Rect2( 249, 246, 69, 70 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Turnos/Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Turnos/Zombie"]
 position = Vector2( -0.105469, 0.102615 )
 shape = SubResource( 30 )
 
-[node name="Tween" type="Tween" parent="Turnos/Area2D2"]
+[node name="Tween" type="Tween" parent="Turnos/Zombie"]
 
-[node name="RayCast2D" type="RayCast2D" parent="Turnos/Area2D2"]
+[node name="RayCast2D" type="RayCast2D" parent="Turnos/Zombie"]
 position = Vector2( 3.05176e-05, 0.130249 )
 enabled = true
 cast_to = Vector2( 0, -50 )
 collision_mask = 128
 collide_with_areas = true
 
-[node name="Area2D4" type="Area2D" parent="Turnos"]
+[node name="Zombie Tanque" type="Area2D" parent="Turnos"]
 position = Vector2( 525.759, 462.414 )
 collision_layer = 23
 collision_mask = 23
 script = ExtResource( 7 )
 target1 = NodePath("../Tanque")
-target2 = NodePath("../Area2D3")
-target3 = NodePath("../Area2D")
+target2 = NodePath("../Soldado")
+target3 = NodePath("../Ranger")
 target4 = NodePath("../../Map/Map_MarketSquare")
-posicion = NodePath(".")
+posicion = NodePath("../Zombie Tanque")
+Resumen = NodePath("../../GUI/ResumenDTurno")
+turnos = 4
 
-[node name="tanque zombi" type="Sprite" parent="Turnos/Area2D4"]
+[node name="tanque zombi" type="Sprite" parent="Turnos/Zombie Tanque"]
 position = Vector2( -0.198792, -10.4757 )
 scale = Vector2( 0.530112, 0.608117 )
 texture = ExtResource( 9 )
 region_enabled = true
 region_rect = Rect2( 420, 357, 150, 102 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Turnos/Area2D4"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Turnos/Zombie Tanque"]
 position = Vector2( -0.135803, -0.0671234 )
 shape = SubResource( 30 )
 
-[node name="Tween" type="Tween" parent="Turnos/Area2D4"]
+[node name="Tween" type="Tween" parent="Turnos/Zombie Tanque"]
 
-[node name="RayCast2D" type="RayCast2D" parent="Turnos/Area2D4"]
+[node name="RayCast2D" type="RayCast2D" parent="Turnos/Zombie Tanque"]
 enabled = true
 cast_to = Vector2( 0, -50 )
 collision_mask = 128
 collide_with_areas = true
 
-[node name="Area2D5" type="Area2D" parent="Turnos"]
+[node name="Trepador" type="Area2D" parent="Turnos"]
 position = Vector2( 644.174, 463.799 )
 collision_layer = 22
 collision_mask = 22
 script = ExtResource( 7 )
 target1 = NodePath("../Tanque")
-target2 = NodePath("../Area2D3")
-target3 = NodePath("../Area2D")
+target2 = NodePath("../Soldado")
+target3 = NodePath("../Ranger")
 target4 = NodePath("../../Map/Map_MarketSquare")
-posicion = NodePath(".")
+posicion = NodePath("../Trepador")
+Resumen = NodePath("../../GUI/ResumenDTurno")
+turnos = 5
 
-[node name="zombi trepa" type="Sprite" parent="Turnos/Area2D5"]
+[node name="zombi trepa" type="Sprite" parent="Turnos/Trepador"]
 position = Vector2( -1.37006, 3.14912 )
 scale = Vector2( 0.913905, 0.871377 )
 texture = ExtResource( 9 )
 region_enabled = true
 region_rect = Rect2( 420, 255, 60, 68 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Turnos/Area2D5"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Turnos/Trepador"]
 position = Vector2( 0.123535, 0.0366483 )
 shape = SubResource( 30 )
 
-[node name="Tween" type="Tween" parent="Turnos/Area2D5"]
+[node name="Tween" type="Tween" parent="Turnos/Trepador"]
 
-[node name="RayCast2D" type="RayCast2D" parent="Turnos/Area2D5"]
+[node name="RayCast2D" type="RayCast2D" parent="Turnos/Trepador"]
 enabled = true
 cast_to = Vector2( 0, -50 )
 collision_mask = 128
