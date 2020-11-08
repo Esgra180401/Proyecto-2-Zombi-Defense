@@ -1,14 +1,14 @@
-[gd_scene load_steps=102 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://GameTheme.ogg" type="AudioStream" id=1]
 [ext_resource path="res://assets/Map_MarketSquare.png" type="Texture" id=2]
-[ext_resource path="res://src/actors/player_movement.gd" type="Script" id=3]
+[ext_resource path="res://src/actors/Soldado.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/top-tree-png-4127.png" type="Texture" id=4]
 [ext_resource path="res://src/Turnos.gd" type="Script" id=5]
-[ext_resource path="res://assets/Bullet.png" type="Texture" id=6]
-[ext_resource path="res://src/EnemyMovement.gd" type="Script" id=7]
-[ext_resource path="res://assets/Character Sprites.png" type="Texture" id=8]
-[ext_resource path="res://assets/Zombie Sprites.png" type="Texture" id=9]
+[ext_resource path="res://src/actors/Ranger.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/actors/Tanque.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/actors/Trepador.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/actors/Zombie Tanque.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/Boton Atk.png" type="Texture" id=10]
 [ext_resource path="res://assets/Boton Curar.png" type="Texture" id=11]
 [ext_resource path="res://assets/Rifle.png" type="Texture" id=12]
@@ -19,76 +19,75 @@
 [ext_resource path="res://assets/Zombie Hand.png" type="Texture" id=17]
 [ext_resource path="res://src/Botones.gd" type="Script" id=18]
 [ext_resource path="res://assets/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=19]
-[ext_resource path="res://assets/Arrow.png" type="Texture" id=20]
-[ext_resource path="res://assets/Rocket.png" type="Texture" id=21]
+[ext_resource path="res://src/actors/Zombie.tscn" type="PackedScene" id=22]
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=21]
 bg_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=22]
 bg_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=23]
 bg_color = Color( 0.282353, 0.12549, 0.0235294, 1 )
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=24]
 bg_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=25]
 bg_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
 border_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
 border_blend = true
 corner_detail = 1
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=26]
 bg_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=27]
 bg_color = Color( 0.282353, 0.12549, 0.0235294, 1 )
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=28]
 bg_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=29]
 bg_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
 draw_center = false
 border_color = Color( 0.607843, 0.439216, 0.239216, 1 )
 border_blend = true
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=30]
 font_data = ExtResource( 19 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=31]
 font_data = ExtResource( 19 )
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=32]
 font_data = ExtResource( 19 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=33]
 font_data = ExtResource( 19 )
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=34]
 font_data = ExtResource( 19 )
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=35]
 font_data = ExtResource( 19 )
 
-[sub_resource type="DynamicFont" id=16]
+[sub_resource type="DynamicFont" id=36]
 font_data = ExtResource( 19 )
 
-[sub_resource type="DynamicFont" id=17]
+[sub_resource type="DynamicFont" id=37]
 font_data = ExtResource( 19 )
 
-[sub_resource type="DynamicFont" id=18]
+[sub_resource type="DynamicFont" id=38]
 font_data = ExtResource( 19 )
 
-[sub_resource type="DynamicFont" id=19]
+[sub_resource type="DynamicFont" id=39]
 font_data = ExtResource( 19 )
 
-[sub_resource type="ConvexPolygonShape2D" id=20]
+[sub_resource type="ConvexPolygonShape2D" id=40]
 points = PoolVector2Array( 38.7022, 37.0408, 0.0959473, 37.2734, 0.0959473, -0.170105, 38.9348, 0.0625 )
 
-[sub_resource type="TileSet" id=21]
+[sub_resource type="TileSet" id=41]
 0/name = "Map_MarketSquare.png 0"
 0/texture = ExtResource( 2 )
 0/tex_offset = Vector2( 0, 0 )
@@ -113,14 +112,14 @@ points = PoolVector2Array( 38.7022, 37.0408, 0.0959473, 37.2734, 0.0959473, -0.1
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape = SubResource( 20 )
+2/shape = SubResource( 40 )
 2/shape_one_way = false
 2/shape_one_way_margin = 1.0
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 20 ),
+"shape": SubResource( 40 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
@@ -167,10 +166,10 @@ points = PoolVector2Array( 38.7022, 37.0408, 0.0959473, 37.2734, 0.0959473, -0.1
 6/shapes = [  ]
 6/z_index = 0
 
-[sub_resource type="ConvexPolygonShape2D" id=22]
+[sub_resource type="ConvexPolygonShape2D" id=42]
 points = PoolVector2Array( 39.0122, 36.1292, -0.127106, 36.024, -0.127106, -0.0455627, 39.038, 0.0890198 )
 
-[sub_resource type="TileSet" id=23]
+[sub_resource type="TileSet" id=43]
 0/name = "Map_MarketSquare.png 0"
 0/texture = ExtResource( 2 )
 0/tex_offset = Vector2( 0, 0 )
@@ -181,22 +180,22 @@ points = PoolVector2Array( 39.0122, 36.1292, -0.127106, 36.024, -0.127106, -0.04
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 22 )
+0/shape = SubResource( 42 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 22 ),
+"shape": SubResource( 42 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="ConvexPolygonShape2D" id=24]
+[sub_resource type="ConvexPolygonShape2D" id=44]
 points = PoolVector2Array( 155.958, 147.181, -0.0559082, 147.181, -0.0559082, -0.112396, 155.958, -0.112396 )
 
-[sub_resource type="TileSet" id=25]
+[sub_resource type="TileSet" id=45]
 0/name = "Map_MarketSquare.png 0"
 0/texture = ExtResource( 2 )
 0/tex_offset = Vector2( 0, 0 )
@@ -207,14 +206,14 @@ points = PoolVector2Array( 155.958, 147.181, -0.0559082, 147.181, -0.0559082, -0
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 24 )
+0/shape = SubResource( 44 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 24 ),
+"shape": SubResource( 44 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
@@ -331,292 +330,13 @@ points = PoolVector2Array( 155.958, 147.181, -0.0559082, 147.181, -0.0559082, -0
 8/shapes = [  ]
 8/z_index = 0
 
-[sub_resource type="Gradient" id=26]
-colors = PoolColorArray( 0.171875, 1, 0, 1, 0.148438, 1, 0, 0.203922 )
-
-[sub_resource type="GradientTexture" id=27]
-gradient = SubResource( 26 )
-
-[sub_resource type="ParticlesMaterial" id=28]
-emission_shape = 1
-emission_sphere_radius = 20.7
-flag_disable_z = true
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 50.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 2.0
-color_ramp = SubResource( 27 )
-
-[sub_resource type="RectangleShape2D" id=29]
-extents = Vector2( 16.0135, 16.9643 )
-
-[sub_resource type="Curve" id=65]
-min_value = -360.0
-max_value = 360.0
-_data = [ Vector2( 0, 360 ), 0.0, 0.0, 0, 0, Vector2( 1, 360 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=66]
-curve = SubResource( 65 )
-
-[sub_resource type="Gradient" id=67]
-offsets = PoolRealArray( 0.773973, 1 )
-colors = PoolColorArray( 0.988909, 1, 0, 1, 0.918596, 1, 0, 0 )
-
-[sub_resource type="GradientTexture" id=68]
-gradient = SubResource( 67 )
-
-[sub_resource type="ParticlesMaterial" id=69]
-flag_align_y = true
-flag_disable_z = true
-direction = Vector3( 0, -1, 0 )
-spread = 5.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 1500.0
-angular_velocity_curve = SubResource( 66 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 4.0
-color_ramp = SubResource( 68 )
-
-[sub_resource type="Gradient" id=76]
-colors = PoolColorArray( 0.733333, 0.0352941, 0.0352941, 1, 0.733333, 0.0352941, 0.0352941, 0.443137 )
-
-[sub_resource type="GradientTexture" id=77]
-gradient = SubResource( 76 )
-
-[sub_resource type="Curve" id=78]
-max_value = 5.0
-_data = [ Vector2( 0, 5 ), 0.0, 0.0, 0, 0, Vector2( 0.983696, 1.78826 ), 0.743434, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=79]
-curve = SubResource( 78 )
-
-[sub_resource type="ParticlesMaterial" id=80]
-flag_disable_z = true
-direction = Vector3( 0, -1, 0 )
-spread = 180.0
-gravity = Vector3( 0, 70, 0 )
-initial_velocity = 78.13
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale_curve = SubResource( 79 )
-color_ramp = SubResource( 77 )
-
-[sub_resource type="Gradient" id=71]
-colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0.215686 )
-
-[sub_resource type="GradientTexture" id=72]
-gradient = SubResource( 71 )
-
-[sub_resource type="ParticlesMaterial" id=70]
-flag_disable_z = true
-direction = Vector3( 0, -1, 0 )
-spread = 0.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 453.61
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-color_ramp = SubResource( 72 )
-
-[sub_resource type="Gradient" id=55]
-offsets = PoolRealArray( 0.119863, 0.59589 )
-colors = PoolColorArray( 1, 0.960938, 0, 1, 1, 0, 0, 1 )
-
-[sub_resource type="GradientTexture" id=56]
-gradient = SubResource( 55 )
-
-[sub_resource type="Curve" id=57]
-max_value = 4.0
-_data = [ Vector2( 0, 1.66673 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=58]
-curve = SubResource( 57 )
-
-[sub_resource type="ParticlesMaterial" id=59]
-flag_disable_z = true
-direction = Vector3( 0, -1, 0 )
-spread = 31.91
-gravity = Vector3( 0, 9.8, 0 )
-initial_velocity = 110.91
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 3.0
-scale_curve = SubResource( 58 )
-color_ramp = SubResource( 56 )
-
-[sub_resource type="Gradient" id=60]
-offsets = PoolRealArray( 0.0753425, 0.308219, 0.599315, 0.784247 )
-colors = PoolColorArray( 0.294118, 0.290196, 0.290196, 0.0588235, 0.219608, 0.215686, 0.215686, 1, 0.222656, 0.222656, 0.222656, 1, 0.270588, 0.270588, 0.270588, 0 )
-
-[sub_resource type="GradientTexture" id=61]
-gradient = SubResource( 60 )
-
-[sub_resource type="Curve" id=62]
-min_value = 0.5
-max_value = 4.0
-_data = [ Vector2( 0, 0.5 ), 0.0, 0.0, 0, 0, Vector2( 1, 2.5642 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=63]
-curve = SubResource( 62 )
-
-[sub_resource type="ParticlesMaterial" id=64]
-flag_disable_z = true
-direction = Vector3( 0, -1, 0 )
-spread = 29.72
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 70.55
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 4.0
-scale_random = 1.0
-scale_curve = SubResource( 63 )
-color_ramp = SubResource( 61 )
-
-[sub_resource type="Gradient" id=73]
-offsets = PoolRealArray( 0.547826, 0.681159 )
-colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
-
-[sub_resource type="GradientTexture" id=74]
-gradient = SubResource( 73 )
-
-[sub_resource type="ParticlesMaterial" id=75]
-flag_disable_z = true
-direction = Vector3( 0, -1, 0 )
-spread = 0.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 510.42
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 0.15
-color_ramp = SubResource( 74 )
-
-[sub_resource type="RectangleShape2D" id=30]
-extents = Vector2( 14.985, 14.7417 )
-
-[sub_resource type="Gradient" id=31]
-offsets = PoolRealArray( 0.00186916, 0.143925, 0.409346, 0.545794, 0.998131 )
-colors = PoolColorArray( 0.897461, 0.896228, 0.771255, 1, 0.916992, 0.849508, 0.265068, 1, 0.84668, 0.484771, 0.125679, 1, 0.938193, 0, 0, 1, 0.858398, 0, 0, 1 )
-
-[sub_resource type="GradientTexture" id=32]
-gradient = SubResource( 31 )
-
-[sub_resource type="Curve" id=33]
-min_value = -400.0
-max_value = 400.0
-_data = [ Vector2( 0, 400 ), 0.0, 13089.4, 0, 0, Vector2( 0.187225, -30.9091 ), -1500.83, -1500.83, 0, 0, Vector2( 1, 69.0909 ), 1133.9, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=34]
-curve = SubResource( 33 )
-
-[sub_resource type="Curve" id=35]
-max_value = 2.6
-_data = [ Vector2( 0, 2.46409 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.407727 ), 2.12728, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=36]
-curve = SubResource( 35 )
-
-[sub_resource type="ParticlesMaterial" id=37]
-emission_shape = 1
-emission_sphere_radius = 2.89
-flag_disable_z = true
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 100.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 100.0
-linear_accel_curve = SubResource( 34 )
-scale = 3.0
-scale_random = 1.0
-scale_curve = SubResource( 36 )
-color_ramp = SubResource( 32 )
-
-[sub_resource type="Gradient" id=38]
-offsets = PoolRealArray( 0, 0.917757 )
-colors = PoolColorArray( 0.227539, 0.223095, 0.223095, 1, 0.219608, 0.219608, 0.219608, 0 )
-
-[sub_resource type="GradientTexture" id=39]
-gradient = SubResource( 38 )
-
-[sub_resource type="Curve" id=40]
-min_value = -200.0
-max_value = 200.0
-_data = [ Vector2( 0.00358423, 200 ), 0.0, 13886.6, 0, 0, Vector2( 0.102151, -64.0909 ), 0.0, 0.0, 0, 0, Vector2( 1, -67.7273 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=41]
-curve = SubResource( 40 )
-
-[sub_resource type="Curve" id=42]
-min_value = 0.99
-max_value = 5.0
-_data = [ Vector2( 0, 0.99 ), 0.0, 0.0, 0, 0, Vector2( 1, 3.61473 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=43]
-curve = SubResource( 42 )
-
-[sub_resource type="ParticlesMaterial" id=44]
-emission_shape = 1
-emission_sphere_radius = 2.0
-flag_disable_z = true
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 150.0
-orbit_velocity = 0.15
-orbit_velocity_random = 1.0
-linear_accel = 100.0
-linear_accel_random = 0.5
-linear_accel_curve = SubResource( 41 )
-scale = 4.0
-scale_random = 1.0
-scale_curve = SubResource( 43 )
-color_ramp = SubResource( 39 )
-
-[sub_resource type="Gradient" id=45]
-offsets = PoolRealArray( 0.208904, 0.75 )
-colors = PoolColorArray( 0.21395, 0.0246468, 0.450684, 1, 0.0330505, 0.528809, 0.117775, 0 )
-
-[sub_resource type="GradientTexture" id=46]
-gradient = SubResource( 45 )
-
-[sub_resource type="Curve" id=47]
-min_value = -200.0
-max_value = 200.0
-_data = [ Vector2( 0, -1.36362 ), 0.0, 0.0, 0, 0, Vector2( 1, -200 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=48]
-curve = SubResource( 47 )
-
-[sub_resource type="Curve" id=49]
-max_value = 7.0
-_data = [ Vector2( 0, 0 ), 0.0, -0.741941, 0, 0, Vector2( 0.984127, 2.47273 ), -2.3699, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=50]
-curve = SubResource( 49 )
-
-[sub_resource type="ParticlesMaterial" id=51]
-emission_shape = 1
-emission_sphere_radius = 0.01
-flag_disable_z = true
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 219.23
-orbit_velocity = 0.2
-orbit_velocity_random = 0.0
-linear_accel = 2.0
-linear_accel_curve = SubResource( 48 )
-scale = 7.0
-scale_curve = SubResource( 50 )
-color_ramp = SubResource( 46 )
-
-[sub_resource type="Gradient" id=52]
+[sub_resource type="Gradient" id=78]
 colors = PoolColorArray( 0.959961, 1, 0, 1, 0.960784, 1, 0, 0.415686 )
 
-[sub_resource type="GradientTexture" id=53]
-gradient = SubResource( 52 )
+[sub_resource type="GradientTexture" id=79]
+gradient = SubResource( 78 )
 
-[sub_resource type="ParticlesMaterial" id=54]
+[sub_resource type="ParticlesMaterial" id=80]
 emission_shape = 1
 emission_sphere_radius = 2.0
 flag_disable_z = true
@@ -626,7 +346,7 @@ initial_velocity = 200.0
 orbit_velocity = 2.0
 orbit_velocity_random = 0.0
 scale = 2.0
-color_ramp = SubResource( 53 )
+color_ramp = SubResource( 79 )
 
 [node name="Mundo" type="Node"]
 __meta__ = {
@@ -646,7 +366,7 @@ margin_left = -39.0
 margin_top = -50.0
 margin_right = 1428.0
 margin_bottom = 807.0
-custom_styles/normal = SubResource( 1 )
+custom_styles/normal = SubResource( 21 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -719,10 +439,10 @@ margin_left = 1077.98
 margin_top = 667.0
 margin_right = 1187.98
 margin_bottom = 725.0
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
+custom_styles/hover = SubResource( 22 )
+custom_styles/pressed = SubResource( 23 )
+custom_styles/disabled = SubResource( 24 )
+custom_styles/normal = SubResource( 25 )
 toggle_mode = true
 icon = ExtResource( 10 )
 __meta__ = {
@@ -734,10 +454,10 @@ margin_left = 1270.0
 margin_top = 667.0
 margin_right = 1232.0
 margin_bottom = 725.0
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/disabled = SubResource( 8 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = SubResource( 26 )
+custom_styles/pressed = SubResource( 27 )
+custom_styles/disabled = SubResource( 28 )
+custom_styles/normal = SubResource( 29 )
 toggle_mode = true
 icon = ExtResource( 11 )
 __meta__ = {
@@ -773,7 +493,7 @@ margin_left = 1192.0
 margin_top = 54.0
 margin_right = 1255.0
 margin_bottom = 68.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 30 )
 custom_colors/font_color = Color( 0.133333, 1, 0, 1 )
 text = "HP:"
 __meta__ = {
@@ -785,7 +505,7 @@ margin_left = 1191.67
 margin_top = 194.703
 margin_right = 1284.67
 margin_bottom = 209.703
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 31 )
 custom_colors/font_color = Color( 0.133333, 1, 0, 1 )
 text = "HP:"
 __meta__ = {
@@ -797,7 +517,7 @@ margin_left = 1192.0
 margin_top = 341.245
 margin_right = 1274.0
 margin_bottom = 355.245
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 32 )
 custom_colors/font_color = Color( 0.133333, 1, 0, 1 )
 text = "HP:"
 __meta__ = {
@@ -809,7 +529,7 @@ margin_left = 1182.95
 margin_top = 69.0
 margin_right = 1252.95
 margin_bottom = 84.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 33 )
 custom_colors/font_color = Color( 0.0509804, 0.968627, 0.980392, 1 )
 text = "LVL:"
 __meta__ = {
@@ -821,7 +541,7 @@ margin_left = 1182.65
 margin_top = 210.501
 margin_right = 1258.46
 margin_bottom = 225.501
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 34 )
 custom_colors/font_color = Color( 0.0509804, 0.968627, 0.980392, 1 )
 text = "LVL:"
 __meta__ = {
@@ -833,7 +553,7 @@ margin_left = 1183.1
 margin_top = 356.338
 margin_right = 1263.91
 margin_bottom = 371.338
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 35 )
 custom_colors/font_color = Color( 0.0509804, 0.968627, 0.980392, 1 )
 text = "LVL:"
 __meta__ = {
@@ -845,7 +565,7 @@ margin_left = 1255.89
 margin_top = 59.5403
 margin_right = 1342.89
 margin_bottom = 74.5403
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 36 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Kits:"
 __meta__ = {
@@ -857,7 +577,7 @@ margin_left = 1255.0
 margin_top = 203.857
 margin_right = 1343.46
 margin_bottom = 218.857
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 37 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Kits:"
 __meta__ = {
@@ -869,7 +589,7 @@ margin_left = 1254.0
 margin_top = 346.082
 margin_right = 1340.86
 margin_bottom = 361.082
-custom_fonts/font = SubResource( 18 )
+custom_fonts/font = SubResource( 38 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Kits:"
 __meta__ = {
@@ -881,7 +601,7 @@ margin_left = 1082.29
 margin_top = 499.021
 margin_right = 1298.29
 margin_bottom = 568.021
-custom_fonts/font = SubResource( 19 )
+custom_fonts/font = SubResource( 39 )
 text = "No dejes que los zombies
 toquen la base
 
@@ -893,14 +613,14 @@ __meta__ = {
 [node name="Map" type="Node" parent="."]
 
 [node name="TileMap" type="TileMap" parent="Map"]
-tile_set = SubResource( 21 )
+tile_set = SubResource( 41 )
 cell_size = Vector2( 39, 37 )
 format = 1
 tile_data = PoolIntArray( -1, 2, 0, -65536, 2, 0, -65535, 2, 0, -65534, 2, 0, -65533, 2, 0, -65532, 2, 0, -65531, 2, 0, -65530, 2, 0, -65529, 2, 0, -65528, 2, 0, -65527, 2, 0, -65526, 2, 0, -65525, 2, 0, -65524, 2, 0, -65523, 2, 0, -65522, 2, 0, -65521, 2, 0, -65520, 2, 0, -65519, 2, 0, -65518, 2, 0, -65517, 2, 0, -65516, 2, 0, -65515, 2, 0, -65514, 2, 0, -65513, 2, 0, -65512, 2, 0, -65511, 2, 0, -65510, 2, 0, -65509, 2, 0, 65535, 2, 0, 5, 4, 0, 6, 4, 0, 8, 536870914, 0, 9, 536870914, 0, 10, 536870914, 0, 11, 536870914, 0, 12, 536870914, 0, 13, 536870914, 0, 14, 536870914, 0, 15, 536870914, 0, 16, 536870914, 0, 17, 536870914, 0, 18, 536870914, 0, 20, 4, 0, 21, 4, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 131071, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 4, 0, 65544, 536870914, 0, 65545, 536870914, 0, 65546, 536870914, 0, 65547, 536870914, 0, 65548, 536870914, 0, 65549, 536870914, 0, 65550, 536870914, 0, 65551, 536870914, 0, 65552, 536870914, 0, 65553, 536870914, 0, 65554, 536870914, 0, 65556, 4, 0, 65557, 2, 0, 65558, 2, 0, 196607, 2, 0, 131076, 2, 0, 131077, 2, 0, 131078, 4, 0, 131080, 536870914, 0, 131081, 536870914, 0, 131082, 536870914, 0, 131083, 536870914, 0, 131084, 536870914, 0, 131085, 536870914, 0, 131086, 536870914, 0, 131087, 536870914, 0, 131088, 536870914, 0, 131089, 536870914, 0, 131090, 2, 0, 131092, 4, 0, 131093, 2, 0, 131094, 2, 0, 262143, 2, 0, 196613, 4, 0, 196614, 4, 0, 196615, 536870916, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 196626, 536870916, 0, 196627, 0, 0, 196628, 4, 0, 196629, 4, 0, 327679, 2, 0, 262144, 4, 0, 262145, 4, 0, 262146, 4, 0, 262147, 4, 0, 262148, 4, 0, 262149, 4, 0, 262150, 4, 0, 262151, 536870916, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 536870916, 0, 262162, 536870916, 0, 262163, 0, 0, 262164, 4, 0, 262165, 4, 0, 262166, 4, 0, 262167, 4, 0, 262168, 4, 0, 262169, 4, 0, 262170, 4, 0, 393215, 2, 0, 327680, 536870916, 0, 327681, 536870916, 0, 327682, 536870916, 0, 327683, 536870916, 0, 327684, 536870916, 0, 327685, 0, 0, 327686, 536870916, 0, 327687, 536870916, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327702, 0, 0, 327703, 0, 0, 327704, 0, 0, 327705, 0, 0, 327706, 0, 0, 458751, 2, 0, 393216, 536870916, 0, 393217, 536870916, 0, 393218, 536870916, 0, 393219, 536870916, 0, 393220, 536870916, 0, 393221, 536870916, 0, 393222, 536870916, 0, 393223, 536870916, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393237, 0, 0, 393238, 0, 0, 393239, 0, 0, 393240, 0, 0, 393241, 0, 0, 393242, 0, 0, 524287, 2, 0, 458759, 536870916, 0, 458760, 0, 0, 458761, 5, 0, 458762, 5, 0, 458763, 5, 0, 458764, 5, 0, 458765, 5, 0, 458766, 5, 0, 458767, 5, 0, 458768, 5, 0, 458769, 5, 0, 458770, 0, 0, 458771, 0, 0, 458778, 0, 0, 589823, 2, 0, 524292, 536870914, 0, 524293, 536870914, 0, 524295, 536870916, 0, 524296, 0, 0, 524297, 5, 0, 524298, 2, 0, 524299, 2, 0, 524300, 5, 0, 524301, 5, 0, 524302, 5, 0, 524303, 2, 0, 524304, 2, 0, 524305, 5, 0, 524306, 0, 0, 524307, 0, 0, 524309, 536870914, 0, 524310, 536870914, 0, 524314, 0, 0, 655359, 2, 0, 589828, 536870914, 0, 589829, 536870914, 0, 589831, 536870916, 0, 589832, 0, 0, 589833, 5, 0, 589834, 2, 0, 589835, 2, 0, 589836, 5, 0, 589837, 5, 0, 589838, 5, 0, 589839, 2, 0, 589840, 2, 0, 589841, 5, 0, 589842, 0, 0, 589843, 0, 0, 589845, 536870914, 0, 589846, 536870914, 0, 589850, 0, 0, 720895, 2, 0, 655367, 536870916, 0, 655368, 0, 0, 655369, 5, 0, 655370, 5, 0, 655371, 5, 0, 655372, 5, 0, 655373, 5, 0, 655374, 5, 0, 655375, 5, 0, 655376, 5, 0, 655377, 5, 0, 655378, 0, 0, 655379, 0, 0, 655386, 0, 0, 786431, 2, 0, 720896, 2, 0, 720897, 2, 0, 720898, 2, 0, 720899, 2, 0, 720900, 2, 0, 720901, 0, 0, 720902, 0, 0, 720903, 536870916, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 2, 0, 720919, 2, 0, 720920, 2, 0, 720921, 2, 0, 720922, 2, 0, 851967, 2, 0, 786432, 2, 0, 786433, 2, 0, 786434, 2, 0, 786435, 2, 0, 786436, 2, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 2, 0, 786455, 2, 0, 786456, 2, 0, 786457, 2, 0, 786458, 2, 0, 917503, 2, 0, 851968, 2, 0, 851969, 2, 0, 851970, 2, 0, 851971, 2, 0, 851972, 2, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 2, 0, 851991, 2, 0, 851992, 2, 0, 851993, 2, 0, 851994, 2, 0, 983039, 2, 0, 917509, 0, 0, 917510, 0, 0, 917511, 2, 0, 917512, 2, 0, 917513, 2, 0, 917514, 0, 0, 917515, 0, 0, 917516, 2, 0, 917517, 2, 0, 917518, 0, 0, 917519, 0, 0, 917520, 2, 0, 917521, 2, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917530, 0, 0, 1048575, 2, 0, 983045, 0, 0, 983046, 0, 0, 983047, 2, 0, 983048, 2, 0, 983049, 0, 0, 983050, 0, 0, 983051, 0, 0, 983052, 0, 0, 983053, 2, 0, 983054, 0, 0, 983055, 0, 0, 983056, 2, 0, 983057, 0, 0, 983058, 0, 0, 983059, 0, 0, 983060, 0, 0, 983061, 0, 0, 983066, 0, 0, 1114111, 2, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 2, 0, 1048584, 2, 0, 1048585, 2, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048602, 0, 0, 1179647, 2, 0, 1114117, 0, 0, 1114118, 0, 0, 1114119, 0, 0, 1114120, 0, 0, 1114121, 0, 0, 1114122, 0, 0, 1114123, 0, 0, 1114124, 2, 0, 1114125, 2, 0, 1114126, 2, 0, 1114127, 2, 0, 1114128, 2, 0, 1114129, 2, 0, 1114130, 2, 0, 1114131, 0, 0, 1114132, 0, 0, 1114133, 0, 0, 1114138, 0, 0, 1245183, 2, 0, 1179648, 2, 0, 1179649, 2, 0, 1179650, 2, 0, 1179651, 2, 0, 1179652, 2, 0, 1179653, 2, 0, 1179654, 2, 0, 1179655, 2, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 2, 0, 1179661, 2, 0, 1179662, 2, 0, 1179663, 2, 0, 1179664, 2, 0, 1179665, 2, 0, 1179666, 2, 0, 1179667, 2, 0, 1179668, 2, 0, 1179669, 2, 0, 1179670, 2, 0, 1179671, 2, 0, 1179672, 2, 0, 1179673, 2, 0, 1179674, 2, 0, 1310719, 2, 0, 1245184, 2, 0, 1245185, 2, 0, 1245186, 2, 0, 1245187, 2, 0, 1245188, 2, 0, 1245189, 2, 0, 1245190, 2, 0, 1245191, 2, 0, 1245192, 0, 0, 1245193, 2, 0, 1245194, 2, 0, 1245195, 2, 0, 1245196, 2, 0, 1245197, 2, 0, 1245198, 2, 0, 1245199, 2, 0, 1245200, 2, 0, 1245201, 2, 0, 1245202, 2, 0, 1245203, 2, 0, 1245204, 2, 0, 1245205, 2, 0, 1245206, 2, 0, 1245207, 2, 0, 1245208, 2, 0, 1245209, 2, 0, 1245210, 2, 0, 1376255, 2, 0, 1310720, 2, 0, 1310721, 2, 0, 1310722, 2, 0, 1310723, 2, 0, 1310724, 2, 0, 1310725, 2, 0, 1310726, 2, 0, 1310727, 2, 0, 1310728, 2, 0, 1310729, 2, 0, 1310730, 2, 0, 1310731, 2, 0, 1310732, 2, 0, 1310733, 2, 0, 1310734, 2, 0, 1310735, 2, 0, 1310736, 2, 0, 1310737, 2, 0, 1310738, 2, 0, 1310739, 2, 0, 1310740, 2, 0, 1310741, 2, 0, 1310742, 2, 0, 1310743, 2, 0, 1310744, 2, 0, 1310745, 2, 0, 1310746, 2, 0, 1441791, 2, 0, 1376256, 2, 0, 1376257, 2, 0, 1376258, 2, 0, 1376259, 2, 0, 1376260, 2, 0, 1376261, 2, 0, 1376262, 2, 0, 1376276, 2, 0, 1376277, 2, 0, 1376278, 2, 0, 1376279, 2, 0, 1376280, 2, 0, 1376281, 2, 0, 1376282, 2, 0 )
 
 [node name="TileMap3" type="TileMap" parent="Map"]
 visible = false
-tile_set = SubResource( 23 )
+tile_set = SubResource( 43 )
 cell_size = Vector2( 39, 37 )
 collision_use_kinematic = true
 collision_layer = 3
@@ -908,7 +628,7 @@ format = 1
 tile_data = PoolIntArray( -1, 536870912, 0, -65536, 536870912, 0, -65535, 536870912, 0, -65534, 536870912, 0, -65533, 536870912, 0, -65532, 536870912, 0, -65531, 536870912, 0, -65530, 536870912, 0, -65529, 536870912, 0, -65528, 536870912, 0, -65527, 536870912, 0, -65526, 536870912, 0, -65525, 536870912, 0, -65524, 536870912, 0, -65523, 536870912, 0, -65522, 536870912, 0, -65521, 536870912, 0, -65520, 536870912, 0, -65519, 536870912, 0, -65518, 536870912, 0, -65517, 536870912, 0, -65516, 536870912, 0, -65515, 536870912, 0, -65514, 536870912, 0, -65513, 536870912, 0, -65512, 536870912, 0, -65511, 536870912, 0, -65510, 536870912, 0, -65509, 536870912, 0, 65535, 536870912, 0, 0, 536870912, 0, 1, 536870912, 0, 2, 536870912, 0, 24, 536870912, 0, 25, 536870912, 0, 26, 536870912, 0, 27, 536870912, 0, 131071, 536870912, 0, 65536, 536870912, 0, 65537, 536870912, 0, 65538, 536870912, 0, 65560, 536870912, 0, 65561, 536870912, 0, 65562, 536870912, 0, 65563, 536870912, 0, 196607, 536870912, 0, 131072, 536870912, 0, 131073, 536870912, 0, 131074, 536870912, 0, 131096, 536870912, 0, 131097, 536870912, 0, 131098, 536870912, 0, 131099, 536870912, 0, 262143, 536870912, 0, 196608, 536870912, 0, 196609, 536870912, 0, 196610, 536870912, 0, 196632, 536870912, 0, 196633, 536870912, 0, 196634, 536870912, 0, 196635, 536870912, 0, 327679, 536870912, 0, 262171, 536870912, 0, 393215, 536870912, 0, 327707, 536870912, 0, 458751, 536870912, 0, 393243, 536870912, 0, 524287, 536870912, 0, 458752, 536870912, 0, 458753, 536870912, 0, 458754, 536870912, 0, 458776, 536870912, 0, 458777, 536870912, 0, 458778, 536870912, 0, 458779, 536870912, 0, 589823, 536870912, 0, 524288, 536870912, 0, 524289, 536870912, 0, 524290, 536870912, 0, 524312, 536870912, 0, 524313, 536870912, 0, 524314, 536870912, 0, 524315, 536870912, 0, 655359, 536870912, 0, 589824, 536870912, 0, 589825, 536870912, 0, 589826, 536870912, 0, 589848, 536870912, 0, 589849, 536870912, 0, 589850, 536870912, 0, 589851, 536870912, 0, 720895, 536870912, 0, 655360, 536870912, 0, 655361, 536870912, 0, 655362, 536870912, 0, 655384, 536870912, 0, 655385, 536870912, 0, 655386, 536870912, 0, 655387, 536870912, 0, 786431, 536870912, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720918, 0, 0, 720919, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0, 720923, 536870912, 0, 851967, 536870912, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 536870912, 0, 917503, 536870912, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851990, 0, 0, 851991, 0, 0, 851992, 0, 0, 851993, 0, 0, 851994, 0, 0, 851995, 536870912, 0, 983039, 536870912, 0, 917504, 536870912, 0, 917505, 536870912, 0, 917506, 536870912, 0, 917528, 536870912, 0, 917529, 536870912, 0, 917530, 536870912, 0, 917531, 536870912, 0, 1048575, 536870912, 0, 983040, 536870912, 0, 983041, 536870912, 0, 983042, 536870912, 0, 983064, 536870912, 0, 983065, 536870912, 0, 983066, 536870912, 0, 983067, 536870912, 0, 1114111, 536870912, 0, 1048576, 536870912, 0, 1048577, 536870912, 0, 1048578, 536870912, 0, 1048600, 536870912, 0, 1048601, 536870912, 0, 1048602, 536870912, 0, 1048603, 536870912, 0, 1179647, 536870912, 0, 1114112, 536870912, 0, 1114113, 536870912, 0, 1114114, 536870912, 0, 1114124, 0, 0, 1114125, 0, 0, 1114126, 0, 0, 1114127, 0, 0, 1114128, 0, 0, 1114129, 0, 0, 1114130, 0, 0, 1114136, 536870912, 0, 1114137, 536870912, 0, 1114138, 536870912, 0, 1114139, 536870912, 0, 1245183, 536870912, 0, 1179648, 536870912, 0, 1179649, 536870912, 0, 1179650, 536870912, 0, 1179651, 536870912, 0, 1179652, 536870912, 0, 1179653, 536870912, 0, 1179654, 536870912, 0, 1179655, 536870912, 0, 1179660, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1179663, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1179666, 0, 0, 1179667, 536870912, 0, 1179668, 536870912, 0, 1179669, 536870912, 0, 1179670, 536870912, 0, 1179671, 536870912, 0, 1179672, 536870912, 0, 1179673, 536870912, 0, 1179674, 536870912, 0, 1179675, 536870912, 0, 1310719, 536870912, 0, 1245184, 536870912, 0, 1245185, 536870912, 0, 1245186, 536870912, 0, 1245187, 536870912, 0, 1245188, 536870912, 0, 1245189, 536870912, 0, 1245190, 536870912, 0, 1245191, 536870912, 0, 1245193, 0, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1245199, 0, 0, 1245200, 0, 0, 1245201, 0, 0, 1245202, 0, 0, 1245203, 536870912, 0, 1245204, 536870912, 0, 1245205, 536870912, 0, 1245206, 536870912, 0, 1245207, 536870912, 0, 1245208, 536870912, 0, 1245209, 536870912, 0, 1245210, 536870912, 0, 1245211, 536870912, 0, 1376255, 536870912, 0, 1310720, 536870912, 0, 1310721, 536870912, 0, 1310722, 536870912, 0, 1310723, 536870912, 0, 1310724, 536870912, 0, 1310725, 536870912, 0, 1310726, 536870912, 0, 1310727, 536870912, 0, 1310728, 536870912, 0, 1310729, 536870912, 0, 1310730, 536870912, 0, 1310731, 536870912, 0, 1310732, 536870912, 0, 1310733, 536870912, 0, 1310734, 536870912, 0, 1310735, 536870912, 0, 1310736, 536870912, 0, 1310737, 536870912, 0, 1310738, 536870912, 0, 1310739, 536870912, 0, 1310740, 536870912, 0, 1310741, 536870912, 0, 1310742, 536870912, 0, 1310743, 536870912, 0, 1310744, 536870912, 0, 1310745, 536870912, 0, 1310746, 536870912, 0, 1310747, 536870912, 0, 1441791, 536870912, 0, 1376256, 536870912, 0, 1376257, 536870912, 0, 1376258, 536870912, 0, 1376259, 536870912, 0, 1376260, 536870912, 0, 1376261, 536870912, 0, 1376262, 536870912, 0, 1376263, 536870912, 0, 1376264, 536870912, 0, 1376265, 536870912, 0, 1376266, 536870912, 0, 1376267, 536870912, 0, 1376268, 536870912, 0, 1376269, 536870912, 0, 1376270, 536870912, 0, 1376271, 536870912, 0, 1376272, 536870912, 0, 1376273, 536870912, 0, 1376274, 536870912, 0, 1376275, 536870912, 0, 1376276, 536870912, 0, 1376277, 536870912, 0, 1376278, 536870912, 0, 1376279, 536870912, 0, 1376280, 536870912, 0, 1376281, 536870912, 0, 1376282, 536870912, 0, 1376283, 536870912, 0 )
 
 [node name="TileMap2" type="TileMap" parent="Map"]
-tile_set = SubResource( 25 )
+tile_set = SubResource( 45 )
 cell_size = Vector2( 39, 37 )
 collision_use_kinematic = true
 format = 1
@@ -925,6 +645,7 @@ region_rect = Rect2( 305, 469, 501, 287 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Music"]
 stream = ExtResource( 1 )
+autoplay = true
 
 [node name="Turnos" type="Node" parent="."]
 script = ExtResource( 5 )
@@ -940,397 +661,21 @@ kits1 = NodePath("../GUI/Kits Soldier")
 kits2 = NodePath("../GUI/Kits Ranger")
 kits3 = NodePath("../GUI/Kits Tank")
 
-[node name="Soldado" type="Area2D" parent="Turnos"]
-position = Vector2( 565.673, 575.64 )
-collision_layer = 2147483783
-collision_mask = 135
-script = ExtResource( 3 )
-health = 200
-strenght = 100
-noiseLVL = 5
-inventario = 2
-maxH = 200
-life = true
+[node name="Soldado" parent="Turnos" instance=ExtResource( 3 )]
 
-[node name="soldier" type="Sprite" parent="Turnos/Soldado"]
-position = Vector2( 0.0256348, -4.58008 )
-scale = Vector2( 0.887913, 0.88527 )
-texture = ExtResource( 8 )
-region_enabled = true
-region_rect = Rect2( 285, 80, 50, 53 )
+[node name="Ranger" parent="Turnos" instance=ExtResource( 6 )]
 
-[node name="Cure" type="Particles2D" parent="Turnos/Soldado"]
-position = Vector2( 0.189026, -0.0419922 )
-emitting = false
-amount = 100
-lifetime = 0.8
+[node name="Tanque" parent="Turnos" instance=ExtResource( 7 )]
+
+[node name="Zombie" parent="Turnos" instance=ExtResource( 22 )]
+
+[node name="Zombie Tanque" parent="Turnos" instance=ExtResource( 9 )]
+
+[node name="Trepador" parent="Turnos" instance=ExtResource( 8 )]
+
+[node name="EnemyTimer" type="Timer" parent="Turnos"]
+wait_time = 5.0
 one_shot = true
-explosiveness = 0.1
-process_material = SubResource( 28 )
-
-[node name="Tween" type="Tween" parent="Turnos/Soldado"]
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Turnos/Soldado"]
-position = Vector2( -0.050354, -0.127075 )
-scale = Vector2( 0.861627, 0.837508 )
-shape = SubResource( 29 )
-
-[node name="RayCast2D" type="RayCast2D" parent="Turnos/Soldado"]
-enabled = true
-cast_to = Vector2( 0, -150 )
-collision_mask = 16
-collide_with_areas = true
-
-[node name="Soldier Shooting" type="Particles2D" parent="Turnos/Soldado"]
-position = Vector2( 7.6748, -24.6482 )
-scale = Vector2( 0.2, 0.2 )
-emitting = false
-amount = 5
-lifetime = 0.5
-one_shot = true
-explosiveness = 0.5
-process_material = SubResource( 69 )
-texture = ExtResource( 6 )
-
-[node name="Blood Splat" type="Particles2D" parent="Turnos/Soldado"]
-position = Vector2( 0.0440063, 0.098999 )
-emitting = false
-amount = 100
-lifetime = 0.5
-one_shot = true
-explosiveness = 0.48
-process_material = SubResource( 80 )
-
-[node name="Ranger" type="Area2D" parent="Turnos"]
-position = Vector2( 448.799, 463.322 )
-priority = 1.0
-collision_layer = 134
-collision_mask = 134
-script = ExtResource( 3 )
-health = 100
-strenght = 175
-inventario = 2
-maxH = 100
-life = true
-
-[node name="ranger" type="Sprite" parent="Turnos/Ranger"]
-position = Vector2( 1.43214, -6.60541 )
-scale = Vector2( 0.861627, 0.837508 )
-texture = ExtResource( 8 )
-region_enabled = true
-region_rect = Rect2( 10, 78, 60, 64 )
-
-[node name="Cure" type="Particles2D" parent="Turnos/Ranger"]
-position = Vector2( 0.451019, -0.723999 )
-emitting = false
-amount = 100
-lifetime = 0.8
-one_shot = true
-explosiveness = 0.1
-process_material = SubResource( 28 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Turnos/Ranger"]
-position = Vector2( 0.0744019, -0.0109558 )
-scale = Vector2( 0.861627, 0.837508 )
-shape = SubResource( 29 )
-
-[node name="Tween" type="Tween" parent="Turnos/Ranger"]
-
-[node name="RayCast2D" type="RayCast2D" parent="Turnos/Ranger"]
-enabled = true
-cast_to = Vector2( 0, -400 )
-collision_mask = 16
-collide_with_areas = true
-
-[node name="Bow Shot" type="Particles2D" parent="Turnos/Ranger"]
-position = Vector2( 2.37823, -26.1219 )
-emitting = false
-amount = 1
-lifetime = 0.8
-one_shot = true
-process_material = SubResource( 70 )
-texture = ExtResource( 20 )
-
-[node name="Blood Splat" type="Particles2D" parent="Turnos/Ranger"]
-position = Vector2( -0.0605774, -0.0567017 )
-emitting = false
-amount = 100
-lifetime = 0.5
-one_shot = true
-explosiveness = 0.48
-process_material = SubResource( 80 )
-
-[node name="Tanque" type="Area2D" parent="Turnos"]
-position = Vector2( 527.602, 130.25 )
-rotation = -4.46638e-06
-collision_layer = 135
-collision_mask = 135
-script = ExtResource( 3 )
-health = 250
-strenght = 250
-noiseLVL = 10
-inventario = 2
-maxH = 500
-life = true
-
-[node name="tank" type="Sprite" parent="Turnos/Tanque"]
-position = Vector2( 0.406586, -4.7933 )
-scale = Vector2( 0.962379, 0.995109 )
-texture = ExtResource( 8 )
-region_enabled = true
-region_rect = Rect2( 156, 80, 46, 53 )
-
-[node name="Cure" type="Particles2D" parent="Turnos/Tanque"]
-position = Vector2( 0.512024, -0.398926 )
-rotation = 4.46638e-06
-emitting = false
-amount = 100
-lifetime = 0.8
-one_shot = true
-explosiveness = 0.1
-process_material = SubResource( 28 )
-
-[node name="Tween" type="Tween" parent="Turnos/Tanque"]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Turnos/Tanque"]
-position = Vector2( 0.046936, 0.0154114 )
-scale = Vector2( 0.861627, 0.837508 )
-shape = SubResource( 29 )
-
-[node name="RayCast2D" type="RayCast2D" parent="Turnos/Tanque"]
-enabled = true
-cast_to = Vector2( 0, -300 )
-collision_mask = 16
-collide_with_areas = true
-
-[node name="Tank Shooting" type="Particles2D" parent="Turnos/Tanque"]
-position = Vector2( 8.6236, -28.3648 )
-rotation = 4.46638e-06
-emitting = false
-amount = 30
-lifetime = 0.8
-one_shot = true
-explosiveness = 0.84
-process_material = SubResource( 59 )
-
-[node name="Smoke" type="Particles2D" parent="Turnos/Tanque"]
-position = Vector2( 9.16785, -20.3437 )
-rotation = 4.46638e-06
-emitting = false
-amount = 50
-lifetime = 0.8
-one_shot = true
-explosiveness = 0.71
-process_material = SubResource( 64 )
-
-[node name="Rocket" type="Particles2D" parent="Turnos/Tanque"]
-position = Vector2( 8.67657, -33.2364 )
-emitting = false
-amount = 1
-lifetime = 0.8
-one_shot = true
-process_material = SubResource( 75 )
-texture = ExtResource( 21 )
-
-[node name="Blood Splat" type="Particles2D" parent="Turnos/Tanque"]
-position = Vector2( -0.0483398, -0.128265 )
-rotation = 4.46638e-06
-emitting = false
-amount = 100
-lifetime = 0.5
-one_shot = true
-explosiveness = 0.48
-process_material = SubResource( 80 )
-
-[node name="Zombie" type="Area2D" parent="Turnos"]
-position = Vector2( 487.548, 425.914 )
-collision_layer = 23
-collision_mask = 23
-script = ExtResource( 7 )
-target1 = NodePath("../Tanque")
-target2 = NodePath("../Soldado")
-target3 = NodePath("../Ranger")
-target4 = NodePath("../../Map/Map_MarketSquare")
-posicion = NodePath("../Zombie")
-Resumen = NodePath("../../GUI/ResumenDTurno")
-turnos = 7
-MaxTturnos = 7
-
-[node name="zombi" type="Sprite" parent="Turnos/Zombie"]
-position = Vector2( -0.143311, 0.0866241 )
-scale = Vector2( 0.580853, 0.604334 )
-texture = ExtResource( 9 )
-region_enabled = true
-region_rect = Rect2( 249, 246, 69, 70 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Turnos/Zombie"]
-position = Vector2( -0.105469, 0.102615 )
-shape = SubResource( 30 )
-
-[node name="Tween" type="Tween" parent="Turnos/Zombie"]
-
-[node name="RayCast2D" type="RayCast2D" parent="Turnos/Zombie"]
-position = Vector2( 3.05176e-05, 0.130249 )
-enabled = true
-cast_to = Vector2( 0, -50 )
-collision_mask = 128
-collide_with_areas = true
-
-[node name="Explosion" type="Particles2D" parent="Turnos/Zombie"]
-position = Vector2( 0.31485, 0.202637 )
-emitting = false
-amount = 250
-lifetime = 0.8
-one_shot = true
-explosiveness = 0.5
-process_material = SubResource( 37 )
-
-[node name="Smoke" type="Particles2D" parent="Turnos/Zombie"]
-position = Vector2( 0.0142517, -0.098053 )
-emitting = false
-amount = 500
-lifetime = 0.8
-one_shot = true
-explosiveness = 0.8
-process_material = SubResource( 44 )
-
-[node name="Blood Splat" type="Particles2D" parent="Turnos/Zombie"]
-position = Vector2( -0.0398865, -0.125305 )
-emitting = false
-amount = 100
-lifetime = 0.5
-one_shot = true
-explosiveness = 0.48
-process_material = SubResource( 80 )
-
-[node name="Zombie Tanque" type="Area2D" parent="Turnos"]
-position = Vector2( 525.759, 462.414 )
-collision_layer = 23
-collision_mask = 23
-script = ExtResource( 7 )
-target1 = NodePath("../Tanque")
-target2 = NodePath("../Soldado")
-target3 = NodePath("../Ranger")
-target4 = NodePath("../../Map/Map_MarketSquare")
-posicion = NodePath("../Zombie Tanque")
-Resumen = NodePath("../../GUI/ResumenDTurno")
-turnos = 4
-MaxTturnos = 4
-
-[node name="tanque zombi" type="Sprite" parent="Turnos/Zombie Tanque"]
-position = Vector2( -0.198792, -10.4757 )
-scale = Vector2( 0.530112, 0.608117 )
-texture = ExtResource( 9 )
-region_enabled = true
-region_rect = Rect2( 420, 357, 150, 102 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Turnos/Zombie Tanque"]
-position = Vector2( -0.135803, -0.0671234 )
-shape = SubResource( 30 )
-
-[node name="Tween" type="Tween" parent="Turnos/Zombie Tanque"]
-
-[node name="RayCast2D" type="RayCast2D" parent="Turnos/Zombie Tanque"]
-enabled = true
-cast_to = Vector2( 0, -50 )
-collision_mask = 128
-collide_with_areas = true
-
-[node name="Explosion" type="Particles2D" parent="Turnos/Zombie Tanque"]
-position = Vector2( -0.0350952, -0.00637817 )
-emitting = false
-amount = 250
-lifetime = 0.8
-one_shot = true
-explosiveness = 0.5
-process_material = SubResource( 37 )
-
-[node name="Smoke" type="Particles2D" parent="Turnos/Zombie Tanque"]
-position = Vector2( -0.0350952, -0.00639343 )
-emitting = false
-amount = 500
-lifetime = 0.8
-one_shot = true
-explosiveness = 0.8
-process_material = SubResource( 44 )
-
-[node name="Blood Splat" type="Particles2D" parent="Turnos/Zombie Tanque"]
-position = Vector2( 0.125793, 0.0827637 )
-emitting = false
-amount = 100
-lifetime = 0.5
-one_shot = true
-explosiveness = 0.48
-process_material = SubResource( 80 )
-
-[node name="Trepador" type="Area2D" parent="Turnos"]
-position = Vector2( 644.174, 463.799 )
-collision_layer = 22
-collision_mask = 22
-script = ExtResource( 7 )
-target1 = NodePath("../Tanque")
-target2 = NodePath("../Soldado")
-target3 = NodePath("../Ranger")
-target4 = NodePath("../../Map/Map_MarketSquare")
-posicion = NodePath("../Trepador")
-Resumen = NodePath("../../GUI/ResumenDTurno")
-turnos = 5
-MaxTturnos = 5
-
-[node name="zombi trepa" type="Sprite" parent="Turnos/Trepador"]
-position = Vector2( -1.37006, 3.14912 )
-scale = Vector2( 0.913905, 0.871377 )
-texture = ExtResource( 9 )
-region_enabled = true
-region_rect = Rect2( 420, 255, 60, 68 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Turnos/Trepador"]
-position = Vector2( 0.123535, 0.0366483 )
-shape = SubResource( 30 )
-
-[node name="Tween" type="Tween" parent="Turnos/Trepador"]
-
-[node name="RayCast2D" type="RayCast2D" parent="Turnos/Trepador"]
-enabled = true
-cast_to = Vector2( 0, -50 )
-collision_mask = 128
-collide_with_areas = true
-
-[node name="Explosion" type="Particles2D" parent="Turnos/Trepador"]
-position = Vector2( -0.0551758, -0.0670319 )
-emitting = false
-amount = 250
-lifetime = 0.8
-one_shot = true
-explosiveness = 0.5
-process_material = SubResource( 37 )
-
-[node name="Smoke" type="Particles2D" parent="Turnos/Trepador"]
-position = Vector2( -0.0550537, -0.0670319 )
-emitting = false
-amount = 500
-lifetime = 0.8
-one_shot = true
-explosiveness = 0.8
-process_material = SubResource( 44 )
-
-[node name="Poison Atk" type="Particles2D" parent="Turnos/Trepador"]
-position = Vector2( -39.187, -260.254 )
-emitting = false
-amount = 500
-lifetime = 0.5
-one_shot = true
-explosiveness = 0.5
-process_material = SubResource( 51 )
-
-[node name="Blood Splat" type="Particles2D" parent="Turnos/Trepador"]
-position = Vector2( 0.511475, 0.0325623 )
-emitting = false
-amount = 100
-lifetime = 0.5
-one_shot = true
-explosiveness = 0.48
-process_material = SubResource( 80 )
 
 [node name="Extra Assets" type="Node" parent="."]
 
@@ -1432,4 +777,5 @@ emitting = false
 amount = 100
 one_shot = true
 explosiveness = 0.5
-process_material = SubResource( 54 )
+process_material = SubResource( 80 )
+[connection signal="timeout" from="Turnos/EnemyTimer" to="Turnos" method="_on_EnemyTimer_timeout"]

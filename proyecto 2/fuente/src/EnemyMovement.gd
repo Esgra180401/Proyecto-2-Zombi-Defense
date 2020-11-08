@@ -8,7 +8,6 @@ export (NodePath) var target3
 
 export (NodePath) var target4
 
-export (NodePath) var posicion
 
 export (NodePath) var Resumen
 onready var sumary = get_node(Resumen)
@@ -36,11 +35,12 @@ var string
 signal completed
 
 func _ready():
+	
 	$Tween.connect("tween_completed",self,"_on_Tween_tween_completed")
 	connect("body_entered",self,"go_back")
 func _physics_process(delta):
 
-	actual = get_node(posicion).get_position()
+	actual = get_position()
 	if !moving:
 		sonido1=get_node(target1).noiseLVL
 		sonido2=get_node(target2).noiseLVL
@@ -65,12 +65,11 @@ func _physics_process(delta):
 						collider = null
 					else:
 						$RayCast2D.get_collider().get_node("Blood Splat").set_emitting(true)
-						string = get_node(posicion).get_name() + " ataco a "+$RayCast2D.get_collider().get_name() +"\n"+$RayCast2D.get_collider().get_name()+" perdio " + str(get_node(posicion).strenght)+"HP"
+						string = get_name() + " ataco a "+$RayCast2D.get_collider().get_name() +"\n"+$RayCast2D.get_collider().get_name()+" perdio " + str(strenght)+"HP"
 						sumary.set_text(string)
-						damage(get_node(posicion).strenght,$RayCast2D.get_collider())
+						damage(strenght,$RayCast2D.get_collider())
 						turnos=0
 		else:
-			
 			if actual[0]<(follow.get_position())[0]-30:
 				motion_vector = Vector2( 1, 0)
 				rotation_degrees = 90
@@ -101,9 +100,9 @@ func _physics_process(delta):
 					if $RayCast2D.get_collider()==null:
 						collider = null
 					else:
-						string = get_node(posicion).get_name() + " ataco a "+$RayCast2D.get_collider().get_name() +"\n"+$RayCast2D.get_collider().get_name()+" perdio " + str(get_node(posicion).strenght)+"HP"
+						string = get_name() + " ataco a "+$RayCast2D.get_collider().get_name() +"\n"+$RayCast2D.get_collider().get_name()+" perdio " + strenght+"HP"
 						sumary.set_text(string)
-						damage(get_node(posicion).strenght,$RayCast2D.get_collider())
+						damage(strenght,$RayCast2D.get_collider())
 						turnos=0
 				else:		
 					last_movement=motion_vector

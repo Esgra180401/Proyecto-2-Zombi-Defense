@@ -31,7 +31,7 @@ var new_index = 0
 
 func _ready():
 	preparacion()
-	
+	$EnemyTimer.start()
 func preparacion():
 	personaje_activo = get_child(new_index)
 	personaje_activo.set_physics_process(false)
@@ -47,9 +47,10 @@ func iniciar():
 	jugar_turno()
 	
 func jugar_turno():
-	personaje_activo.set_physics_process(true)
-	actualizar_labels()
-	yield(personaje_activo,"completed")
+	if personaje_activo.get_name() != "EnemyTimer":
+		personaje_activo.set_physics_process(true)
+		actualizar_labels()
+		yield(personaje_activo,"completed")
 	new_index=(personaje_activo.get_index()+1)
 	if new_index>2:
 		BtnAtk.set_disabled(true)
@@ -76,3 +77,12 @@ func actualizar_labels():
 	get_node(kits1).set_text("Kits:"+str(get_child(0).inventario))
 	get_node(kits2).set_text("Kits:"+str(get_child(1).inventario))
 	get_node(kits3).set_text("Kits:"+str(get_child(2).inventario))
+	
+var enemy = preload("res://src/actors/Zombie.tscn")
+func _on_EnemyTimer_timeout():
+	var e = enemy.instance()
+	var pos = Vector2(97.328,203.874)
+	e.position = pos
+	
+	$EnemyTimer.start()
+	add_child(e)

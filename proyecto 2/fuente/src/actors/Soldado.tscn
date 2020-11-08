@@ -1,0 +1,139 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://src/actors/player_movement.gd" type="Script" id=1]
+[ext_resource path="res://assets/Character Sprites.png" type="Texture" id=2]
+[ext_resource path="res://assets/Bullet.png" type="Texture" id=3]
+
+[sub_resource type="Gradient" id=46]
+colors = PoolColorArray( 0.171875, 1, 0, 1, 0.148438, 1, 0, 0.203922 )
+
+[sub_resource type="GradientTexture" id=47]
+gradient = SubResource( 46 )
+
+[sub_resource type="ParticlesMaterial" id=48]
+emission_shape = 1
+emission_sphere_radius = 20.7
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 50.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 2.0
+color_ramp = SubResource( 47 )
+
+[sub_resource type="RectangleShape2D" id=49]
+extents = Vector2( 16.0135, 16.9643 )
+
+[sub_resource type="Curve" id=50]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, 360 ), 0.0, 0.0, 0, 0, Vector2( 1, 360 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=51]
+curve = SubResource( 50 )
+
+[sub_resource type="Gradient" id=52]
+offsets = PoolRealArray( 0.773973, 1 )
+colors = PoolColorArray( 0.988909, 1, 0, 1, 0.918596, 1, 0, 0 )
+
+[sub_resource type="GradientTexture" id=53]
+gradient = SubResource( 52 )
+
+[sub_resource type="ParticlesMaterial" id=54]
+flag_align_y = true
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 5.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1500.0
+angular_velocity_curve = SubResource( 51 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 4.0
+color_ramp = SubResource( 53 )
+
+[sub_resource type="Gradient" id=16]
+colors = PoolColorArray( 0.733333, 0.0352941, 0.0352941, 1, 0.733333, 0.0352941, 0.0352941, 0.443137 )
+
+[sub_resource type="GradientTexture" id=17]
+gradient = SubResource( 16 )
+
+[sub_resource type="Curve" id=18]
+max_value = 5.0
+_data = [ Vector2( 0, 5 ), 0.0, 0.0, 0, 0, Vector2( 0.983696, 1.78826 ), 0.743434, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=19]
+curve = SubResource( 18 )
+
+[sub_resource type="ParticlesMaterial" id=20]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 180.0
+gravity = Vector3( 0, 70, 0 )
+initial_velocity = 78.13
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 19 )
+color_ramp = SubResource( 17 )
+
+[node name="Soldado" type="Area2D"]
+position = Vector2( 565.673, 575.64 )
+collision_layer = 2147483783
+collision_mask = 135
+script = ExtResource( 1 )
+health = 200
+strenght = 100
+noiseLVL = 5
+inventario = 2
+maxH = 200
+life = true
+
+[node name="soldier" type="Sprite" parent="."]
+position = Vector2( 0.0256348, -4.58008 )
+scale = Vector2( 0.887913, 0.88527 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 285, 80, 50, 53 )
+
+[node name="Cure" type="Particles2D" parent="."]
+position = Vector2( 0.189026, -0.0419922 )
+emitting = false
+amount = 100
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.1
+process_material = SubResource( 48 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2( -0.050354, -0.127075 )
+scale = Vector2( 0.861627, 0.837508 )
+shape = SubResource( 49 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, -150 )
+collision_mask = 16
+collide_with_areas = true
+
+[node name="Soldier Shooting" type="Particles2D" parent="."]
+position = Vector2( 7.6748, -24.6482 )
+scale = Vector2( 0.2, 0.2 )
+emitting = false
+amount = 5
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.5
+process_material = SubResource( 54 )
+texture = ExtResource( 3 )
+
+[node name="Blood Splat" type="Particles2D" parent="."]
+position = Vector2( 0.0440063, 0.098999 )
+emitting = false
+amount = 100
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.48
+process_material = SubResource( 20 )
