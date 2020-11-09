@@ -19,9 +19,10 @@ func _ready():
 	
 func _button_pressed1():
 	if turns.personaje_activo.collider == null:
-		print("miss")
+		pass
 	else:
-		string=turns.personaje_activo.get_name() + " ataco a " + turns.personaje_activo.collider.get_name()+"\n"+turns.personaje_activo.collider.get_name()+" perdio "+str(turns.personaje_activo.strenght)+"HP"
+		turns.personaje_activo.noiseLVL=0+turns.personaje_activo.MaxNoise
+		string=turns.personaje_activo.get_name() + " ataco a " + turns.personaje_activo.collider.Tipo+"\n"+turns.personaje_activo.collider.Tipo+" perdio "+str(turns.personaje_activo.strenght)+"HP"
 		sumary.set_text(string)
 		if turns.personaje_activo.get_name() == "Tanque":
 			turns.personaje_activo.get_node("Tank Shooting").set_emitting(true)

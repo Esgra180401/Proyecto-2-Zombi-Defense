@@ -4,6 +4,7 @@ export var health: int
 export var strenght: int
 export var level: int
 export var noiseLVL: int
+export var MaxNoise: int
 export var inventario: int
 export var maxH: int
 export var life: bool

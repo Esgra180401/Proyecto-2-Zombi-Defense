@@ -84,29 +84,29 @@ scale_random = 1.0
 scale_curve = SubResource( 14 )
 color_ramp = SubResource( 10 )
 
-[sub_resource type="Gradient" id=71]
+[sub_resource type="Gradient" id=16]
 offsets = PoolRealArray( 0.208904, 0.75 )
 colors = PoolColorArray( 0.21395, 0.0246468, 0.450684, 1, 0.0330505, 0.528809, 0.117775, 0 )
 
-[sub_resource type="GradientTexture" id=72]
-gradient = SubResource( 71 )
+[sub_resource type="GradientTexture" id=17]
+gradient = SubResource( 16 )
 
-[sub_resource type="Curve" id=73]
+[sub_resource type="Curve" id=18]
 min_value = -200.0
 max_value = 200.0
 _data = [ Vector2( 0, -1.36362 ), 0.0, 0.0, 0, 0, Vector2( 1, -200 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=74]
-curve = SubResource( 73 )
+[sub_resource type="CurveTexture" id=19]
+curve = SubResource( 18 )
 
-[sub_resource type="Curve" id=75]
+[sub_resource type="Curve" id=20]
 max_value = 7.0
 _data = [ Vector2( 0, 0 ), 0.0, -0.741941, 0, 0, Vector2( 0.984127, 2.47273 ), -2.3699, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=76]
-curve = SubResource( 75 )
+[sub_resource type="CurveTexture" id=21]
+curve = SubResource( 20 )
 
-[sub_resource type="ParticlesMaterial" id=77]
+[sub_resource type="ParticlesMaterial" id=22]
 emission_shape = 1
 emission_sphere_radius = 0.01
 flag_disable_z = true
@@ -116,25 +116,25 @@ initial_velocity = 219.23
 orbit_velocity = 0.2
 orbit_velocity_random = 0.0
 linear_accel = 2.0
-linear_accel_curve = SubResource( 74 )
+linear_accel_curve = SubResource( 19 )
 scale = 7.0
-scale_curve = SubResource( 76 )
-color_ramp = SubResource( 72 )
+scale_curve = SubResource( 21 )
+color_ramp = SubResource( 17 )
 
-[sub_resource type="Gradient" id=16]
+[sub_resource type="Gradient" id=23]
 colors = PoolColorArray( 0.733333, 0.0352941, 0.0352941, 1, 0.733333, 0.0352941, 0.0352941, 0.443137 )
 
-[sub_resource type="GradientTexture" id=17]
-gradient = SubResource( 16 )
+[sub_resource type="GradientTexture" id=24]
+gradient = SubResource( 23 )
 
-[sub_resource type="Curve" id=18]
+[sub_resource type="Curve" id=25]
 max_value = 5.0
 _data = [ Vector2( 0, 5 ), 0.0, 0.0, 0, 0, Vector2( 0.983696, 1.78826 ), 0.743434, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=19]
-curve = SubResource( 18 )
+[sub_resource type="CurveTexture" id=26]
+curve = SubResource( 25 )
 
-[sub_resource type="ParticlesMaterial" id=20]
+[sub_resource type="ParticlesMaterial" id=27]
 flag_disable_z = true
 direction = Vector3( 0, -1, 0 )
 spread = 180.0
@@ -142,8 +142,8 @@ gravity = Vector3( 0, 70, 0 )
 initial_velocity = 78.13
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale_curve = SubResource( 19 )
-color_ramp = SubResource( 17 )
+scale_curve = SubResource( 26 )
+color_ramp = SubResource( 24 )
 
 [node name="Trepador" type="Area2D"]
 position = Vector2( 644.174, 463.799 )
@@ -154,10 +154,10 @@ target1 = NodePath("../Tanque")
 target2 = NodePath("../Soldado")
 target3 = NodePath("../Ranger")
 target4 = NodePath("../../Map/Map_MarketSquare")
-posicion = NodePath("../Trepador")
 Resumen = NodePath("../../GUI/ResumenDTurno")
 turnos = 5
 MaxTturnos = 5
+Tipo = "Trepador"
 
 [node name="zombi trepa" type="Sprite" parent="."]
 position = Vector2( -1.37006, 3.14912 )
@@ -203,7 +203,7 @@ amount = 500
 lifetime = 0.5
 one_shot = true
 explosiveness = 0.5
-process_material = SubResource( 77 )
+process_material = SubResource( 22 )
 
 [node name="Blood Splat" type="Particles2D" parent="."]
 position = Vector2( 0.511475, 0.0325623 )
@@ -212,4 +212,4 @@ amount = 100
 lifetime = 0.5
 one_shot = true
 explosiveness = 0.48
-process_material = SubResource( 20 )
+process_material = SubResource( 27 )

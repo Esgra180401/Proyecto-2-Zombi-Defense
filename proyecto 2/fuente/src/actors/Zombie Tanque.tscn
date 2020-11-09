@@ -117,10 +117,10 @@ target1 = NodePath("../Tanque")
 target2 = NodePath("../Soldado")
 target3 = NodePath("../Ranger")
 target4 = NodePath("../../Map/Map_MarketSquare")
-posicion = NodePath("../Zombie Tanque")
 Resumen = NodePath("../../GUI/ResumenDTurno")
 turnos = 4
 MaxTturnos = 4
+Tipo = "Zombie Tanque"
 
 [node name="tanque zombi" type="Sprite" parent="."]
 position = Vector2( -0.198792, -10.4757 )

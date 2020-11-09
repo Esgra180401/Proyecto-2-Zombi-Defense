@@ -14,6 +14,7 @@ onready var sumary = get_node(Resumen)
 
 export var turnos: int
 export var MaxTturnos: int
+export var Tipo: String
 
 class_name EnemyMovement
 
@@ -37,7 +38,6 @@ signal completed
 func _ready():
 	set_physics_process(false)
 	$Tween.connect("tween_completed",self,"_on_Tween_tween_completed")
-	connect("body_entered",self,"go_back")
 func _physics_process(delta):
 
 	actual = get_position()
@@ -65,7 +65,7 @@ func _physics_process(delta):
 						collider = null
 					else:
 						$RayCast2D.get_collider().get_node("Blood Splat").set_emitting(true)
-						string = get_name() + " ataco a "+$RayCast2D.get_collider().get_name() +"\n"+$RayCast2D.get_collider().get_name()+" perdio " + str(strenght)+"HP"
+						string = Tipo + " ataco a "+$RayCast2D.get_collider().get_name() +"\n"+$RayCast2D.get_collider().get_name()+" perdio " + str(strenght)+"HP"
 						sumary.set_text(string)
 						damage(strenght,$RayCast2D.get_collider())
 						turnos=0
@@ -100,7 +100,7 @@ func _physics_process(delta):
 					if $RayCast2D.get_collider()==null:
 						collider = null
 					else:
-						string = get_name() + " ataco a "+$RayCast2D.get_collider().get_name() +"\n"+$RayCast2D.get_collider().get_name()+" perdio " + strenght+"HP"
+						string = Tipo + " ataco a "+$RayCast2D.get_collider().get_name() +"\n"+$RayCast2D.get_collider().get_name()+" perdio " + strenght+"HP"
 						sumary.set_text(string)
 						damage(strenght,$RayCast2D.get_collider())
 						turnos=0
@@ -111,10 +111,6 @@ func _physics_process(delta):
 					$Tween.start()
 					moving = true
 					motion_vector=Vector2()
-			
-		
-func go_back(object):
-	pass
 		
 #This function is connected to the tween node's tween_completed signal.
 func _on_Tween_tween_completed(object, key):
