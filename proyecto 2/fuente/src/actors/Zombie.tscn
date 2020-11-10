@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://src/EnemyMovement.gd" type="Script" id=1]
 [ext_resource path="res://assets/Zombie Sprites.png" type="Texture" id=2]
@@ -108,6 +108,31 @@ orbit_velocity_random = 0.0
 scale_curve = SubResource( 19 )
 color_ramp = SubResource( 17 )
 
+[sub_resource type="Gradient" id=21]
+offsets = PoolRealArray( 0, 0.350725 )
+colors = PoolColorArray( 1, 0.866667, 0, 1, 1, 0.866667, 0, 0 )
+
+[sub_resource type="GradientTexture" id=22]
+gradient = SubResource( 21 )
+
+[sub_resource type="Curve" id=23]
+max_value = 4.0
+_data = [ Vector2( 0, 3.78182 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=24]
+curve = SubResource( 23 )
+
+[sub_resource type="ParticlesMaterial" id=25]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 192.71
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 24 )
+color_ramp = SubResource( 22 )
+
 [node name="Zombie" type="Area2D"]
 position = Vector2( 487.548, 425.914 )
 collision_layer = 23
@@ -138,7 +163,7 @@ shape = SubResource( 1 )
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2( 3.05176e-05, 0.130249 )
 enabled = true
-cast_to = Vector2( 0, -50 )
+cast_to = Vector2( 0, -70 )
 collision_mask = 128
 collide_with_areas = true
 
@@ -168,3 +193,12 @@ lifetime = 0.5
 one_shot = true
 explosiveness = 0.48
 process_material = SubResource( 20 )
+
+[node name="Attack" type="Particles2D" parent="."]
+position = Vector2( 0, -50.0253 )
+emitting = false
+amount = 300
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.83
+process_material = SubResource( 25 )

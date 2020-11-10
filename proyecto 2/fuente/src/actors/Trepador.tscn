@@ -110,10 +110,11 @@ curve = SubResource( 20 )
 emission_shape = 1
 emission_sphere_radius = 0.01
 flag_disable_z = true
-spread = 180.0
+direction = Vector3( 0, -1, 0 )
+spread = 4.68
 gravity = Vector3( 0, 0, 0 )
-initial_velocity = 219.23
-orbit_velocity = 0.2
+initial_velocity = 651.52
+orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 linear_accel = 2.0
 linear_accel_curve = SubResource( 19 )
@@ -147,8 +148,8 @@ color_ramp = SubResource( 24 )
 
 [node name="Trepador" type="Area2D"]
 position = Vector2( 644.174, 463.799 )
-collision_layer = 22
-collision_mask = 22
+collision_layer = 524310
+collision_mask = 524310
 script = ExtResource( 1 )
 target1 = NodePath("../Tanque")
 target2 = NodePath("../Soldado")
@@ -174,7 +175,7 @@ shape = SubResource( 1 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = true
-cast_to = Vector2( 0, -50 )
+cast_to = Vector2( 0, -300 )
 collision_mask = 128
 collide_with_areas = true
 
@@ -196,11 +197,11 @@ one_shot = true
 explosiveness = 0.8
 process_material = SubResource( 15 )
 
-[node name="Poison Atk" type="Particles2D" parent="."]
-position = Vector2( -39.187, -260.254 )
+[node name="Attack" type="Particles2D" parent="."]
+position = Vector2( 1.20021, 51.2814 )
 emitting = false
 amount = 500
-lifetime = 0.5
+lifetime = 0.8
 one_shot = true
 explosiveness = 0.5
 process_material = SubResource( 22 )

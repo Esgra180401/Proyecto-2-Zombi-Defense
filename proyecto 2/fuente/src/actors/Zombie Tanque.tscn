@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://src/EnemyMovement.gd" type="Script" id=1]
 [ext_resource path="res://assets/Zombie Sprites.png" type="Texture" id=2]
@@ -108,10 +108,38 @@ orbit_velocity_random = 0.0
 scale_curve = SubResource( 19 )
 color_ramp = SubResource( 17 )
 
+[sub_resource type="Gradient" id=21]
+offsets = PoolRealArray( 0.255072, 0.498551 )
+colors = PoolColorArray( 0.273202, 0.259529, 0.246522, 1, 0.333333, 0.172549, 0.0196078, 0 )
+
+[sub_resource type="GradientTexture" id=22]
+gradient = SubResource( 21 )
+
+[sub_resource type="Curve" id=23]
+min_value = 1.0
+max_value = 7.0
+_data = [ Vector2( 0, 4.92265 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), -4.26076, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=24]
+curve = SubResource( 23 )
+
+[sub_resource type="ParticlesMaterial" id=25]
+emission_shape = 2
+emission_box_extents = Vector3( 0, 50, 1 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 44.06
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 302.09
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 24 )
+color_ramp = SubResource( 22 )
+
 [node name="Zombie Tanque" type="Area2D"]
 position = Vector2( 525.759, 462.414 )
-collision_layer = 23
-collision_mask = 23
+collision_layer = 524311
+collision_mask = 524311
 script = ExtResource( 1 )
 target1 = NodePath("../Tanque")
 target2 = NodePath("../Soldado")
@@ -137,7 +165,7 @@ shape = SubResource( 1 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = true
-cast_to = Vector2( 0, -50 )
+cast_to = Vector2( 0, -190 )
 collision_mask = 128
 collide_with_areas = true
 
@@ -167,3 +195,12 @@ lifetime = 0.5
 one_shot = true
 explosiveness = 0.48
 process_material = SubResource( 20 )
+
+[node name="Attack" type="Particles2D" parent="."]
+position = Vector2( -6.10352e-05, -69.4502 )
+emitting = false
+amount = 1000
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.45
+process_material = SubResource( 25 )

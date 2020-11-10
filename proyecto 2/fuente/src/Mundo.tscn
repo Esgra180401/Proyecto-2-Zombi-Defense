@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://GameTheme.ogg" type="AudioStream" id=1]
 [ext_resource path="res://assets/Map_MarketSquare.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://src/Turnos.gd" type="Script" id=5]
 [ext_resource path="res://src/actors/Ranger.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/actors/Tanque.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/Flag.png" type="Texture" id=8]
 [ext_resource path="res://assets/Boton Atk.png" type="Texture" id=10]
 [ext_resource path="res://assets/Boton Curar.png" type="Texture" id=11]
 [ext_resource path="res://assets/Rifle.png" type="Texture" id=12]
@@ -328,6 +329,9 @@ points = PoolVector2Array( 155.958, 147.181, -0.0559082, 147.181, -0.0559082, -0
 8/shape_one_way_margin = 0.0
 8/shapes = [  ]
 8/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 112.33, 102.148 )
 
 [sub_resource type="Gradient" id=26]
 colors = PoolColorArray( 0.959961, 1, 0, 1, 0.960784, 1, 0, 0.415686 )
@@ -660,9 +664,10 @@ kits1 = NodePath("../GUI/Kits Soldier")
 kits2 = NodePath("../GUI/Kits Ranger")
 kits3 = NodePath("../GUI/Kits Tank")
 Resumen = NodePath("../GUI/ResumenDTurno")
+Bandera = NodePath("../Extra Assets/Base")
 
 [node name="Soldado" parent="Turnos" instance=ExtResource( 3 )]
-position = Vector2( 604.923, 462.679 )
+position = Vector2( 604.202, 462.927 )
 
 [node name="Ranger" parent="Turnos" instance=ExtResource( 6 )]
 
@@ -674,6 +679,7 @@ MaxNoise = 10
 [node name="Zombie" parent="Turnos" instance=ExtResource( 22 )]
 position = Vector2( 526.258, 203.663 )
 life = true
+target4 = NodePath("../../Extra Assets/Base")
 
 [node name="Extra Assets" type="Node" parent="."]
 
@@ -766,6 +772,26 @@ texture = ExtResource( 4 )
 position = Vector2( 157.373, 462.877 )
 scale = Vector2( 0.456573, 0.494131 )
 texture = ExtResource( 4 )
+
+[node name="Base" type="Area2D" parent="Extra Assets"]
+position = Vector2( 409.253, 672.404 )
+scale = Vector2( 0.123395, 0.13072 )
+collision_layer = 524288
+collision_mask = 524288
+
+[node name="Flag" type="Sprite" parent="Extra Assets/Base"]
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Extra Assets/Base"]
+position = Vector2( -5.11084, 82.0186 )
+shape = SubResource( 29 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Extra Assets/Base"]
+position = Vector2( 0, 80.3242 )
+enabled = true
+cast_to = Vector2( 0, -100 )
+collide_with_areas = true
 
 [node name="Animaciones" type="Node" parent="."]
 

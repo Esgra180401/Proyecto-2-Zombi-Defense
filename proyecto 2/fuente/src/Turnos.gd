@@ -28,6 +28,8 @@ export (NodePath) var kits3
 
 export (NodePath) var Resumen
 
+export (NodePath) var Bandera
+
 var enemy1 = preload("res://src/actors/Zombie.tscn")
 var enemy2= preload("res://src/actors/Zombie Tanque.tscn")
 var enemy3 = preload("res://src/actors/Trepador.tscn")
@@ -70,7 +72,9 @@ func jugar_turno():
 		BtnCur.set_disabled(true)
 	print(get_child(0).life)
 	if new_index==get_child_count():
-		if get_child(0).life==false and get_child(1).life==false and get_child(2).life==false:
+		if get_node(Bandera).get_node("RayCast2D").get_collider()!=null:
+			game_over()
+		elif get_child(0).life==false and get_child(1).life==false and get_child(2).life==false:
 			game_over()
 		else:
 			get_child(0).noiseLVL=0
@@ -85,7 +89,9 @@ func jugar_turno():
 			jugar_turno()
 		
 	else:
-		if get_child(0).life==false and get_child(1).life==false and get_child(2).life==false:
+		if get_node(Bandera).get_node("RayCast2D").get_collider()!=null:
+			game_over()
+		elif get_child(0).life==false and get_child(1).life==false and get_child(2).life==false:
 			game_over()
 		else:
 			personaje_activo=get_child(new_index)

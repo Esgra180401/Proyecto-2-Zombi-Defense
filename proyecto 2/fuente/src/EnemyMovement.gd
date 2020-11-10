@@ -47,13 +47,13 @@ func _physics_process(delta):
 		sonido3=get_node(target3).noiseLVL
 		
 		if sonido1==0 and sonido2==0 and sonido3==0:
-			follow = get_node(target4)
+			follow = Vector2(408.673,682.429)
 		elif sonido1 > sonido2 and sonido1 > sonido3:
-			follow = get_node(target1)
+			follow = get_node(target1).position
 		elif sonido1 < sonido2 and sonido2 > sonido3:
-			follow = get_node(target2)
+			follow = get_node(target2).position
 		else:
-			follow = get_node(target3)
+			follow = get_node(target3).position
 		
 		if turnos <= 0:
 				turnos = 0+MaxTturnos
@@ -68,32 +68,31 @@ func _physics_process(delta):
 						string = Tipo + " ataco a "+$RayCast2D.get_collider().get_name() +"\n"+$RayCast2D.get_collider().get_name()+" perdio " + str(strenght)+"HP"
 						sumary.set_text(string)
 						damage(strenght,$RayCast2D.get_collider())
+						get_node("Attack").set_emitting(true)
 						turnos=0
 		else:
-			if actual[0]<(follow.get_position())[0]-30:
+			if actual[0]<follow[0]-30:
 				motion_vector = Vector2( 1, 0)
 				rotation_degrees = 90
 				tile_size = 39
 				turnos-=1
-			elif actual[0]>(follow.get_position())[0]+30:
+			elif actual[0]>follow[0]+30:
 				motion_vector = Vector2( -1, 0)
 				rotation_degrees = 270
 				tile_size = 39
 				turnos-=1
-			elif actual[1]<(follow.get_position())[1]-30:
+			elif actual[1]<follow[1]-30:
 				motion_vector = Vector2( 0, 1)
 				rotation_degrees = 180
 				tile_size = 37
 				turnos-=1
-			elif actual[1]>(follow.get_position())[1]+30:
+			elif actual[1]>follow[1]+30:
 				motion_vector = Vector2( 0, -1)
 				rotation_degrees = 0
 				tile_size = 37
 				turnos-=1
 			else:
-				motion_vector = Vector2( 0, 1)
-				rotation_degrees = 180
-				tile_size = 37
+				motion_vector = Vector2(0,0)
 				turnos-=1
 			if motion_vector != Vector2():
 				if $RayCast2D.is_colliding():
@@ -103,6 +102,7 @@ func _physics_process(delta):
 						string = Tipo + " ataco a "+$RayCast2D.get_collider().get_name() +"\n"+$RayCast2D.get_collider().get_name()+" perdio " + strenght+"HP"
 						sumary.set_text(string)
 						damage(strenght,$RayCast2D.get_collider())
+						get_node("Attack").set_emitting(true)
 						turnos=0
 				else:		
 					last_movement=motion_vector
