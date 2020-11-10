@@ -28,6 +28,8 @@ export (NodePath) var kits3
 
 export (NodePath) var Resumen
 
+export (NodePath) var Rounds
+
 export (NodePath) var Bandera
 
 var enemy1 = preload("res://src/actors/Zombie.tscn")
@@ -73,8 +75,11 @@ func jugar_turno():
 	else:
 		personaje_activo.set_physics_process(true)
 		yield(personaje_activo,"completed")
+	if personaje_activo.get_index()<3:
+		esperar(0.8)
+	else:
+		esperar(0.4)
 	actualizar_labels()
-	esperar(1)
 	yield(self, "timer_end")
 	limpiar()
 	is_dead()
@@ -92,6 +97,7 @@ func jugar_turno():
 			get_child(1).noiseLVL=0
 			get_child(2).noiseLVL=0
 			ronda+=1
+			actualizar_labels()
 			activar_spawns(ronda)
 			new_index = 0
 			personaje_activo=get_child(new_index)
@@ -106,6 +112,7 @@ func jugar_turno():
 			game_over()
 		else:
 			personaje_activo=get_child(new_index)
+			actualizar_labels()
 			jugar_turno()
 
 func actualizar_labels():
@@ -120,6 +127,8 @@ func actualizar_labels():
 	get_node(kits1).set_text("Kits:"+str(get_child(0).inventario))
 	get_node(kits2).set_text("Kits:"+str(get_child(1).inventario))
 	get_node(kits3).set_text("Kits:"+str(get_child(2).inventario))
+	
+	get_node(Rounds).set_text("Ronda "+str(ronda))
 	
 func game_over():
 	BtnAtk.set_disabled(true)

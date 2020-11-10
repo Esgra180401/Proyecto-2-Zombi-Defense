@@ -613,6 +613,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Ronda" type="Label" parent="GUI"]
+margin_left = 1079.71
+margin_top = 597.112
+margin_right = 1192.71
+margin_bottom = 630.112
+custom_fonts/font = SubResource( 19 )
+custom_colors/font_color = Color( 0.262745, 0.027451, 0.027451, 1 )
+text = "Ronda 0
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Map" type="Node" parent="."]
 
 [node name="TileMap" type="TileMap" parent="Map"]
@@ -664,6 +677,7 @@ kits1 = NodePath("../GUI/Kits Soldier")
 kits2 = NodePath("../GUI/Kits Ranger")
 kits3 = NodePath("../GUI/Kits Tank")
 Resumen = NodePath("../GUI/ResumenDTurno")
+Rounds = NodePath("../GUI/Ronda")
 Bandera = NodePath("../Extra Assets/Base")
 
 [node name="Soldado" parent="Turnos" instance=ExtResource( 3 )]
@@ -677,6 +691,7 @@ noiseLVL = 0
 MaxNoise = 10
 
 [node name="Timer" type="Timer" parent="Turnos"]
+wait_time = 0.8
 
 [node name="Zombie" parent="Turnos" instance=ExtResource( 22 )]
 position = Vector2( 526.258, 203.663 )
