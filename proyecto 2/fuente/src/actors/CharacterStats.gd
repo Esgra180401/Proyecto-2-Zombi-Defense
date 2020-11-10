@@ -37,6 +37,7 @@ func damage(pwr,target):
 		target.health = 0
 	if target.health == 0 :
 		target.dead()
+		
 
 func dead():
 	life=false

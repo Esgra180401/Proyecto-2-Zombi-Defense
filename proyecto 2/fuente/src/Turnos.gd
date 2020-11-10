@@ -44,7 +44,11 @@ var personaje_activo
 var new_index = 0
 var ronda = 0
 
+onready var timer = get_node("Timer")
+signal timer_end
+
 func _ready():
+	timer.connect("timeout",self,"_emit_timer_end_signal")
 	preparacion()
 	
 func preparacion():
@@ -62,12 +66,16 @@ func iniciar():
 	jugar_turno()
 	
 func jugar_turno():
-	if personaje_activo.life==false:
+	if personaje_activo.get_name()=="Timer":
+		pass
+	elif personaje_activo.life==false :
 		pass
 	else:
 		personaje_activo.set_physics_process(true)
 		yield(personaje_activo,"completed")
 	actualizar_labels()
+	esperar(1)
+	yield(self, "timer_end")
 	limpiar()
 	is_dead()
 	new_index=(personaje_activo.get_index()+1)
@@ -165,10 +173,16 @@ func is_dead():
 		
 func limpiar():
 	for i in range(get_child_count()):
-		if i == 0 or i == 1 or i == 2:
+		if i == 0 or i == 1 or i == 2 or i == 3:
 			pass
 		elif i >= get_child_count():
 			pass
 		else:
 			if get_child(i).life==false:
 				remove_child(get_child(i))
+func esperar(tiempo):
+	timer.set_wait_time(tiempo)
+	timer.set_timer_process_mode(0)
+	timer.start()
+func _emit_timer_end_signal():
+	emit_signal("timer_end")	

@@ -676,6 +676,8 @@ position = Vector2( 525.647, 425.263 )
 noiseLVL = 0
 MaxNoise = 10
 
+[node name="Timer" type="Timer" parent="Turnos"]
+
 [node name="Zombie" parent="Turnos" instance=ExtResource( 22 )]
 position = Vector2( 526.258, 203.663 )
 target4 = NodePath("../../Extra Assets/Base")
