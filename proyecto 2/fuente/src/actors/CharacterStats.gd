@@ -19,6 +19,7 @@ func heal(player):
 		player.turnos -= 1
 		if player.health > player.maxH:
 			player.health = 0 + player.maxH
+			
 func drops(item):
 	if item == "lvl":
 		level += 1
@@ -29,9 +30,16 @@ func drops(item):
 			health = 0 + maxH
 	else:
 		strenght += 10
+		
 func damage(pwr,target):
 	target.health -= pwr
 	if target.health < 0 :
 		target.health = 0
+	if target.health == 0 :
+		target.dead()
+
+func dead():
+	life=false
+	get_node("Sprite").set_visible(false)
 	
 

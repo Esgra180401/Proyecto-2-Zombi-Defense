@@ -330,16 +330,16 @@ points = PoolVector2Array( 155.958, 147.181, -0.0559082, 147.181, -0.0559082, -0
 8/shapes = [  ]
 8/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=29]
+[sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 112.33, 102.148 )
 
-[sub_resource type="Gradient" id=26]
+[sub_resource type="Gradient" id=27]
 colors = PoolColorArray( 0.959961, 1, 0, 1, 0.960784, 1, 0, 0.415686 )
 
-[sub_resource type="GradientTexture" id=27]
-gradient = SubResource( 26 )
+[sub_resource type="GradientTexture" id=28]
+gradient = SubResource( 27 )
 
-[sub_resource type="ParticlesMaterial" id=28]
+[sub_resource type="ParticlesMaterial" id=29]
 emission_shape = 1
 emission_sphere_radius = 2.0
 flag_disable_z = true
@@ -349,7 +349,7 @@ initial_velocity = 200.0
 orbit_velocity = 2.0
 orbit_velocity_random = 0.0
 scale = 2.0
-color_ramp = SubResource( 27 )
+color_ramp = SubResource( 28 )
 
 [node name="Mundo" type="Node"]
 __meta__ = {
@@ -678,7 +678,6 @@ MaxNoise = 10
 
 [node name="Zombie" parent="Turnos" instance=ExtResource( 22 )]
 position = Vector2( 526.258, 203.663 )
-life = true
 target4 = NodePath("../../Extra Assets/Base")
 
 [node name="Extra Assets" type="Node" parent="."]
@@ -785,7 +784,7 @@ flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Extra Assets/Base"]
 position = Vector2( -5.11084, 82.0186 )
-shape = SubResource( 29 )
+shape = SubResource( 26 )
 
 [node name="RayCast2D" type="RayCast2D" parent="Extra Assets/Base"]
 position = Vector2( 0, 80.3242 )
@@ -801,7 +800,7 @@ emitting = false
 amount = 100
 one_shot = true
 explosiveness = 0.5
-process_material = SubResource( 28 )
+process_material = SubResource( 29 )
 
 [node name="Toombstone" type="Sprite" parent="."]
 position = Vector2( 62.0126, 200.387 )

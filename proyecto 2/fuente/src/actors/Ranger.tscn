@@ -78,7 +78,7 @@ inventario = 2
 maxH = 100
 life = true
 
-[node name="ranger" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 1.43214, -6.60541 )
 scale = Vector2( 0.861627, 0.837508 )
 texture = ExtResource( 3 )
@@ -94,7 +94,7 @@ one_shot = true
 explosiveness = 0.1
 process_material = SubResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2( 0.0744019, -0.0109558 )
 scale = Vector2( 0.861627, 0.837508 )
 shape = SubResource( 4 )

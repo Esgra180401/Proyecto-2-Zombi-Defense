@@ -134,7 +134,7 @@ inventario = 2
 maxH = 500
 life = true
 
-[node name="tank" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.406586, -4.7933 )
 scale = Vector2( 0.962379, 0.995109 )
 texture = ExtResource( 2 )
@@ -153,7 +153,7 @@ process_material = SubResource( 3 )
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2( 0.046936, 0.0154114 )
 scale = Vector2( 0.861627, 0.837508 )
 shape = SubResource( 4 )

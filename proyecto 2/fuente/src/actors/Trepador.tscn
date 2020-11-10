@@ -151,6 +151,10 @@ position = Vector2( 644.174, 463.799 )
 collision_layer = 524310
 collision_mask = 524310
 script = ExtResource( 1 )
+health = 150
+strenght = 100
+maxH = 150
+life = true
 target1 = NodePath("../Tanque")
 target2 = NodePath("../Soldado")
 target3 = NodePath("../Ranger")
@@ -160,7 +164,7 @@ turnos = 5
 MaxTturnos = 5
 Tipo = "Trepador"
 
-[node name="zombi trepa" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -1.37006, 3.14912 )
 scale = Vector2( 0.913905, 0.871377 )
 texture = ExtResource( 2 )

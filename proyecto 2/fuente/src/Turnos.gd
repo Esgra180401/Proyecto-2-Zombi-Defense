@@ -62,16 +62,19 @@ func iniciar():
 	jugar_turno()
 	
 func jugar_turno():
-	if personaje_activo.get_name() != "EnemyTimer":
+	if personaje_activo.life==false:
+		pass
+	else:
 		personaje_activo.set_physics_process(true)
-		actualizar_labels()
 		yield(personaje_activo,"completed")
+	actualizar_labels()
+	limpiar()
+	is_dead()
 	new_index=(personaje_activo.get_index()+1)
 	if new_index>2:
 		BtnAtk.set_disabled(true)
 		BtnCur.set_disabled(true)
-	print(get_child(0).life)
-	if new_index==get_child_count():
+	if new_index>=get_child_count():
 		if get_node(Bandera).get_node("RayCast2D").get_collider()!=null:
 			game_over()
 		elif get_child(0).life==false and get_child(1).life==false and get_child(2).life==false:
@@ -151,3 +154,21 @@ func activar_spawns(rounds):
 		spawned.position = Vector2(525.5,55.981)
 		spawned.rotation_degrees = 180
 		add_child(spawned)
+		
+func is_dead():
+	if get_child(0).life==false:
+		get_child(0).get_node("Collision").set_disabled(true)
+	if get_child(1).life==false:
+		get_child(1).get_node("Collision").set_disabled(true)
+	if get_child(2).life==false:
+		get_child(2).get_node("Collision").set_disabled(true)
+		
+func limpiar():
+	for i in range(get_child_count()):
+		if i == 0 or i == 1 or i == 2:
+			pass
+		elif i >= get_child_count():
+			pass
+		else:
+			if get_child(i).life==false:
+				remove_child(get_child(i))
