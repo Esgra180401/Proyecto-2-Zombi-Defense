@@ -21,14 +21,15 @@ func heal(player):
 		if player.health > player.maxH:
 			player.health = 0 + player.maxH
 			
-func drops(item):
-	if item == "lvl":
+func pick_up(item):
+	if item == "LVL":
 		level += 1
+		if level==3:
+			habilidad=true
 		maxH += maxH/10
-	elif item == "medkit":
+		health = 0+maxH
+	elif item == "KIT":
 		inventario += 1
-		if health > maxH:
-			health = 0 + maxH
 	else:
 		strenght += 10
 		

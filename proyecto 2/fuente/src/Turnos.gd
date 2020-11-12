@@ -26,6 +26,12 @@ export (NodePath) var kits2
 
 export (NodePath) var kits3
 
+export (NodePath) var pwr1
+
+export (NodePath) var pwr2
+
+export (NodePath) var pwr3
+
 export (NodePath) var Resumen
 
 export (NodePath) var Rounds
@@ -35,12 +41,17 @@ export (NodePath) var Bandera
 var enemy1 = preload("res://src/actors/Zombie.tscn")
 var enemy2= preload("res://src/actors/Zombie Tanque.tscn")
 var enemy3 = preload("res://src/actors/Trepador.tscn")
+var item1 = preload("res://src/LVL UP.tscn")
+var item2 = preload("res://src/KIT UP.tscn")
+var item3 = preload("res://src/WPN UP.tscn")
 
+var ItemOptions = [item1,item2,item3]
 var EOptions1 = [enemy1,enemy1,enemy1,enemy1,enemy2,enemy3,enemy3]
 var EOptions2 = [enemy1,enemy1,enemy2,enemy3,enemy3,enemy3,enemy3]
 var EOptions3 = [enemy1,enemy1,enemy2,enemy2,enemy2,enemy2,enemy2,enemy3,enemy3]
 
 var spawned
+var sItem
 
 var personaje_activo
 var new_index = 0
@@ -71,18 +82,21 @@ func iniciar():
 func jugar_turno():
 	if personaje_activo.get_name()=="Timer":
 		pass
-	elif personaje_activo.life==false :
+	elif personaje_activo.Tipo=="Item":
+		pass
+	elif personaje_activo.life==false:
 		pass
 	else:
 		personaje_activo.set_physics_process(true)
 		yield(personaje_activo,"completed")
-	if personaje_activo.get_index()<3:
-		esperar(0.8)
-	else:
-		esperar(0.4)
+		if personaje_activo.get_index()<3:
+			esperar(0.8)
+		else:
+			esperar(0.4)
+		yield(self, "timer_end")
 	actualizar_labels()
-	yield(self, "timer_end")
-	limpiar()
+	limpiar_zombie()
+	limpiar_item()
 	is_dead()
 	new_index=(personaje_activo.get_index()+1)
 	if new_index>2:
@@ -117,6 +131,8 @@ func jugar_turno():
 			jugar_turno()
 
 func actualizar_labels():
+	print("---")
+	print("gays")
 	get_node(Vida1).set_text("HP:"+str(get_child(0).health))
 	get_node(Vida2).set_text("HP:"+str(get_child(1).health))
 	get_node(Vida3).set_text("HP:"+str(get_child(2).health))
@@ -128,6 +144,10 @@ func actualizar_labels():
 	get_node(kits1).set_text("Kits:"+str(get_child(0).inventario))
 	get_node(kits2).set_text("Kits:"+str(get_child(1).inventario))
 	get_node(kits3).set_text("Kits:"+str(get_child(2).inventario))
+	
+	get_node(pwr1).set_text("Poder:"+str(get_child(0).strenght))
+	get_node(pwr2).set_text("Poder:"+str(get_child(1).strenght))
+	get_node(pwr3).set_text("Poder:"+str(get_child(2).strenght))
 	
 	get_node(Rounds).set_text("Ronda "+str(ronda))
 	
@@ -181,18 +201,48 @@ func is_dead():
 	if get_child(2).life==false:
 		get_child(2).get_node("Collision").set_disabled(true)
 		
-func limpiar():
+func limpiar_zombie():
 	for i in range(get_child_count()):
 		if i == 0 or i == 1 or i == 2 or i == 3:
 			pass
 		elif i >= get_child_count():
 			pass
+		elif get_child(i).Tipo=="Item":
+			pass
 		else:
 			if get_child(i).life==false:
+				drop_item(get_child(i).position)
 				remove_child(get_child(i))
+				
+func limpiar_item():
+	for i in range(get_child_count()):
+		if i == 0 or i == 1 or i == 2 or i == 3:
+			pass
+		elif i >= get_child_count():
+			pass
+		elif get_child(i).Tipo=="Item" and get_child(i).picked==true:
+			remove_child(get_child(i))
+		else:
+			pass
+				
+func drop_item(pos):
+	sItem=ItemOptions[randi() % ItemOptions.size()].instance()
+	sItem.position=pos
+	add_child(sItem)
+				
 func esperar(tiempo):
 	timer.set_wait_time(tiempo)
 	timer.set_timer_process_mode(0)
 	timer.start()
 func _emit_timer_end_signal():
-	emit_signal("timer_end")	
+	emit_signal("timer_end")
+	
+func pick_up():
+	for i in range(get_child_count()):
+		if i == 0 or i == 1 or i == 2 or i == 3:
+			pass
+		elif i >= get_child_count():
+			pass
+		elif get_child(i).Tipo=="Item":
+			if get_child(i).get_collider()!=null:
+				print(get_child(i).get_collider())

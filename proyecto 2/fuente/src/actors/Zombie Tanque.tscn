@@ -151,7 +151,7 @@ target3 = NodePath("../Ranger")
 target4 = NodePath("../../Map/Map_MarketSquare")
 Resumen = NodePath("../../GUI/ResumenDTurno")
 turnos = 3
-MaxTturnos = 3
+MaxTurnos = 3
 Tipo = "Zombie Tanque"
 
 [node name="Sprite" type="Sprite" parent="."]

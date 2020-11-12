@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Items.gd" type="Script" id=1]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.547529, 1 )
@@ -26,10 +28,16 @@ scale_curve = SubResource( 4 )
 color_ramp = SubResource( 2 )
 
 [node name="KIT UP" type="RayCast2D"]
-position = Vector2( -142.11, -79.6769 )
+position = Vector2( -568.44, -318.708 )
 enabled = true
 cast_to = Vector2( 0, 5 )
 collision_mask = 16384
+collide_with_areas = true
+script = ExtResource( 1 )
+Tipo = "Item"
+item = "KIT"
+Resumen = NodePath("../../GUI/ResumenDTurno")
+turn = NodePath("..")
 
 [node name="Item Effect" type="Particles2D" parent="."]
 position = Vector2( -0.00926208, 0.0533447 )

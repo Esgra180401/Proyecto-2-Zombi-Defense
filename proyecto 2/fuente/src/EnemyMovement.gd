@@ -13,7 +13,7 @@ export (NodePath) var Resumen
 onready var sumary = get_node(Resumen)
 
 export var turnos: int
-export var MaxTturnos: int
+export var MaxTurnos: int
 export var Tipo: String
 
 class_name EnemyMovement
@@ -56,7 +56,7 @@ func _physics_process(delta):
 			follow = get_node(target3).position
 		
 		if turnos <= 0:
-				turnos = 0+MaxTturnos
+				turnos = 0+MaxTurnos
 				emit_signal("completed")
 				set_physics_process(false)
 				

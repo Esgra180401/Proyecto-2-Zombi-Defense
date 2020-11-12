@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Items.gd" type="Script" id=1]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.528517, 1 )
@@ -27,10 +29,16 @@ scale_curve = SubResource( 4 )
 color_ramp = SubResource( 2 )
 
 [node name="LVL UP" type="RayCast2D"]
-position = Vector2( -288.651, 7.1272 )
+position = Vector2( -667.098, 25.479 )
 enabled = true
-cast_to = Vector2( 0, 5 )
+cast_to = Vector2( 0, 10 )
 collision_mask = 16384
+collide_with_areas = true
+script = ExtResource( 1 )
+Tipo = "Item"
+item = "LVL"
+Resumen = NodePath("../../GUI/ResumenDTurno")
+turn = NodePath("..")
 
 [node name="Item Effect" type="Particles2D" parent="."]
 position = Vector2( -0.0643311, -0.200356 )

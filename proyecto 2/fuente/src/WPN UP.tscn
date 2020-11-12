@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Items.gd" type="Script" id=1]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.144487, 0.551331, 0.893536 )
@@ -7,14 +9,14 @@ colors = PoolColorArray( 1, 0, 0, 1, 0.317647, 0.0156863, 0.0156863, 0.682353, 1
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )
 
-[sub_resource type="Curve" id=4]
+[sub_resource type="Curve" id=3]
 max_value = 5.0
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 4.95455 ), 4.68, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=5]
-curve = SubResource( 4 )
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
 
-[sub_resource type="ParticlesMaterial" id=6]
+[sub_resource type="ParticlesMaterial" id=5]
 flag_disable_z = true
 direction = Vector3( 0, -1, 0 )
 spread = 180.0
@@ -22,17 +24,23 @@ gravity = Vector3( 0, 0, 0 )
 initial_velocity = 125.0
 orbit_velocity = 2.0
 orbit_velocity_random = 0.0
-scale_curve = SubResource( 5 )
+scale_curve = SubResource( 4 )
 color_ramp = SubResource( 2 )
 
 [node name="WPN UP" type="RayCast2D"]
-position = Vector2( -119.452, 61.9086 )
+position = Vector2( -2304, 146.592 )
 enabled = true
 cast_to = Vector2( 0, 5 )
 collision_mask = 16384
+collide_with_areas = true
+script = ExtResource( 1 )
+Tipo = "Item"
+item = "WPN"
+Resumen = NodePath("../../GUI/ResumenDTurno")
+turn = NodePath("..")
 
 [node name="Item Effect" type="Particles2D" parent="."]
 position = Vector2( 0.0109406, -0.0102234 )
 amount = 150
 explosiveness = 0.5
-process_material = SubResource( 6 )
+process_material = SubResource( 5 )

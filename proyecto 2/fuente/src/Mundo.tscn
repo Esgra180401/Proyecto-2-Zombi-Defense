@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://GameTheme.ogg" type="AudioStream" id=1]
 [ext_resource path="res://assets/Map_MarketSquare.png" type="Texture" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://src/actors/Ranger.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/actors/Tanque.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/Flag.png" type="Texture" id=8]
-[ext_resource path="res://src/KIT UP.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/Boton Atk.png" type="Texture" id=10]
 [ext_resource path="res://assets/Boton Curar.png" type="Texture" id=11]
 [ext_resource path="res://assets/Rifle.png" type="Texture" id=12]
@@ -20,9 +19,7 @@
 [ext_resource path="res://src/Botones.gd" type="Script" id=18]
 [ext_resource path="res://assets/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=19]
 [ext_resource path="res://assets/Toombstone.png" type="Texture" id=20]
-[ext_resource path="res://src/LVL UP.tscn" type="PackedScene" id=21]
 [ext_resource path="res://src/actors/Zombie.tscn" type="PackedScene" id=22]
-[ext_resource path="res://src/WPN UP.tscn" type="PackedScene" id=23]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
@@ -602,6 +599,42 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="WPN Soldier" type="Label" parent="GUI"]
+margin_left = 1086.7
+margin_top = 107.237
+margin_right = 1173.7
+margin_bottom = 122.237
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 1, 0.00392157, 0.00392157, 1 )
+text = "Poder:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WPN Ranger" type="Label" parent="GUI"]
+margin_left = 1086.0
+margin_top = 249.076
+margin_right = 1164.59
+margin_bottom = 264.076
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 1, 0.00392157, 0.00392157, 1 )
+text = "Poder:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WPN Tank" type="Label" parent="GUI"]
+margin_left = 1086.0
+margin_top = 395.237
+margin_right = 1164.84
+margin_bottom = 410.237
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 1, 0.00392157, 0.00392157, 1 )
+text = "Poder:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ResumenDTurno" type="Label" parent="GUI"]
 margin_left = 1082.29
 margin_top = 499.021
@@ -679,6 +712,9 @@ LVL3 = NodePath("../GUI/LVL Tank")
 kits1 = NodePath("../GUI/Kits Soldier")
 kits2 = NodePath("../GUI/Kits Ranger")
 kits3 = NodePath("../GUI/Kits Tank")
+pwr1 = NodePath("../GUI/WPN Soldier")
+pwr2 = NodePath("../GUI/WPN Ranger")
+pwr3 = NodePath("../GUI/WPN Tank")
 Resumen = NodePath("../GUI/ResumenDTurno")
 Rounds = NodePath("../GUI/Ronda")
 Bandera = NodePath("../Extra Assets/Base")
@@ -817,6 +853,31 @@ cast_to = Vector2( 0, -100 )
 collision_mask = 524288
 collide_with_areas = true
 
+[node name="Toombstone" type="Sprite" parent="Extra Assets"]
+position = Vector2( 62.0126, 203.754 )
+scale = Vector2( 1.75317, 1.71352 )
+texture = ExtResource( 20 )
+
+[node name="Toombstone2" type="Sprite" parent="Extra Assets"]
+position = Vector2( 217.188, 20.103 )
+scale = Vector2( 1.75317, 1.71352 )
+texture = ExtResource( 20 )
+
+[node name="Toombstone4" type="Sprite" parent="Extra Assets"]
+position = Vector2( 840.558, 19.8502 )
+scale = Vector2( 1.75317, 1.71352 )
+texture = ExtResource( 20 )
+
+[node name="Toombstone3" type="Sprite" parent="Extra Assets"]
+position = Vector2( 528.539, 18.457 )
+scale = Vector2( 1.75317, 1.71352 )
+texture = ExtResource( 20 )
+
+[node name="Toombstone5" type="Sprite" parent="Extra Assets"]
+position = Vector2( 996.734, 203.057 )
+scale = Vector2( 1.75317, 1.71352 )
+texture = ExtResource( 20 )
+
 [node name="Animaciones" type="Node" parent="."]
 
 [node name="LVL Up" type="Particles2D" parent="Animaciones"]
@@ -826,36 +887,3 @@ amount = 100
 one_shot = true
 explosiveness = 0.5
 process_material = SubResource( 29 )
-
-[node name="Toombstone" type="Sprite" parent="."]
-position = Vector2( 62.0126, 203.754 )
-scale = Vector2( 1.75317, 1.71352 )
-texture = ExtResource( 20 )
-
-[node name="Toombstone2" type="Sprite" parent="."]
-position = Vector2( 217.188, 20.103 )
-scale = Vector2( 1.75317, 1.71352 )
-texture = ExtResource( 20 )
-
-[node name="Toombstone4" type="Sprite" parent="."]
-position = Vector2( 840.558, 19.8502 )
-scale = Vector2( 1.75317, 1.71352 )
-texture = ExtResource( 20 )
-
-[node name="Toombstone3" type="Sprite" parent="Toombstone4"]
-position = Vector2( -177.974, -0.813064 )
-texture = ExtResource( 20 )
-
-[node name="Toombstone5" type="Sprite" parent="."]
-position = Vector2( 996.734, 203.057 )
-scale = Vector2( 1.75317, 1.71352 )
-texture = ExtResource( 20 )
-
-[node name="KIT UP" parent="." instance=ExtResource( 9 )]
-position = Vector2( 215.185, 165.244 )
-
-[node name="LVL UP" parent="." instance=ExtResource( 21 )]
-position = Vector2( 137.419, 166.04 )
-
-[node name="WPN UP" parent="." instance=ExtResource( 23 )]
-position = Vector2( 175.702, 204.02 )

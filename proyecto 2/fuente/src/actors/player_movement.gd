@@ -12,6 +12,8 @@ var contar=0
 var collider = null
 var new_position
 
+export var Tipo: String
+
 signal completed
 
 func _ready():

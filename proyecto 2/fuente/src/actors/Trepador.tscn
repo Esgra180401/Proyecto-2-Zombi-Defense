@@ -161,7 +161,7 @@ target3 = NodePath("../Ranger")
 target4 = NodePath("../../Map/Map_MarketSquare")
 Resumen = NodePath("../../GUI/ResumenDTurno")
 turnos = 4
-MaxTturnos = 4
+MaxTurnos = 4
 Tipo = "Trepador"
 
 [node name="Sprite" type="Sprite" parent="."]
