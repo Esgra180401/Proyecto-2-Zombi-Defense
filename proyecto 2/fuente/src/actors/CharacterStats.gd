@@ -8,6 +8,7 @@ export var MaxNoise: int
 export var inventario: int
 export var maxH: int
 export var life: bool
+export var habilidad: bool
 
 func alive():
 	if health == 0:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://GameTheme.ogg" type="AudioStream" id=1]
 [ext_resource path="res://assets/Map_MarketSquare.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://src/actors/Ranger.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/actors/Tanque.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/Flag.png" type="Texture" id=8]
+[ext_resource path="res://src/KIT UP.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/Boton Atk.png" type="Texture" id=10]
 [ext_resource path="res://assets/Boton Curar.png" type="Texture" id=11]
 [ext_resource path="res://assets/Rifle.png" type="Texture" id=12]
@@ -19,7 +20,9 @@
 [ext_resource path="res://src/Botones.gd" type="Script" id=18]
 [ext_resource path="res://assets/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=19]
 [ext_resource path="res://assets/Toombstone.png" type="Texture" id=20]
+[ext_resource path="res://src/LVL UP.tscn" type="PackedScene" id=21]
 [ext_resource path="res://src/actors/Zombie.tscn" type="PackedScene" id=22]
+[ext_resource path="res://src/WPN UP.tscn" type="PackedScene" id=23]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
@@ -682,19 +685,23 @@ Bandera = NodePath("../Extra Assets/Base")
 
 [node name="Soldado" parent="Turnos" instance=ExtResource( 3 )]
 position = Vector2( 604.202, 462.927 )
+habilidad = true
 
 [node name="Ranger" parent="Turnos" instance=ExtResource( 6 )]
+habilidad = true
 
 [node name="Tanque" parent="Turnos" instance=ExtResource( 7 )]
 position = Vector2( 525.647, 425.263 )
+health = 500
 noiseLVL = 0
 MaxNoise = 10
+habilidad = true
 
 [node name="Timer" type="Timer" parent="Turnos"]
 wait_time = 0.8
 
 [node name="Zombie" parent="Turnos" instance=ExtResource( 22 )]
-position = Vector2( 526.258, 203.663 )
+position = Vector2( 643.298, 203.663 )
 target4 = NodePath("../../Extra Assets/Base")
 
 [node name="Extra Assets" type="Node" parent="."]
@@ -807,6 +814,7 @@ shape = SubResource( 26 )
 position = Vector2( 0, 80.3242 )
 enabled = true
 cast_to = Vector2( 0, -100 )
+collision_mask = 524288
 collide_with_areas = true
 
 [node name="Animaciones" type="Node" parent="."]
@@ -820,17 +828,12 @@ explosiveness = 0.5
 process_material = SubResource( 29 )
 
 [node name="Toombstone" type="Sprite" parent="."]
-position = Vector2( 62.0126, 200.387 )
+position = Vector2( 62.0126, 203.754 )
 scale = Vector2( 1.75317, 1.71352 )
 texture = ExtResource( 20 )
 
 [node name="Toombstone2" type="Sprite" parent="."]
-position = Vector2( 217.188, 21.5188 )
-scale = Vector2( 1.75317, 1.71352 )
-texture = ExtResource( 20 )
-
-[node name="Toombstone3" type="Sprite" parent="."]
-position = Vector2( 528.539, 18.457 )
+position = Vector2( 217.188, 20.103 )
 scale = Vector2( 1.75317, 1.71352 )
 texture = ExtResource( 20 )
 
@@ -839,7 +842,20 @@ position = Vector2( 840.558, 19.8502 )
 scale = Vector2( 1.75317, 1.71352 )
 texture = ExtResource( 20 )
 
+[node name="Toombstone3" type="Sprite" parent="Toombstone4"]
+position = Vector2( -177.974, -0.813064 )
+texture = ExtResource( 20 )
+
 [node name="Toombstone5" type="Sprite" parent="."]
 position = Vector2( 996.734, 203.057 )
 scale = Vector2( 1.75317, 1.71352 )
 texture = ExtResource( 20 )
+
+[node name="KIT UP" parent="." instance=ExtResource( 9 )]
+position = Vector2( 215.185, 165.244 )
+
+[node name="LVL UP" parent="." instance=ExtResource( 21 )]
+position = Vector2( 137.419, 166.04 )
+
+[node name="WPN UP" parent="." instance=ExtResource( 23 )]
+position = Vector2( 175.702, 204.02 )

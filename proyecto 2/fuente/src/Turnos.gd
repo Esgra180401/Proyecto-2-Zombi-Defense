@@ -54,6 +54,7 @@ func _ready():
 	preparacion()
 	
 func preparacion():
+	actualizar_labels()
 	personaje_activo = get_child(new_index)
 	personaje_activo.set_physics_process(false)
 	new_index +=1
