@@ -742,16 +742,18 @@ Bandera = NodePath("../Extra Assets/Base")
 
 [node name="Soldado" parent="Turnos" instance=ExtResource( 3 )]
 position = Vector2( 526.596, 389.4 )
-habilidad = true
+level = 1
 
 [node name="Ranger" parent="Turnos" instance=ExtResource( 6 )]
 position = Vector2( 448.561, 462.47 )
-health = 150
+health = 1
+level = 1
 maxH = 150
 
 [node name="Tanque" parent="Turnos" instance=ExtResource( 7 )]
 position = Vector2( 604.212, 463.013 )
 health = 500
+level = 1
 rango = 4
 
 [node name="Timer" type="Timer" parent="Turnos"]
