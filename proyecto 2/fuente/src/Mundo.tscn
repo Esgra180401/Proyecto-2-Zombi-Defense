@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://GameTheme.ogg" type="AudioStream" id=1]
 [ext_resource path="res://assets/Map_MarketSquare.png" type="Texture" id=2]
@@ -333,24 +333,6 @@ points = PoolVector2Array( 155.958, 147.181, -0.0559082, 147.181, -0.0559082, -0
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 112.33, 102.148 )
 
-[sub_resource type="Gradient" id=27]
-colors = PoolColorArray( 0.959961, 1, 0, 1, 0.960784, 1, 0, 0.415686 )
-
-[sub_resource type="GradientTexture" id=28]
-gradient = SubResource( 27 )
-
-[sub_resource type="ParticlesMaterial" id=29]
-emission_shape = 1
-emission_sphere_radius = 2.0
-flag_disable_z = true
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 200.0
-orbit_velocity = 2.0
-orbit_velocity_random = 0.0
-scale = 2.0
-color_ramp = SubResource( 28 )
-
 [node name="Mundo" type="Node"]
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
@@ -600,10 +582,10 @@ __meta__ = {
 }
 
 [node name="WPN Soldier" type="Label" parent="GUI"]
-margin_left = 1086.7
-margin_top = 107.237
-margin_right = 1173.7
-margin_bottom = 122.237
+margin_left = 1087.26
+margin_top = 98.8185
+margin_right = 1174.26
+margin_bottom = 113.819
 custom_fonts/font = SubResource( 16 )
 custom_colors/font_color = Color( 1, 0.00392157, 0.00392157, 1 )
 text = "Poder:"
@@ -612,10 +594,10 @@ __meta__ = {
 }
 
 [node name="WPN Ranger" type="Label" parent="GUI"]
-margin_left = 1086.0
-margin_top = 249.076
-margin_right = 1164.59
-margin_bottom = 264.076
+margin_left = 1085.44
+margin_top = 242.902
+margin_right = 1164.03
+margin_bottom = 257.902
 custom_fonts/font = SubResource( 16 )
 custom_colors/font_color = Color( 1, 0.00392157, 0.00392157, 1 )
 text = "Poder:"
@@ -624,13 +606,49 @@ __meta__ = {
 }
 
 [node name="WPN Tank" type="Label" parent="GUI"]
-margin_left = 1086.0
-margin_top = 395.237
-margin_right = 1164.84
-margin_bottom = 410.237
+margin_left = 1086.56
+margin_top = 389.063
+margin_right = 1165.4
+margin_bottom = 404.063
 custom_fonts/font = SubResource( 16 )
 custom_colors/font_color = Color( 1, 0.00392157, 0.00392157, 1 )
 text = "Poder:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RNG Soldier" type="Label" parent="GUI"]
+margin_left = 1086.56
+margin_top = 116.031
+margin_right = 1165.4
+margin_bottom = 131.031
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0.976471, 0.34902, 0.00784314, 1 )
+text = "Rango:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RNG Ranger" type="Label" parent="GUI"]
+margin_left = 1084.88
+margin_top = 257.884
+margin_right = 1163.72
+margin_bottom = 272.884
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0.976471, 0.34902, 0.00784314, 1 )
+text = "Rango:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RNG Tank" type="Label" parent="GUI"]
+margin_left = 1086.56
+margin_top = 405.041
+margin_right = 1165.4
+margin_bottom = 420.041
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0.976471, 0.34902, 0.00784314, 1 )
+text = "Rango:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -715,30 +733,27 @@ kits3 = NodePath("../GUI/Kits Tank")
 pwr1 = NodePath("../GUI/WPN Soldier")
 pwr2 = NodePath("../GUI/WPN Ranger")
 pwr3 = NodePath("../GUI/WPN Tank")
+rng1 = NodePath("../GUI/RNG Soldier")
+rng2 = NodePath("../GUI/RNG Ranger")
+rng3 = NodePath("../GUI/RNG Tank")
 Resumen = NodePath("../GUI/ResumenDTurno")
 Rounds = NodePath("../GUI/Ronda")
 Bandera = NodePath("../Extra Assets/Base")
 
 [node name="Soldado" parent="Turnos" instance=ExtResource( 3 )]
-position = Vector2( 604.202, 462.927 )
-habilidad = true
+position = Vector2( 526.596, 389.4 )
 
 [node name="Ranger" parent="Turnos" instance=ExtResource( 6 )]
-habilidad = true
+position = Vector2( 448.561, 462.47 )
 
 [node name="Tanque" parent="Turnos" instance=ExtResource( 7 )]
-position = Vector2( 525.647, 425.263 )
-health = 500
-noiseLVL = 0
-MaxNoise = 10
-habilidad = true
+position = Vector2( 604.212, 463.013 )
 
 [node name="Timer" type="Timer" parent="Turnos"]
 wait_time = 0.8
 
 [node name="Zombie" parent="Turnos" instance=ExtResource( 22 )]
-position = Vector2( 643.298, 203.663 )
-target4 = NodePath("../../Extra Assets/Base")
+position = Vector2( 526.229, 240.076 )
 
 [node name="Extra Assets" type="Node" parent="."]
 
@@ -879,11 +894,3 @@ scale = Vector2( 1.75317, 1.71352 )
 texture = ExtResource( 20 )
 
 [node name="Animaciones" type="Node" parent="."]
-
-[node name="LVL Up" type="Particles2D" parent="Animaciones"]
-position = Vector2( 605.167, 498.972 )
-emitting = false
-amount = 100
-one_shot = true
-explosiveness = 0.5
-process_material = SubResource( 29 )

@@ -10,9 +10,19 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Area2D",
+"class": "CharacterStats",
+"language": "GDScript",
+"path": "res://src/actors/CharacterStats.gd"
+}, {
+"base": "Area2D",
 "class": "EnemyMovement",
 "language": "GDScript",
 "path": "res://src/EnemyMovement.gd"
+}, {
+"base": "Node",
+"class": "GUI",
+"language": "GDScript",
+"path": "res://src/Botones.gd"
 }, {
 "base": "RayCast2D",
 "class": "Items",
@@ -30,7 +40,9 @@ _global_script_classes=[ {
 "path": "res://src/actors/player_movement.gd"
 } ]
 _global_script_class_icons={
+"CharacterStats": "",
 "EnemyMovement": "",
+"GUI": "",
 "Items": "",
 "Turnos": "",
 "player_movement": ""

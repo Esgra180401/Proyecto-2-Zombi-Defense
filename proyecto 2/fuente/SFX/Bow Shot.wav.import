@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Bow Shot.wav-637ba44bc588844fa1f243fc79616846.sample"
+
+[deps]
+
+source_file="res://SFX/Bow Shot.wav"
+dest_files=[ "res://.import/Bow Shot.wav-637ba44bc588844fa1f243fc79616846.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

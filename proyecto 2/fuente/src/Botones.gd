@@ -1,4 +1,7 @@
 extends Node
+
+class_name GUI
+
 export (NodePath) var turn
 onready var turns = get_node(turn)
 
@@ -36,11 +39,14 @@ func _button_pressed1():
 		else:
 			turns.personaje_activo.collider.get_node("Blood Splat").set_emitting(true)
 			turns.personaje_activo.get_node("Soldier Shooting").set_emitting(true)
+		turns.personaje_activo.get_node("AtkSFX").play()
 		turns.personaje_activo.damage(turns.personaje_activo.strenght,turns.personaje_activo.collider)
 		turns.personaje_activo.turnos = 0
 	
 func _button_pressed2():
 	if turns.personaje_activo.inventario > 0:
+		turns.personaje_activo.get_node("Cure").set_emitting(true)
+		turns.personaje_activo.get_node("Heal").play()
 		string=turns.personaje_activo.get_name() + " se ha curado "+str((turns.personaje_activo.maxH)/4)+" HP"
 		sumary.set_text(string)
 		turns.personaje_activo.get_node("Cure").set_emitting(true)

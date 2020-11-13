@@ -1,5 +1,7 @@
 extends "res://src/actors/CharacterStats.gd"
 
+class_name EnemyMovement
+
 export (NodePath) var target1
 
 export (NodePath) var target2
@@ -15,9 +17,6 @@ onready var sumary = get_node(Resumen)
 export var turnos: int
 export var MaxTurnos: int
 export var Tipo: String
-
-class_name EnemyMovement
-
 
 var moving = false
 var  tile_size = 37
@@ -68,6 +67,7 @@ func _physics_process(delta):
 						string = Tipo + " ataco a "+$RayCast2D.get_collider().get_name() +"\n"+$RayCast2D.get_collider().get_name()+" perdio " + str(strenght)+"HP"
 						sumary.set_text(string)
 						damage(strenght,$RayCast2D.get_collider())
+						get_node("AtkSFX").play()
 						get_node("Attack").set_emitting(true)
 						turnos=0
 		else:

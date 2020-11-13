@@ -7,11 +7,12 @@ var moving = false
 var  tile_size = 37
 var last_movement = Vector2(0,0)
 var motion_vector = Vector2()
-var turnos = 10
+var turnos = 15
 var contar=0
 var collider = null
 var new_position
 
+export var rango: int
 export var Tipo: String
 
 signal completed
@@ -30,7 +31,7 @@ func _physics_process(delta):
 			collider = null
 				
 		if turnos <= 0:
-				turnos = 10
+				turnos = 15
 				emit_signal("completed")
 				set_physics_process(false)
 				

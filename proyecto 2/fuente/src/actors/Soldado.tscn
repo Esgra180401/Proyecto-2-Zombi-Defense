@@ -1,8 +1,11 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://src/actors/player_movement.gd" type="Script" id=1]
-[ext_resource path="res://assets/Character Sprites.png" type="Texture" id=2]
-[ext_resource path="res://assets/Bullet.png" type="Texture" id=3]
+[ext_resource path="res://assets/Bullet.png" type="Texture" id=2]
+[ext_resource path="res://assets/Character Sprites.png" type="Texture" id=3]
+[ext_resource path="res://SFX/Soldier.wav" type="AudioStream" id=4]
+[ext_resource path="res://SFX/PowerUp.wav" type="AudioStream" id=5]
+[ext_resource path="res://SFX/Heal.wav" type="AudioStream" id=6]
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 0.171875, 1, 0, 1, 0.148438, 1, 0, 0.203922 )
@@ -10,7 +13,14 @@ colors = PoolColorArray( 0.171875, 1, 0, 1, 0.148438, 1, 0, 0.203922 )
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )
 
-[sub_resource type="ParticlesMaterial" id=3]
+[sub_resource type="Curve" id=20]
+max_value = 5.0
+_data = [ Vector2( 0, 3.14883 ), 0.0, -9.12959, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=21]
+curve = SubResource( 20 )
+
+[sub_resource type="ParticlesMaterial" id=22]
 emission_shape = 1
 emission_sphere_radius = 20.7
 flag_disable_z = true
@@ -20,53 +30,54 @@ initial_velocity = 50.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 2.0
+scale_curve = SubResource( 21 )
 color_ramp = SubResource( 2 )
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 16.0135, 16.9643 )
 
-[sub_resource type="Curve" id=16]
+[sub_resource type="Curve" id=24]
 min_value = -360.0
 max_value = 360.0
 _data = [ Vector2( 0, 360 ), 0.0, 0.0, 0, 0, Vector2( 1, 360 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=17]
-curve = SubResource( 16 )
+[sub_resource type="CurveTexture" id=25]
+curve = SubResource( 24 )
 
-[sub_resource type="Gradient" id=18]
+[sub_resource type="Gradient" id=26]
 offsets = PoolRealArray( 0.773973, 1 )
 colors = PoolColorArray( 0.988909, 1, 0, 1, 0.918596, 1, 0, 0 )
 
-[sub_resource type="GradientTexture" id=19]
-gradient = SubResource( 18 )
+[sub_resource type="GradientTexture" id=27]
+gradient = SubResource( 26 )
 
-[sub_resource type="ParticlesMaterial" id=20]
+[sub_resource type="ParticlesMaterial" id=28]
 flag_align_y = true
 flag_disable_z = true
 direction = Vector3( 0, -1, 0 )
 spread = 5.0
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 1500.0
-angular_velocity_curve = SubResource( 17 )
+angular_velocity_curve = SubResource( 25 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 4.0
-color_ramp = SubResource( 19 )
+color_ramp = SubResource( 27 )
 
-[sub_resource type="Gradient" id=10]
+[sub_resource type="Gradient" id=12]
 colors = PoolColorArray( 0.733333, 0.0352941, 0.0352941, 1, 0.733333, 0.0352941, 0.0352941, 0.443137 )
 
-[sub_resource type="GradientTexture" id=11]
-gradient = SubResource( 10 )
+[sub_resource type="GradientTexture" id=13]
+gradient = SubResource( 12 )
 
-[sub_resource type="Curve" id=12]
+[sub_resource type="Curve" id=14]
 max_value = 5.0
 _data = [ Vector2( 0, 5 ), 0.0, 0.0, 0, 0, Vector2( 0.983696, 1.78826 ), 0.743434, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=13]
-curve = SubResource( 12 )
+[sub_resource type="CurveTexture" id=15]
+curve = SubResource( 14 )
 
-[sub_resource type="ParticlesMaterial" id=14]
+[sub_resource type="ParticlesMaterial" id=16]
 flag_disable_z = true
 direction = Vector3( 0, -1, 0 )
 spread = 180.0
@@ -74,11 +85,37 @@ gravity = Vector3( 0, 70, 0 )
 initial_velocity = 78.13
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale_curve = SubResource( 13 )
-color_ramp = SubResource( 11 )
+scale_curve = SubResource( 15 )
+color_ramp = SubResource( 13 )
+
+[sub_resource type="Gradient" id=17]
+colors = PoolColorArray( 0.959961, 1, 0, 1, 0.960784, 1, 0, 0.415686 )
+
+[sub_resource type="GradientTexture" id=18]
+gradient = SubResource( 17 )
+
+[sub_resource type="Curve" id=29]
+max_value = 5.0
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 2.72727 ), -11.8766, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=30]
+curve = SubResource( 29 )
+
+[sub_resource type="ParticlesMaterial" id=19]
+emission_shape = 1
+emission_sphere_radius = 2.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 200.0
+orbit_velocity = 2.0
+orbit_velocity_random = 0.0
+scale = 2.0
+scale_curve = SubResource( 30 )
+color_ramp = SubResource( 18 )
 
 [node name="Soldado" type="Area2D"]
-position = Vector2( 565.673, 575.64 )
+position = Vector2( 1169.88, 1038.57 )
 collision_layer = 2147500167
 collision_mask = 16519
 script = ExtResource( 1 )
@@ -88,30 +125,31 @@ MaxNoise = 5
 inventario = 2
 maxH = 200
 life = true
+rango = 4
 Tipo = "Humano"
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.0256348, -4.58008 )
 scale = Vector2( 0.887913, 0.88527 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 285, 80, 50, 53 )
 
 [node name="Cure" type="Particles2D" parent="."]
-position = Vector2( 0.189026, -0.0419922 )
+position = Vector2( 0.188904, -0.0418701 )
 emitting = false
 amount = 100
 lifetime = 0.8
 one_shot = true
 explosiveness = 0.1
-process_material = SubResource( 3 )
+process_material = SubResource( 22 )
 
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2( -0.050354, -0.127075 )
 scale = Vector2( 0.861627, 0.837508 )
-shape = SubResource( 15 )
+shape = SubResource( 23 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = true
@@ -127,8 +165,8 @@ amount = 5
 lifetime = 0.5
 one_shot = true
 explosiveness = 0.5
-process_material = SubResource( 20 )
-texture = ExtResource( 3 )
+process_material = SubResource( 28 )
+texture = ExtResource( 2 )
 
 [node name="Blood Splat" type="Particles2D" parent="."]
 position = Vector2( 0.0440063, 0.098999 )
@@ -137,4 +175,21 @@ amount = 100
 lifetime = 0.5
 one_shot = true
 explosiveness = 0.48
-process_material = SubResource( 14 )
+process_material = SubResource( 16 )
+
+[node name="AtkSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+
+[node name="PowerUp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+
+[node name="LVL Up" type="Particles2D" parent="."]
+position = Vector2( -0.386963, 0.121338 )
+emitting = false
+amount = 100
+one_shot = true
+explosiveness = 0.5
+process_material = SubResource( 19 )
+
+[node name="Heal" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )

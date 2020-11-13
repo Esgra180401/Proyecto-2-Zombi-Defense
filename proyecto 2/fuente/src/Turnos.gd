@@ -32,6 +32,12 @@ export (NodePath) var pwr2
 
 export (NodePath) var pwr3
 
+export (NodePath) var rng1
+
+export (NodePath) var rng2
+
+export (NodePath) var rng3
+
 export (NodePath) var Resumen
 
 export (NodePath) var Rounds
@@ -89,19 +95,21 @@ func jugar_turno():
 	else:
 		personaje_activo.set_physics_process(true)
 		yield(personaje_activo,"completed")
+		apagar_btn()
 		if personaje_activo.get_index()<3:
 			esperar(0.8)
 		else:
 			esperar(0.4)
 		yield(self, "timer_end")
+	if personaje_activo.get_index()<=2:
+		encender_btn()
 	actualizar_labels()
 	limpiar_zombie()
 	limpiar_item()
 	is_dead()
 	new_index=(personaje_activo.get_index()+1)
 	if new_index>2:
-		BtnAtk.set_disabled(true)
-		BtnCur.set_disabled(true)
+		apagar_btn()
 	if new_index>=get_child_count():
 		if get_node(Bandera).get_node("RayCast2D").get_collider()!=null:
 			game_over()
@@ -116,8 +124,7 @@ func jugar_turno():
 			activar_spawns(ronda)
 			new_index = 0
 			personaje_activo=get_child(new_index)
-			BtnAtk.set_disabled(false)
-			BtnCur.set_disabled(false)
+			encender_btn()
 			jugar_turno()
 		
 	else:
@@ -131,8 +138,6 @@ func jugar_turno():
 			jugar_turno()
 
 func actualizar_labels():
-	print("---")
-	print("gays")
 	get_node(Vida1).set_text("HP:"+str(get_child(0).health))
 	get_node(Vida2).set_text("HP:"+str(get_child(1).health))
 	get_node(Vida3).set_text("HP:"+str(get_child(2).health))
@@ -148,6 +153,10 @@ func actualizar_labels():
 	get_node(pwr1).set_text("Poder:"+str(get_child(0).strenght))
 	get_node(pwr2).set_text("Poder:"+str(get_child(1).strenght))
 	get_node(pwr3).set_text("Poder:"+str(get_child(2).strenght))
+	
+	get_node(rng1).set_text("Rango:"+str(get_child(0).rango))
+	get_node(rng2).set_text("Rango:"+str(get_child(1).rango))
+	get_node(rng3).set_text("Rango:"+str(get_child(2).rango))
 	
 	get_node(Rounds).set_text("Ronda "+str(ronda))
 	
@@ -246,3 +255,11 @@ func pick_up():
 		elif get_child(i).Tipo=="Item":
 			if get_child(i).get_collider()!=null:
 				print(get_child(i).get_collider())
+
+func apagar_btn():
+	BtnAtk.set_disabled(true)
+	BtnCur.set_disabled(true)
+	
+func encender_btn():
+	BtnAtk.set_disabled(false)
+	BtnCur.set_disabled(false)

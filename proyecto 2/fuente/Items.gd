@@ -26,7 +26,9 @@ func _physics_process(delta):
 		elif item=="WPN":
 			string=(get_collider().get_name())+" ha obtenido una\nmejora para su arma"
 		else:
-			string=(get_collider().get_name())+" ha conseguido\nunkit de salud"
+			string=(get_collider().get_name())+" ha conseguido\nun kit de salud"
+		get_collider().get_node("PowerUp").play()
+		get_collider().get_node("LVL Up").set_emitting(true)
 		Summary.set_text(string)
 		get_collider().pick_up(item)
 		set_visible(false)
