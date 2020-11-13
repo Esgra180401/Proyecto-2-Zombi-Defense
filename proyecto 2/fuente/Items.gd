@@ -30,7 +30,7 @@ func _physics_process(delta):
 		get_collider().get_node("PowerUp").play()
 		get_collider().get_node("LVL Up").set_emitting(true)
 		Summary.set_text(string)
-		get_collider().pick_up(item)
+		get_collider().pick_up(item,get_collider())
 		set_visible(false)
 		set_physics_process(false)
 		picked=true

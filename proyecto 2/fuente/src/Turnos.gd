@@ -119,6 +119,7 @@ func jugar_turno():
 			get_child(0).noiseLVL=0
 			get_child(1).noiseLVL=0
 			get_child(2).noiseLVL=0
+			veneno()
 			ronda+=1
 			actualizar_labels()
 			activar_spawns(ronda)
@@ -263,3 +264,21 @@ func apagar_btn():
 func encender_btn():
 	BtnAtk.set_disabled(false)
 	BtnCur.set_disabled(false)
+	
+func veneno():
+	if get_child(0).habilidad==false:
+		if get_child(0).poison==true:
+			if get_child(0).life==true:
+				get_child(0).get_node("Blood Splat").set_emitting(true)
+				get_child(0).damage(15,get_child(0))
+				get_child(0).poison=false
+	if get_child(1).poison==true:
+		if get_child(1).life==true:
+			get_child(1).get_node("Blood Splat").set_emitting(true)
+			get_child(1).damage(15,get_child(1))
+			get_child(1).poison=false
+	if get_child(2).poison==true:
+		if get_child(2).life==true:
+			get_child(2).get_node("Blood Splat").set_emitting(true)
+			get_child(2).damage(15,get_child(2))
+			get_child(2).poison=false

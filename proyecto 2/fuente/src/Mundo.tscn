@@ -8,6 +8,7 @@
 [ext_resource path="res://src/actors/Ranger.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/actors/Tanque.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/Flag.png" type="Texture" id=8]
+[ext_resource path="res://src/actors/Trepador.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/Boton Atk.png" type="Texture" id=10]
 [ext_resource path="res://assets/Boton Curar.png" type="Texture" id=11]
 [ext_resource path="res://assets/Rifle.png" type="Texture" id=12]
@@ -19,7 +20,6 @@
 [ext_resource path="res://src/Botones.gd" type="Script" id=18]
 [ext_resource path="res://assets/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=19]
 [ext_resource path="res://assets/Toombstone.png" type="Texture" id=20]
-[ext_resource path="res://src/actors/Zombie.tscn" type="PackedScene" id=22]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.415686, 0.215686, 0.0901961, 1 )
@@ -742,18 +742,23 @@ Bandera = NodePath("../Extra Assets/Base")
 
 [node name="Soldado" parent="Turnos" instance=ExtResource( 3 )]
 position = Vector2( 526.596, 389.4 )
+habilidad = true
 
 [node name="Ranger" parent="Turnos" instance=ExtResource( 6 )]
 position = Vector2( 448.561, 462.47 )
+health = 150
+maxH = 150
 
 [node name="Tanque" parent="Turnos" instance=ExtResource( 7 )]
 position = Vector2( 604.212, 463.013 )
+health = 500
+rango = 4
 
 [node name="Timer" type="Timer" parent="Turnos"]
 wait_time = 0.8
 
-[node name="Zombie" parent="Turnos" instance=ExtResource( 22 )]
-position = Vector2( 526.229, 240.076 )
+[node name="Trepador" parent="Turnos" instance=ExtResource( 9 )]
+position = Vector2( 682.855, 240.962 )
 
 [node name="Extra Assets" type="Node" parent="."]
 

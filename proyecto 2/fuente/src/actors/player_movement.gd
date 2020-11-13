@@ -14,6 +14,7 @@ var new_position
 
 export var rango: int
 export var Tipo: String
+export var poison: bool
 
 signal completed
 

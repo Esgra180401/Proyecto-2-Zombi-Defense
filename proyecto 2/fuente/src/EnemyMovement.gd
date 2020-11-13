@@ -67,6 +67,8 @@ func _physics_process(delta):
 						string = Tipo + " ataco a "+$RayCast2D.get_collider().get_name() +"\n"+$RayCast2D.get_collider().get_name()+" perdio " + str(strenght)+"HP"
 						sumary.set_text(string)
 						damage(strenght,$RayCast2D.get_collider())
+						if Tipo=="Trepador":
+							$RayCast2D.get_collider().poison=true
 						get_node("AtkSFX").play()
 						get_node("Attack").set_emitting(true)
 						turnos=0

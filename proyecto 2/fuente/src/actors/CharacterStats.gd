@@ -17,28 +17,54 @@ func alive():
 		life = false
 func heal(player):
 	if player.inventario > 0:
-		player.health += (player.maxH)/4
-		player.inventario -= 1
-		player.turnos -= 1
+		if player.get_name()=="Ranger":
+			if player.habilidad == true:
+				player.health = 0 + maxH
+			else:
+				player.health += (player.maxH)/4
+				player.inventario -= 1
+		else:
+			player.health += (player.maxH)/4
+			player.inventario -= 1
 		if player.health > player.maxH:
 			player.health = 0 + player.maxH
 			
-func pick_up(item):
+func pick_up(item,player):
 	if item == "LVL":
-		level += 1
-		if level==3:
-			habilidad=true
-		maxH += maxH/10
-		health = 0+maxH
+		player.level += 1
+		if player.level==3:
+			player.habilidad=true
+		if player.get_name()=="Soldado":
+			if player.habilidad==true:
+				player.maxH += player.maxH/5
+				player.health = 0+player.maxH
+			else:
+				player.maxH += player.maxH/10
+				player.health = 0+player.maxH
+		else:
+			player.maxH += player.maxH/10
+			player.health = 0+player.maxH
 	elif item == "KIT":
-		inventario += 1
+		player.inventario += 1
 	else:
-		strenght += 10
+		if player.get_name()=="Tanque":
+			if player.strenght==250:
+				player.get_node("RayCast2D").set_cast_to(Vector2(0,-300))
+				player.rango=8
+		player.strenght += 10
 		
 func damage(pwr,target):
-	target.health -= pwr
-	if target.health < 0 :
-		target.health = 0
+	if target.get_name()=="Tanque":
+		if target.habilidad==true:
+			target.health -= pwr/2
+		else:
+			target.health -= pwr
+			if target.health < 0 :
+				target.health = 0
+	else:
+		target.health -= pwr
+		if target.health < 0 :
+			target.health = 0
 	if target.health == 0 :
 		target.dead()
 		
