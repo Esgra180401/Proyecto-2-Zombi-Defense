@@ -164,14 +164,17 @@ rotation = -8.93276e-06
 collision_layer = 2148024455
 collision_mask = 540807
 script = ExtResource( 1 )
-health = 250
+health = 500
 strenght = 250
+level = 1
 MaxNoise = 10
 inventario = 2
 maxH = 500
 life = true
-rango = 8
+turnos = 15
+MaxTurnos = 15
 Tipo = "Humano"
+rango = 4
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.406586, -4.7933 )

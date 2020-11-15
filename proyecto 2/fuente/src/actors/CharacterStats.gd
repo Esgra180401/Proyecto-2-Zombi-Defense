@@ -11,6 +11,16 @@ export var inventario: int
 export var maxH: int
 export var life: bool
 export var habilidad: bool
+export var turnos: int
+export var MaxTurnos: int
+export var Tipo: String
+
+var moving = false
+var new_position
+var  tile_size = 37
+var last_movement = Vector2(0,0)
+var motion_vector = Vector2()
+var collider = null
 
 func alive():
 	if health == 0:

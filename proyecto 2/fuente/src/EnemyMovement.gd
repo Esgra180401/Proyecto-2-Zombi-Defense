@@ -10,23 +10,11 @@ export (NodePath) var target3
 
 export (NodePath) var target4
 
-
 export (NodePath) var Resumen
 onready var sumary = get_node(Resumen)
 
-export var turnos: int
-export var MaxTurnos: int
-export var Tipo: String
-
-var moving = false
-var  tile_size = 37
-var last_movement = Vector2(0,0)
-var motion_vector = Vector2()
-var contar=0
-var collider = null
 var follow
 var actual
-var new_position
 var sonido1
 var sonido2
 var sonido3
