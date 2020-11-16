@@ -69,8 +69,8 @@ func damage(pwr,target):
 			target.health -= pwr/2
 		else:
 			target.health -= pwr
-			if target.health < 0 :
-				target.health = 0
+		if target.health < 0 :
+			target.health = 0
 	else:
 		target.health -= pwr
 		if target.health < 0 :
