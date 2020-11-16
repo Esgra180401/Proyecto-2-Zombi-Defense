@@ -653,6 +653,39 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="STT Soldier" type="Label" parent="GUI"]
+margin_left = 1303.24
+margin_top = 12.1593
+margin_right = 1393.24
+margin_bottom = 27.1593
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 1, 0, 0.937255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="STT Ranger" type="Label" parent="GUI"]
+margin_left = 1303.0
+margin_top = 155.819
+margin_right = 1387.68
+margin_bottom = 170.819
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 1, 0, 0.937255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="STT Tank" type="Label" parent="GUI"]
+margin_left = 1303.0
+margin_top = 297.891
+margin_right = 1393.0
+margin_bottom = 312.891
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 1, 0, 0.937255, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ResumenDTurno" type="Label" parent="GUI"]
 margin_left = 1082.29
 margin_top = 499.021
@@ -668,13 +701,26 @@ __meta__ = {
 }
 
 [node name="Ronda" type="Label" parent="GUI"]
-margin_left = 1079.71
-margin_top = 597.112
-margin_right = 1192.71
-margin_bottom = 630.112
+margin_left = 1081.3
+margin_top = 457.421
+margin_right = 1194.3
+margin_bottom = 490.421
 custom_fonts/font = SubResource( 19 )
 custom_colors/font_color = Color( 0.262745, 0.027451, 0.027451, 1 )
 text = "Ronda 0
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TurnoActual" type="Label" parent="GUI"]
+margin_left = 1078.12
+margin_top = 596.318
+margin_right = 1191.12
+margin_bottom = 629.318
+custom_fonts/font = SubResource( 19 )
+custom_colors/font_color = Color( 0.352941, 0.980392, 0.00392157, 1 )
+text = "Turno de:
 "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -721,6 +767,7 @@ autoplay = true
 script = ExtResource( 5 )
 Boton_Atk = NodePath("../GUI/Ataque")
 Boton_Cur = NodePath("../GUI/Curar")
+turnoA = NodePath("../GUI/TurnoActual")
 Vida1 = NodePath("../GUI/Vida Soldier")
 Vida2 = NodePath("../GUI/Vida Ranger")
 Vida3 = NodePath("../GUI/Vida Tank")
@@ -736,24 +783,33 @@ pwr3 = NodePath("../GUI/WPN Tank")
 rng1 = NodePath("../GUI/RNG Soldier")
 rng2 = NodePath("../GUI/RNG Ranger")
 rng3 = NodePath("../GUI/RNG Tank")
+stt1 = NodePath("../GUI/STT Soldier")
+stt2 = NodePath("../GUI/STT Ranger")
+stt3 = NodePath("../GUI/STT Tank")
 Resumen = NodePath("../GUI/ResumenDTurno")
 Rounds = NodePath("../GUI/Ronda")
 Bandera = NodePath("../Extra Assets/Base")
 
 [node name="Soldado" parent="Turnos" instance=ExtResource( 3 )]
-position = Vector2( 526.596, 389.4 )
+position = Vector2( 526.711, 426.282 )
 
 [node name="Ranger" parent="Turnos" instance=ExtResource( 6 )]
-position = Vector2( 448.561, 462.47 )
+position = Vector2( 604.601, 462.787 )
 
 [node name="Tanque" parent="Turnos" instance=ExtResource( 7 )]
-position = Vector2( 604.212, 463.013 )
+position = Vector2( 448.804, 461.926 )
 
 [node name="Timer" type="Timer" parent="Turnos"]
 wait_time = 0.8
 
 [node name="Trepador" parent="Turnos" instance=ExtResource( 9 )]
-position = Vector2( 682.855, 240.962 )
+position = Vector2( 643.799, 277.634 )
+
+[node name="Trepador2" parent="Turnos" instance=ExtResource( 9 )]
+position = Vector2( 527.466, 241.965 )
+
+[node name="Trepador3" parent="Turnos" instance=ExtResource( 9 )]
+position = Vector2( 408.977, 241.074 )
 
 [node name="Extra Assets" type="Node" parent="."]
 

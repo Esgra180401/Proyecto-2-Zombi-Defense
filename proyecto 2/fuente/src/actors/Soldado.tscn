@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://src/actors/player_movement.gd" type="Script" id=1]
 [ext_resource path="res://assets/Bullet.png" type="Texture" id=2]
@@ -88,20 +88,45 @@ orbit_velocity_random = 0.0
 scale_curve = SubResource( 15 )
 color_ramp = SubResource( 13 )
 
-[sub_resource type="Gradient" id=17]
+[sub_resource type="Gradient" id=27]
+offsets = PoolRealArray( 0, 0.6875 )
+colors = PoolColorArray( 0.664063, 0, 1, 1, 0.0187683, 0.320313, 0.150694, 0.698039 )
+
+[sub_resource type="GradientTexture" id=28]
+gradient = SubResource( 27 )
+
+[sub_resource type="Curve" id=29]
+max_value = 5.0
+_data = [ Vector2( 0, 5 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=30]
+curve = SubResource( 29 )
+
+[sub_resource type="ParticlesMaterial" id=31]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 180.0
+gravity = Vector3( 0, 70, 0 )
+initial_velocity = 78.13
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 30 )
+color_ramp = SubResource( 28 )
+
+[sub_resource type="Gradient" id=22]
 colors = PoolColorArray( 0.959961, 1, 0, 1, 0.960784, 1, 0, 0.415686 )
 
-[sub_resource type="GradientTexture" id=18]
-gradient = SubResource( 17 )
+[sub_resource type="GradientTexture" id=23]
+gradient = SubResource( 22 )
 
-[sub_resource type="Curve" id=19]
+[sub_resource type="Curve" id=24]
 max_value = 5.0
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 2.72727 ), -11.8766, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=20]
-curve = SubResource( 19 )
+[sub_resource type="CurveTexture" id=25]
+curve = SubResource( 24 )
 
-[sub_resource type="ParticlesMaterial" id=21]
+[sub_resource type="ParticlesMaterial" id=26]
 emission_shape = 1
 emission_sphere_radius = 2.0
 flag_disable_z = true
@@ -111,11 +136,11 @@ initial_velocity = 200.0
 orbit_velocity = 2.0
 orbit_velocity_random = 0.0
 scale = 2.0
-scale_curve = SubResource( 20 )
-color_ramp = SubResource( 18 )
+scale_curve = SubResource( 25 )
+color_ramp = SubResource( 23 )
 
 [node name="Soldado" type="Area2D"]
-position = Vector2( 1169.88, 1038.57 )
+position = Vector2( 509.521, 441.707 )
 collision_layer = 2147500167
 collision_mask = 16519
 script = ExtResource( 1 )
@@ -180,6 +205,14 @@ one_shot = true
 explosiveness = 0.48
 process_material = SubResource( 16 )
 
+[node name="Poison Splat" type="Particles2D" parent="."]
+emitting = false
+amount = 100
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.48
+process_material = SubResource( 31 )
+
 [node name="AtkSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
 
@@ -192,7 +225,7 @@ emitting = false
 amount = 100
 one_shot = true
 explosiveness = 0.5
-process_material = SubResource( 21 )
+process_material = SubResource( 26 )
 
 [node name="Heal" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )

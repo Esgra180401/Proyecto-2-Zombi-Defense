@@ -8,6 +8,8 @@ onready var BtnAtk = get_node(Boton_Atk)
 export (NodePath) var Boton_Cur
 onready var BtnCur = get_node(Boton_Cur)
 
+export (NodePath) var turnoA
+
 export (NodePath) var Vida1
 
 export (NodePath) var Vida2
@@ -37,6 +39,12 @@ export (NodePath) var rng1
 export (NodePath) var rng2
 
 export (NodePath) var rng3
+
+export (NodePath) var stt1
+
+export (NodePath) var stt2
+
+export (NodePath) var stt3
 
 export (NodePath) var Resumen
 
@@ -71,7 +79,6 @@ func _ready():
 	preparacion()
 	
 func preparacion():
-	actualizar_labels()
 	personaje_activo = get_child(new_index)
 	personaje_activo.set_physics_process(false)
 	new_index +=1
@@ -83,6 +90,7 @@ func preparacion():
 		
 func iniciar():
 	personaje_activo = get_child(0)
+	actualizar_labels()
 	jugar_turno()
 	
 func jugar_turno():
@@ -121,10 +129,10 @@ func jugar_turno():
 			get_child(2).noiseLVL=0
 			veneno()
 			ronda+=1
-			actualizar_labels()
 			activar_spawns(ronda)
 			new_index = 0
 			personaje_activo=get_child(new_index)
+			actualizar_labels()
 			encender_btn()
 			jugar_turno()
 		
@@ -158,6 +166,37 @@ func actualizar_labels():
 	get_node(rng1).set_text("Rango:"+str(get_child(0).rango))
 	get_node(rng2).set_text("Rango:"+str(get_child(1).rango))
 	get_node(rng3).set_text("Rango:"+str(get_child(2).rango))
+	
+	if get_child(0).poison==true:
+		get_node(stt1).set_text("ENVENENADO")
+	else:
+		get_node(stt1).set_text("")
+		
+	if get_child(1).poison==true:
+		get_node(stt2).set_text("ENVENENADO")
+	else:
+		get_node(stt2).set_text("")
+		
+	if get_child(2).poison==true:
+		get_node(stt3).set_text("ENVENENADO")
+	else:
+		get_node(stt3).set_text("")
+		
+	if get_child(0).life!=true:
+		get_node(stt1).set_text("")
+		
+	if get_child(1).life!=true:
+		get_node(stt2).set_text("")
+		
+	if get_child(2).life!=true:
+		get_node(stt3).set_text("")
+	
+	if personaje_activo.get_name()=="Timer":
+		pass
+	elif personaje_activo.Tipo == "Humano":
+		get_node(turnoA).set_text("Turno de:"+str(personaje_activo.get_name()))
+	elif personaje_activo.Tipo=="Zombie" or personaje_activo.Tipo=="Trepador" or personaje_activo.Tipo=="Zombie Tanque":
+		get_node(turnoA).set_text("Turno de:Zombies")
 	
 	get_node(Rounds).set_text("Ronda "+str(ronda))
 	
@@ -269,16 +308,16 @@ func veneno():
 	if get_child(0).habilidad==false:
 		if get_child(0).poison==true:
 			if get_child(0).life==true:
-				get_child(0).get_node("Blood Splat").set_emitting(true)
+				get_child(0).get_node("Poison Splat").set_emitting(true)
 				get_child(0).damage(15,get_child(0))
 				get_child(0).poison=false
 	if get_child(1).poison==true:
 		if get_child(1).life==true:
-			get_child(1).get_node("Blood Splat").set_emitting(true)
+			get_child(1).get_node("Poison Splat").set_emitting(true)
 			get_child(1).damage(15,get_child(1))
 			get_child(1).poison=false
 	if get_child(2).poison==true:
 		if get_child(2).life==true:
-			get_child(2).get_node("Blood Splat").set_emitting(true)
+			get_child(2).get_node("Poison Splat").set_emitting(true)
 			get_child(2).damage(15,get_child(2))
 			get_child(2).poison=false

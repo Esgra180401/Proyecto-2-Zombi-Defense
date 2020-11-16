@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://src/actors/player_movement.gd" type="Script" id=1]
 [ext_resource path="res://assets/Character Sprites.png" type="Texture" id=2]
@@ -7,20 +7,20 @@
 [ext_resource path="res://SFX/PowerUp.wav" type="AudioStream" id=5]
 [ext_resource path="res://SFX/Heal.wav" type="AudioStream" id=6]
 
-[sub_resource type="Gradient" id=1]
+[sub_resource type="Gradient" id=60]
 colors = PoolColorArray( 0.171875, 1, 0, 1, 0.148438, 1, 0, 0.203922 )
 
-[sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 1 )
+[sub_resource type="GradientTexture" id=61]
+gradient = SubResource( 60 )
 
-[sub_resource type="Curve" id=3]
+[sub_resource type="Curve" id=62]
 max_value = 5.0
 _data = [ Vector2( 0, 3.22358 ), 0.0, -8.34343, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=4]
-curve = SubResource( 3 )
+[sub_resource type="CurveTexture" id=63]
+curve = SubResource( 62 )
 
-[sub_resource type="ParticlesMaterial" id=5]
+[sub_resource type="ParticlesMaterial" id=64]
 emission_shape = 1
 emission_sphere_radius = 20.7
 flag_disable_z = true
@@ -30,27 +30,27 @@ initial_velocity = 50.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 2.0
-scale_curve = SubResource( 4 )
-color_ramp = SubResource( 2 )
+scale_curve = SubResource( 63 )
+color_ramp = SubResource( 61 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=65]
 extents = Vector2( 16.0135, 16.9643 )
 
-[sub_resource type="Gradient" id=7]
+[sub_resource type="Gradient" id=66]
 offsets = PoolRealArray( 0.119863, 0.59589 )
 colors = PoolColorArray( 1, 0.960938, 0, 1, 1, 0, 0, 1 )
 
-[sub_resource type="GradientTexture" id=8]
-gradient = SubResource( 7 )
+[sub_resource type="GradientTexture" id=67]
+gradient = SubResource( 66 )
 
-[sub_resource type="Curve" id=9]
+[sub_resource type="Curve" id=68]
 max_value = 4.0
 _data = [ Vector2( 0, 1.66673 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=10]
-curve = SubResource( 9 )
+[sub_resource type="CurveTexture" id=69]
+curve = SubResource( 68 )
 
-[sub_resource type="ParticlesMaterial" id=11]
+[sub_resource type="ParticlesMaterial" id=70]
 flag_disable_z = true
 direction = Vector3( 0, -1, 0 )
 spread = 31.91
@@ -59,25 +59,25 @@ initial_velocity = 110.91
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 3.0
-scale_curve = SubResource( 10 )
-color_ramp = SubResource( 8 )
+scale_curve = SubResource( 69 )
+color_ramp = SubResource( 67 )
 
-[sub_resource type="Gradient" id=12]
+[sub_resource type="Gradient" id=71]
 offsets = PoolRealArray( 0.0753425, 0.308219, 0.599315, 0.784247 )
 colors = PoolColorArray( 0.294118, 0.290196, 0.290196, 0.0588235, 0.219608, 0.215686, 0.215686, 1, 0.222656, 0.222656, 0.222656, 1, 0.270588, 0.270588, 0.270588, 0 )
 
-[sub_resource type="GradientTexture" id=13]
-gradient = SubResource( 12 )
+[sub_resource type="GradientTexture" id=72]
+gradient = SubResource( 71 )
 
-[sub_resource type="Curve" id=14]
+[sub_resource type="Curve" id=73]
 min_value = 0.5
 max_value = 4.0
 _data = [ Vector2( 0, 0.5 ), 0.0, 0.0, 0, 0, Vector2( 1, 2.5642 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=15]
-curve = SubResource( 14 )
+[sub_resource type="CurveTexture" id=74]
+curve = SubResource( 73 )
 
-[sub_resource type="ParticlesMaterial" id=16]
+[sub_resource type="ParticlesMaterial" id=75]
 flag_disable_z = true
 direction = Vector3( 0, -1, 0 )
 spread = 29.72
@@ -87,17 +87,17 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 4.0
 scale_random = 1.0
-scale_curve = SubResource( 15 )
-color_ramp = SubResource( 13 )
+scale_curve = SubResource( 74 )
+color_ramp = SubResource( 72 )
 
-[sub_resource type="Gradient" id=17]
+[sub_resource type="Gradient" id=76]
 offsets = PoolRealArray( 0.547826, 0.681159 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=18]
-gradient = SubResource( 17 )
+[sub_resource type="GradientTexture" id=77]
+gradient = SubResource( 76 )
 
-[sub_resource type="ParticlesMaterial" id=19]
+[sub_resource type="ParticlesMaterial" id=78]
 flag_disable_z = true
 direction = Vector3( 0, -1, 0 )
 spread = 0.0
@@ -106,22 +106,22 @@ initial_velocity = 510.42
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 0.15
-color_ramp = SubResource( 18 )
+color_ramp = SubResource( 77 )
 
-[sub_resource type="Gradient" id=20]
+[sub_resource type="Gradient" id=79]
 colors = PoolColorArray( 0.733333, 0.0352941, 0.0352941, 1, 0.733333, 0.0352941, 0.0352941, 0.443137 )
 
-[sub_resource type="GradientTexture" id=21]
-gradient = SubResource( 20 )
+[sub_resource type="GradientTexture" id=80]
+gradient = SubResource( 79 )
 
-[sub_resource type="Curve" id=22]
+[sub_resource type="Curve" id=81]
 max_value = 5.0
 _data = [ Vector2( 0, 5 ), 0.0, 0.0, 0, 0, Vector2( 0.983696, 1.78826 ), 0.743434, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=23]
-curve = SubResource( 22 )
+[sub_resource type="CurveTexture" id=82]
+curve = SubResource( 81 )
 
-[sub_resource type="ParticlesMaterial" id=24]
+[sub_resource type="ParticlesMaterial" id=83]
 flag_disable_z = true
 direction = Vector3( 0, -1, 0 )
 spread = 180.0
@@ -129,23 +129,47 @@ gravity = Vector3( 0, 70, 0 )
 initial_velocity = 78.13
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale_curve = SubResource( 23 )
-color_ramp = SubResource( 21 )
+scale_curve = SubResource( 82 )
+color_ramp = SubResource( 80 )
 
-[sub_resource type="Gradient" id=25]
-colors = PoolColorArray( 0.959961, 1, 0, 1, 0.960784, 1, 0, 0.415686 )
-
-[sub_resource type="GradientTexture" id=26]
-gradient = SubResource( 25 )
-
-[sub_resource type="Curve" id=27]
+[sub_resource type="Curve" id=58]
 max_value = 5.0
 _data = [ Vector2( 0, 0 ), 0.0, 0.51404, 0, 0, Vector2( 1, 2.35273 ), -6.49498, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=28]
-curve = SubResource( 27 )
+[sub_resource type="CurveTexture" id=59]
+curve = SubResource( 58 )
 
-[sub_resource type="ParticlesMaterial" id=29]
+[sub_resource type="Curve" id=84]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=85]
+curve = SubResource( 84 )
+
+[sub_resource type="ParticlesMaterial" id=86]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 180.0
+gravity = Vector3( 0, 70, 0 )
+initial_velocity = 78.13
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 85 )
+color_ramp = SubResource( 59 )
+
+[sub_resource type="Gradient" id=87]
+colors = PoolColorArray( 0.959961, 1, 0, 1, 0.960784, 1, 0, 0.415686 )
+
+[sub_resource type="GradientTexture" id=88]
+gradient = SubResource( 87 )
+
+[sub_resource type="Curve" id=89]
+max_value = 5.0
+_data = [ Vector2( 0, 0 ), 0.0, 0.51404, 0, 0, Vector2( 1, 2.35273 ), -6.49498, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=90]
+curve = SubResource( 89 )
+
+[sub_resource type="ParticlesMaterial" id=91]
 emission_shape = 1
 emission_sphere_radius = 2.0
 flag_disable_z = true
@@ -155,11 +179,11 @@ initial_velocity = 200.0
 orbit_velocity = 2.0
 orbit_velocity_random = 0.0
 scale = 2.0
-scale_curve = SubResource( 28 )
-color_ramp = SubResource( 26 )
+scale_curve = SubResource( 90 )
+color_ramp = SubResource( 88 )
 
 [node name="Tanque" type="Area2D"]
-position = Vector2( 1053.25, 555.511 )
+position = Vector2( 443.688, 228.506 )
 rotation = -8.93276e-06
 collision_layer = 2148024455
 collision_mask = 540807
@@ -191,14 +215,14 @@ amount = 100
 lifetime = 0.8
 one_shot = true
 explosiveness = 0.1
-process_material = SubResource( 5 )
+process_material = SubResource( 64 )
 
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2( 0.046936, 0.0154114 )
 scale = Vector2( 0.861627, 0.837508 )
-shape = SubResource( 6 )
+shape = SubResource( 65 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = true
@@ -214,7 +238,7 @@ amount = 30
 lifetime = 0.8
 one_shot = true
 explosiveness = 0.84
-process_material = SubResource( 11 )
+process_material = SubResource( 70 )
 
 [node name="Smoke" type="Particles2D" parent="."]
 position = Vector2( 9.16785, -20.3437 )
@@ -224,7 +248,7 @@ amount = 50
 lifetime = 0.8
 one_shot = true
 explosiveness = 0.71
-process_material = SubResource( 16 )
+process_material = SubResource( 75 )
 
 [node name="Rocket" type="Particles2D" parent="."]
 position = Vector2( 8.67657, -33.2364 )
@@ -232,7 +256,7 @@ emitting = false
 amount = 1
 lifetime = 0.8
 one_shot = true
-process_material = SubResource( 19 )
+process_material = SubResource( 78 )
 texture = ExtResource( 3 )
 
 [node name="Blood Splat" type="Particles2D" parent="."]
@@ -243,22 +267,32 @@ amount = 100
 lifetime = 0.5
 one_shot = true
 explosiveness = 0.48
-process_material = SubResource( 24 )
+process_material = SubResource( 83 )
+
+[node name="Poison Splat" type="Particles2D" parent="."]
+position = Vector2( 0.118858, -0.115799 )
+rotation = 8.93276e-06
+emitting = false
+amount = 100
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.48
+process_material = SubResource( 86 )
+
+[node name="LVL Up" type="Particles2D" parent="."]
+position = Vector2( 0.0403442, 0.0336304 )
+rotation = 8.93276e-06
+emitting = false
+amount = 100
+one_shot = true
+explosiveness = 0.5
+process_material = SubResource( 91 )
 
 [node name="AtkSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
 
 [node name="PowerUp" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
-
-[node name="LVL Up" type="Particles2D" parent="."]
-position = Vector2( 0.0403442, 0.0336342 )
-rotation = 8.93276e-06
-emitting = false
-amount = 100
-one_shot = true
-explosiveness = 0.5
-process_material = SubResource( 29 )
 
 [node name="Heal" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
