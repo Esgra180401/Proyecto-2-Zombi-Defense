@@ -88,21 +88,21 @@ orbit_velocity_random = 0.0
 scale_curve = SubResource( 15 )
 color_ramp = SubResource( 13 )
 
-[sub_resource type="Gradient" id=27]
+[sub_resource type="Gradient" id=17]
 offsets = PoolRealArray( 0, 0.6875 )
 colors = PoolColorArray( 0.664063, 0, 1, 1, 0.0187683, 0.320313, 0.150694, 0.698039 )
 
-[sub_resource type="GradientTexture" id=28]
-gradient = SubResource( 27 )
+[sub_resource type="GradientTexture" id=18]
+gradient = SubResource( 17 )
 
-[sub_resource type="Curve" id=29]
+[sub_resource type="Curve" id=19]
 max_value = 5.0
 _data = [ Vector2( 0, 5 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=30]
-curve = SubResource( 29 )
+[sub_resource type="CurveTexture" id=20]
+curve = SubResource( 19 )
 
-[sub_resource type="ParticlesMaterial" id=31]
+[sub_resource type="ParticlesMaterial" id=21]
 flag_disable_z = true
 direction = Vector3( 0, -1, 0 )
 spread = 180.0
@@ -110,8 +110,8 @@ gravity = Vector3( 0, 70, 0 )
 initial_velocity = 78.13
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale_curve = SubResource( 30 )
-color_ramp = SubResource( 28 )
+scale_curve = SubResource( 20 )
+color_ramp = SubResource( 18 )
 
 [sub_resource type="Gradient" id=22]
 colors = PoolColorArray( 0.959961, 1, 0, 1, 0.960784, 1, 0, 0.415686 )
@@ -211,7 +211,7 @@ amount = 100
 lifetime = 0.5
 one_shot = true
 explosiveness = 0.48
-process_material = SubResource( 31 )
+process_material = SubResource( 21 )
 
 [node name="AtkSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
